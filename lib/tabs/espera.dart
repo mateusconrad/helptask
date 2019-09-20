@@ -8,7 +8,6 @@ class Espera extends StatefulWidget {
 class _EsperaState extends State<Espera> {
   @override
   Widget build(BuildContext context) {
-
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
@@ -31,11 +30,12 @@ class _EsperaState extends State<Espera> {
                       ),
                       OutlineButton(
                         child: const Text('Atender'),
-                        onPressed: () {
-                        },
+                        onPressed: () {},
                       ),
-                      Icon(Icons.info),
-
+                      IconButton(
+                        icon: Icon(Icons.info),
+                        onPressed: () {},
+                      ),
                     ],
                   ),
                 ),
@@ -63,7 +63,10 @@ class _EsperaState extends State<Espera> {
                         child: const Text('Atender'),
                         onPressed: () {/* ... */},
                       ),
-                      Icon(Icons.info,color: Colors.white,),
+                      IconButton(
+                        icon: Icon(Icons.info),
+                        onPressed: () {},
+                      ),
                     ],
                   ),
                 ),
@@ -75,4 +78,3 @@ class _EsperaState extends State<Espera> {
     );
   }
 }
-

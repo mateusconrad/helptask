@@ -23,7 +23,10 @@ class _FinalizadoState extends State<Finalizado> {
               ButtonTheme.bar(
                 child: ButtonBar(
                   children: <Widget>[
-                    Icon(Icons.info),
+                    IconButton(
+                      icon: Icon(Icons.info),
+                      onPressed: () {},
+                    ),
                   ],
                 ),
               ),
@@ -43,7 +46,10 @@ class _FinalizadoState extends State<Finalizado> {
               ButtonTheme.bar(
                 child: ButtonBar(
                   children: <Widget>[
-                    Icon(Icons.info),
+                    IconButton(
+                      icon: Icon(Icons.info),
+                      onPressed: () {},
+                    ),
                   ],
                 ),
               ),

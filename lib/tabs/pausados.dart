@@ -31,6 +31,10 @@ class _PausaState extends State<Pausa> {
                       child: const Text('Detalhes'),
                       onPressed: () {/* ... */},
                     ),
+                    IconButton(
+                      icon: Icon(Icons.info),
+                      onPressed: () {},
+                    ),
                   ],
                 ),
               ),
@@ -48,19 +52,20 @@ class _PausaState extends State<Pausa> {
                 subtitle: Text('Teclado parou de funcionar'),
               ),
               ButtonTheme.bar(
-                child: ButtonBar(
-                  children: <Widget>[
-                    OutlineButton(
-                      child: const Text('Retomar'),
-                      onPressed: () {/* ... */},
-                    ),
-                    OutlineButton(
-                      child: const Text('Detalhes'),
-                      onPressed: () {/* ... */},
-                    ),
-                  ]
-                )
-              ),
+                  child: ButtonBar(children: <Widget>[
+                OutlineButton(
+                  child: const Text('Retomar'),
+                  onPressed: () {/* ... */},
+                ),
+                OutlineButton(
+                  child: const Text('Detalhes'),
+                  onPressed: () {/* ... */},
+                ),
+                IconButton(
+                  icon: Icon(Icons.info),
+                  onPressed: () {},
+                ),
+              ])),
             ],
           ),
         ),

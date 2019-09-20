@@ -33,7 +33,10 @@ class _AndamentoState extends State<Andamento> {
                         child: const Text('Pausar'),
                         onPressed: () {/* ... */},
                       ),
-                      Icon(Icons.info),
+                      IconButton(
+                        icon: Icon(Icons.info),
+                        onPressed: () {},
+                      ),
                     ],
                   ),
                 ),
@@ -61,7 +64,10 @@ class _AndamentoState extends State<Andamento> {
                         child: const Text('Pausar'),
                         onPressed: () {/* ... */},
                       ),
-                      Icon(Icons.info),
+                      IconButton(
+                        icon: Icon(Icons.info),
+                        onPressed: () {},
+                      ),
                     ],
                   ),
                 ),

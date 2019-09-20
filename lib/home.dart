@@ -1,16 +1,16 @@
 import 'package:app_vai/menuLateral.dart';
 import 'package:flutter/material.dart';
-import 'espera.dart';
-import 'pausados.dart';
-import 'andamento.dart';
-import 'finalizado.dart';
+import 'tabs/espera.dart';
+import 'tabs/pausados.dart';
+import 'tabs/andamento.dart';
+import 'tabs/finalizado.dart';
+import 'package:app_vai/abrir_chamado.dart';
 
 class TabBarDemo extends StatelessWidget {
-  String nomeTab= "Chamados";
+  String nomeTab = "Chamados";
 
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       //showSemanticsDebugger: true,
@@ -24,16 +24,26 @@ class TabBarDemo extends StatelessWidget {
           appBar: AppBar(
             bottom: TabBar(
               tabs: [
-                Tab(icon: Icon(Icons.hourglass_full), text: ("em espera"),),
-                Tab(icon: Icon(Icons.pause), text: ("pausados"),),
-                Tab(icon: Icon(Icons.build), text: ("atendendo"),),
-                Tab(icon: Icon(Icons.check), text: ("Finalizados"),),
+                Tab(
+                  icon: Icon(Icons.hourglass_full),
+                  text: ("em espera"),
+                ),
+                Tab(
+                  icon: Icon(Icons.pause),
+                  text: ("pausados"),
+                ),
+                Tab(
+                  icon: Icon(Icons.build),
+                  text: ("atendendo"),
+                ),
+                Tab(
+                  icon: Icon(Icons.check),
+                  text: ("Finalizados"),
+                ),
               ],
             ),
             title: Text(nomeTab),
           ),
-
-
           body: TabBarView(
             children: [
               Espera(),
@@ -42,13 +52,17 @@ class TabBarDemo extends StatelessWidget {
               Finalizado(),
             ],
           ),
-          drawer: MenuLateral(
-
+          floatingActionButton: FloatingActionButton.extended(
+            icon: Icon(Icons.add),
+            label: Text("Novo"),
+            onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> AbrirChamado()));
+            },
           ),
-        ),
+          drawer: MenuLateral(),
 
+        ),
       ),
     );
   }
-
 }

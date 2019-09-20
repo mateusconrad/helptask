@@ -8,8 +8,6 @@ class MenuLateral extends StatefulWidget {
 class _MenuLateralState extends State<MenuLateral> {
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-
-    );
+    return Drawer();
   }
 }
