@@ -28,15 +28,18 @@ class _LoginState extends State<Login> {
             children: <Widget>[
               SizedBox(height: 200),
               _widgetText(
-                Icons.person,
+                iconField = Icons.person,
                 "login",
                 "Digite o usuário",
+                controller: _cLogin,
               ),
               SizedBox(height: 15.0),
               _widgetText(
-                Icons.vpn_key,
+                iconField = Icons.vpn_key,
                 "Senha",
                 "Digite a senha",
+                password: true,
+                controller: _cPassw,
               ),
 
               SizedBox(height: 45.0),
@@ -76,7 +79,8 @@ class _LoginState extends State<Login> {
                 filled: true,
                 contentPadding: EdgeInsets.fromLTRB(15, 10, 15, 10),
                 prefixIcon: Icon(iconField),
-                //iconField,
+                labelText: label,
+                hintText: hint,
                 // prefixIcon: Icon(Icons.person),
               ),
             );
