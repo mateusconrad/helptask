@@ -6,7 +6,7 @@ import 'tabs/andamento.dart';
 import 'tabs/finalizado.dart';
 import 'package:app_vai/abrir_chamado.dart';
 
-class TabBarDemo extends StatelessWidget {
+class TabBarHome extends StatelessWidget {
   String nomeTab = "Chamados";
 
   @override
