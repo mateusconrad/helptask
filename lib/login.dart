@@ -57,7 +57,7 @@ class _LoginState extends State<Login> {
     return Material(
               elevation: 5.0,
               borderRadius: BorderRadius.circular(30.0),
-              color: Colors.indigoAccent,
+              color: Colors.tealAccent,
               child: MaterialButton(
                   minWidth: MediaQuery.of(context).size.width,
                   padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -67,7 +67,10 @@ class _LoginState extends State<Login> {
                         MaterialPageRoute(
                             builder: (context) => TabBarHome()));
                   },
-                  child: Text(label),
+                  child: Text(label,
+                  style: TextStyle(
+                    color: Colors.black
+                  ),),
 
               ),
             );
