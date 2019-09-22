@@ -27,10 +27,14 @@ class _LoginState extends State<Login> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              SizedBox(height: 100),
               ClipRRect(
                   borderRadius: BorderRadius.circular(30),
-                  child: Image.asset("images/abase.jpg", height: 200,)),
-              SizedBox(height:50),
+                  child: Image.asset(
+                    "images/abase.jpg",
+                    height: 200,
+                  )),
+              SizedBox(height: 50),
               _widgetText(iconField = Icons.person, "login", "Digite o usuário",
                   controller: _cLogin),
               SizedBox(height: 15.0),
@@ -53,27 +57,24 @@ class _LoginState extends State<Login> {
     ));
   }
 
-  Material _loginButton(BuildContext context, String label ) {
+  Material _loginButton(BuildContext context, String label) {
     return Material(
-              elevation: 5.0,
-              borderRadius: BorderRadius.circular(30.0),
-              color: Colors.tealAccent,
-              child: MaterialButton(
-                  minWidth: MediaQuery.of(context).size.width,
-                  padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => TabBarHome()));
-                  },
-                  child: Text(label,
-                  style: TextStyle(
-                    color: Colors.black
-                  ),),
-
-              ),
-            );
+      elevation: 10,
+      borderRadius: BorderRadius.circular(30.0),
+      color: Colors.tealAccent,
+      child: MaterialButton(
+        minWidth: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => TabBarHome()));
+        },
+        child: Text(
+          label,
+          style: TextStyle(color: Colors.black),
+        ),
+      ),
+    );
   }
 
   TextFormField _widgetText(IconData iconField, String label, String hint,
@@ -83,7 +84,8 @@ class _LoginState extends State<Login> {
       obscureText: password,
       decoration: InputDecoration(
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(50),
+          borderRadius: BorderRadius.all(
+            Radius.circular(50),
           ),
         ),
         filled: true,
