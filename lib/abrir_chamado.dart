@@ -39,9 +39,9 @@ class _AbrirChamadoState extends State<AbrirChamado> {
                 ),
                 Row(
                   children: <Widget>[
-                    _botaoAbrirChamado("Cancelar", Colors.red),
-                    _sizedBox(15, 0),
-                    _botaoAbrirChamado("Concluir", Colors.indigo),
+                    Flexible(flex: 2,child: _botaoAbrirChamado("Cancelar", Colors.red)),
+                    Flexible(flex: 1,child: _sizedBox(15, 0)),
+                    Flexible(flex: 2,child: _botaoAbrirChamado("Concluir", Colors.indigo)),
                   ],
                 ),
               ],
@@ -57,7 +57,20 @@ class _AbrirChamadoState extends State<AbrirChamado> {
     return RaisedButton(
       child: Text(text),
       color: cor,
-      onPressed: () {},
+      onPressed: () {
+        return AlertDialog(
+          title: Text("certeza??"),
+          content: Text("certoo"),
+          actions: <Widget>[
+            new FlatButton(
+              child: new Text("Fechar"),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
     );
   }
 
