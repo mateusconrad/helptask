@@ -1,4 +1,3 @@
-import 'dart:ui' as prefix0;
 
 import 'package:flutter/material.dart';
 import 'home.dart';
