@@ -18,20 +18,48 @@ class _AbrirChamadoState extends State<AbrirChamado> {
       appBar: AppBar(
         title: Text("Abrir Chamado"),
       ),
-      body: Column(
-        //mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          SizedBox(height: 15,),
-          _textoChamado("Título"),
-          SizedBox(height: 15,),
-          _textoDescr("Descrição"),
-          _normal2Down(),
-        ],
-      ),
+      body: Center(
+        child: Container(
+          width: 350,
+          child: Column(
+            //mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              _sizedBox(30, 30),
+              _textoChamado("Título"),
+              _sizedBox(15, 15),
+              _textoDescr("Descrição"),
+              _sizedBox(0, 20),
+              Row(
+                children: <Widget>[
+                  _sizedBox(1,15),
+                  Text("Prioridade: ", ),
+                  _sizedBox(10, 10),
+                  _prioridadeMenu(),
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  RaisedButton(
+                      child: Text(
+                        "Cancelar"
+                      ),
+                    onPressed: (){},
+                  ),
+                  _sizedBox(15, 0),
 
+                ],
+              ),
+
+            ],
+          ),
+        ),
+
+      ),
     );
   }
+
+  SizedBox _sizedBox(double largura, double altura) => SizedBox(height: altura, width: largura,);
 
 
   TextFormField _textoChamado(String label) {
@@ -59,7 +87,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
     );
   }
 
-  DropdownButton _normal2Down() => DropdownButton<String>(
+  DropdownButton _prioridadeMenu() => DropdownButton<String>(
     items: [
       DropdownMenuItem<String>(
         value: "1", child: Text("Baixa",),),
