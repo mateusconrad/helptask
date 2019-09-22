@@ -40,14 +40,9 @@ class _AbrirChamadoState extends State<AbrirChamado> {
               ),
               Row(
                 children: <Widget>[
-                  RaisedButton(
-                      child: Text(
-                        "Cancelar"
-                      ),
-                    onPressed: (){},
-                  ),
+                  _botaoAbrirChamado("Cancelar"),
                   _sizedBox(15, 0),
-
+                  _botaoAbrirChamado("Concluir"),
                 ],
               ),
 
@@ -57,6 +52,13 @@ class _AbrirChamadoState extends State<AbrirChamado> {
 
       ),
     );
+  }
+
+  RaisedButton _botaoAbrirChamado(String text) {
+    return RaisedButton(
+                    child: Text(text),
+                  onPressed: (){},
+                );
   }
 
   SizedBox _sizedBox(double largura, double altura) => SizedBox(height: altura, width: largura,);
