@@ -27,85 +27,93 @@ class _AbrirChamadoState extends State<AbrirChamado> {
                 _sizedBox(15, 15),
                 _textoDescr("Descrição"),
                 _sizedBox(0, 20),
-                Row(
+                Column(
                   children: <Widget>[
-                    _sizedBox(1, 15),
-                    Text(
-                      "Prioridade: ",
-                    ),
-                    _sizedBox(10, 10),
-                    _prioridadeMenu(),
-                  ],
-                ),
-                Row(
-                  children: <Widget>[
-                    _sizedBox(1, 15),
-                    Text("Classificação"),
-                    _sizedBox(10, 10),
-
-                    DropdownButton<String>(
-                      items: [
-                        DropdownMenuItem<String>(
-                          value: "1",
-                          child: Text(
-                            "Hardware",
-                          ),
+                    Row(
+                      children: <Widget>[
+                        Text(
+                          "Prioridade: ",
                         ),
-                        DropdownMenuItem<String>(
-                          value: "2",
-                          child: Text(
-                            "Software",
-                          ),
-                        ),
-                        DropdownMenuItem<String>(
-                          value: "3",
-                          child: Text(
-                            "Rede",
-                          ),
-                        ),
-                        DropdownMenuItem<String>(
-                          value: "4",
-                          child: Text(
-                            "Impressoras",
-                          ),
-                        ),
-                        DropdownMenuItem<String>(
-                          value: "5",
-                          child: Text(
-                            "Telefonia",
-                          ),
-                        ),
+                        _sizedBox(20, 10),
+                        _prioridadeMenu(),
                       ],
-                      onChanged: (value) {
-                        setState(() {
-                          _value = value;
-                        });
-                      },
-                      value: _value,
-                      elevation: 2,
-                      //style: TextStyle(color: Colors.black, fontSize: 30),
-                      //isDense: true,
-                      iconSize: 40.0,
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Text("Classificação"),
+                        _sizedBox(10, 10),
+                        _categoriaMenu(),
+                      ],
                     ),
                   ],
                 ),
+                IconButton(
+                  icon: Icon(Icons.camera_alt),
+                  iconSize: 50,
+                  onPressed: (){},
+                ),
+                _sizedBox(10, 100),
 
-            Row(
-              children: <Widget>[
-                Flexible(
-                    flex: 2, child: _botaoAbrirChamado("Cancelar", Colors.red)),
-                Flexible(flex: 1, child: _sizedBox(15, 0)),
-                Flexible(flex: 2,
-                    child: _botaoAbrirChamado("Concluir", Colors.indigo)),
+                ButtonBar(
+                  children: <Widget>[
+                    _botaoAbrirChamado("Cancelar", Colors.red),
+                    _botaoAbrirChamado("Concluir", Colors.indigo),
+                  ],
+                ),
               ],
             ),
-            ],
           ),
         ),
       ),
-    ),);
+    );
   }
 
+  DropdownButton<String> _categoriaMenu() {
+    return DropdownButton<String>(
+      items: [
+        DropdownMenuItem<String>(
+          value: "1",
+          child: Text(
+            "Hardware",
+          ),
+        ),
+        DropdownMenuItem<String>(
+          value: "2",
+          child: Text(
+            "Software",
+          ),
+        ),
+        DropdownMenuItem<String>(
+          value: "3",
+          child: Text(
+            "Rede",
+          ),
+        ),
+        DropdownMenuItem<String>(
+          value: "4",
+          child: Text(
+            "Impressoras",
+          ),
+        ),
+        DropdownMenuItem<String>(
+          value: "5",
+          child: Text(
+            "Telefonia",
+          ),
+        ),
+      ],
+      onChanged: (value) {
+        setState(() {
+          _value = value;
+        });
+      },
+      value: _value,
+      elevation: 2,
+      //style: TextStyle(color: Colors.black, fontSize: 30),
+      //isDense: true,
+      iconSize: 40.0,
+    );
+  }
 
   RaisedButton _botaoAbrirChamado(String text, Color cor) {
     return RaisedButton(
@@ -128,8 +136,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
     );
   }
 
-  SizedBox _sizedBox(double largura, double altura) =>
-      SizedBox(
+  SizedBox _sizedBox(double largura, double altura) => SizedBox(
         height: altura,
         width: largura,
       );
@@ -137,7 +144,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
   TextFormField _textoChamado(String label) {
     return TextFormField(
       decoration:
-      InputDecoration(labelText: label, border: OutlineInputBorder()),
+          InputDecoration(labelText: label, border: OutlineInputBorder()),
     );
   }
 
@@ -151,8 +158,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
     );
   }
 
-  DropdownButton _prioridadeMenu() =>
-      DropdownButton<String>(
+  DropdownButton _prioridadeMenu() => DropdownButton<String>(
         items: [
           DropdownMenuItem<String>(
             value: "1",
