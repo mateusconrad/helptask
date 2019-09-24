@@ -26,7 +26,9 @@ class _EsperaState extends State<Espera> {
                     children: <Widget>[
                       OutlineButton(
                         child: const Text('Finalizar'),
-                        onPressed: () {/* ... */},
+                        onPressed: () {
+                          /* ... */
+                        },
                       ),
                       OutlineButton(
                         child: const Text('Atender'),
@@ -57,11 +59,15 @@ class _EsperaState extends State<Espera> {
                     children: <Widget>[
                       OutlineButton(
                         child: const Text('Finalizar'),
-                        onPressed: () {/* ... */},
+                        onPressed: () {
+                          /* ... */
+                        },
                       ),
                       OutlineButton(
                         child: const Text('Atender'),
-                        onPressed: () {/* ... */},
+                        onPressed: () {
+                          /* ... */
+                        },
                       ),
                       IconButton(
                         icon: Icon(Icons.info),

@@ -28,3 +28,4 @@ flutter:
 #assets de imagens
   assets:
     - images/abase.jpg
+    - images/yoda.jpg

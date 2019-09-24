@@ -39,17 +39,71 @@ class _AbrirChamadoState extends State<AbrirChamado> {
                 ),
                 Row(
                   children: <Widget>[
-                    Flexible(flex: 2,child: _botaoAbrirChamado("Cancelar", Colors.red)),
-                    Flexible(flex: 1,child: _sizedBox(15, 0)),
-                    Flexible(flex: 2,child: _botaoAbrirChamado("Concluir", Colors.indigo)),
+                    _sizedBox(1, 15),
+                    Text("Classificação"),
+                    _sizedBox(10, 10),
+
+                    DropdownButton<String>(
+                      items: [
+                        DropdownMenuItem<String>(
+                          value: "1",
+                          child: Text(
+                            "Hardware",
+                          ),
+                        ),
+                        DropdownMenuItem<String>(
+                          value: "2",
+                          child: Text(
+                            "Software",
+                          ),
+                        ),
+                        DropdownMenuItem<String>(
+                          value: "3",
+                          child: Text(
+                            "Rede",
+                          ),
+                        ),
+                        DropdownMenuItem<String>(
+                          value: "4",
+                          child: Text(
+                            "Impressoras",
+                          ),
+                        ),
+                        DropdownMenuItem<String>(
+                          value: "5",
+                          child: Text(
+                            "Telefonia",
+                          ),
+                        ),
+                      ],
+                      onChanged: (value) {
+                        setState(() {
+                          _value = value;
+                        });
+                      },
+                      value: _value,
+                      elevation: 2,
+                      //style: TextStyle(color: Colors.black, fontSize: 30),
+                      //isDense: true,
+                      iconSize: 40.0,
+                    ),
                   ],
                 ),
+
+            Row(
+              children: <Widget>[
+                Flexible(
+                    flex: 2, child: _botaoAbrirChamado("Cancelar", Colors.red)),
+                Flexible(flex: 1, child: _sizedBox(15, 0)),
+                Flexible(flex: 2,
+                    child: _botaoAbrirChamado("Concluir", Colors.indigo)),
               ],
             ),
+            ],
           ),
         ),
       ),
-    );
+    ),);
   }
 
 
@@ -74,7 +128,8 @@ class _AbrirChamadoState extends State<AbrirChamado> {
     );
   }
 
-  SizedBox _sizedBox(double largura, double altura) => SizedBox(
+  SizedBox _sizedBox(double largura, double altura) =>
+      SizedBox(
         height: altura,
         width: largura,
       );
@@ -82,7 +137,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
   TextFormField _textoChamado(String label) {
     return TextFormField(
       decoration:
-          InputDecoration(labelText: label, border: OutlineInputBorder()),
+      InputDecoration(labelText: label, border: OutlineInputBorder()),
     );
   }
 
@@ -96,7 +151,8 @@ class _AbrirChamadoState extends State<AbrirChamado> {
     );
   }
 
-  DropdownButton _prioridadeMenu() => DropdownButton<String>(
+  DropdownButton _prioridadeMenu() =>
+      DropdownButton<String>(
         items: [
           DropdownMenuItem<String>(
             value: "1",
