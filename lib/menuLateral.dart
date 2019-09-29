@@ -13,8 +13,8 @@ class _MenuLateralState extends State<MenuLateral> {
       child: ListView(
         children: <Widget>[
           UserAccountsDrawerHeader(
-            accountName: Text("CORONEL MACOXA"),
-            accountEmail: Text("cor@nel.com.br"),
+            accountName: Text("Master Yoda"),
+            accountEmail: Text("yoda@sw.uni.verse"),
             currentAccountPicture: CircleAvatar(
               backgroundImage: AssetImage("images/yoda.jpg"),
             ),
@@ -22,7 +22,7 @@ class _MenuLateralState extends State<MenuLateral> {
           //SizedBox(height:100,),
 
           _ListTile(context, Icons.help, "Ajuda", "mais informações...", Icons.live_help),
-          _ListTile(context, Icons.transit_enterexit, "VAZAR", "Fazer Logout", Icons.arrow_drop_down),
+          _ListTile(context, Icons.transit_enterexit, "Sair", "Fazer Logout", Icons.power_settings_new),
 
         ],
       ),

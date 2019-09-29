@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "358274061160",
+    "firebase_url": "https://interdisciplinar-si2019.firebaseio.com",
+    "project_id": "interdisciplinar-si2019",
+    "storage_bucket": "interdisciplinar-si2019.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:358274061160:android:030a376611f176af78fcdd",
+        "android_client_info": {
+          "package_name": "com.interdisciplinar.app_vai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "358274061160-1paqkesdlfsq74d10o351dftp9qtgg37.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.interdisciplinar.app_vai",
+            "certificate_hash": "405a38a1858821cfad0bab4656a848632cddce59"
+          }
+        },
+        {
+          "client_id": "358274061160-30ana234se9a6s91i02qf9tojii685su.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4L-4nHhEvUpEkc_m7WP2QvOrgMWD1BQw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "358274061160-30ana234se9a6s91i02qf9tojii685su.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
