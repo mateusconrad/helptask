@@ -11,73 +11,45 @@ class _EsperaState extends State<Espera> {
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
-          Card(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              //mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                const ListTile(
-                  leading: Icon(Icons.album),
-                  title: Text('Teclado Estragado'),
-                  subtitle: Text('Teclado parou de funcionar'),
+          StreamBuilder<Card>(
+            stream: null,
+            builder: (context, snapshot) {
+              return Card(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  //mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    const ListTile(
+                      leading: Icon(Icons.album),
+                      title: Text('Teclado Estragado'),
+                      subtitle: Text('Teclado parou de funcionar'),
+                    ),
+                    ButtonTheme.bar(
+                      child: ButtonBar(
+                        children: <Widget>[
+                          OutlineButton(
+                            child: const Text('Finalizar'),
+                            onPressed: () {
+                              /* ... */
+                            },
+                          ),
+                          OutlineButton(
+                            child: const Text('Atender'),
+                            onPressed: () {
+                              /* ... */
+                            },
+                          ),
+                          IconButton(
+                            icon: Icon(Icons.info),
+                            onPressed: () {},
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
-                ButtonTheme.bar(
-                  child: ButtonBar(
-                    children: <Widget>[
-                      OutlineButton(
-                        child: const Text('Finalizar'),
-                        onPressed: () {
-                          /* ... */
-                        },
-                      ),
-                      OutlineButton(
-                        child: const Text('Atender'),
-                        onPressed: () {},
-                      ),
-                      IconButton(
-                        icon: Icon(Icons.info),
-                        onPressed: () {},
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Card(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              //mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                const ListTile(
-                  leading: Icon(Icons.album),
-                  title: Text('Teclado Estragado'),
-                  subtitle: Text('Teclado parou de funcionar'),
-                ),
-                ButtonTheme.bar(
-                  child: ButtonBar(
-                    children: <Widget>[
-                      OutlineButton(
-                        child: const Text('Finalizar'),
-                        onPressed: () {
-                          /* ... */
-                        },
-                      ),
-                      OutlineButton(
-                        child: const Text('Atender'),
-                        onPressed: () {
-                          /* ... */
-                        },
-                      ),
-                      IconButton(
-                        icon: Icon(Icons.info),
-                        onPressed: () {},
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+              );
+            }
           ),
         ],
       ),
