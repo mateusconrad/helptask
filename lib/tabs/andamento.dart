@@ -27,7 +27,9 @@ class _AndamentoState extends State<Andamento> {
                     children: <Widget>[
                       OutlineButton(
                         child: const Text('Finalizar'),
-                        onPressed: () {/* ... */},
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> FinalizarChamado()));
+                        },
                       ),
                       OutlineButton(
                         child: const Text('Pausar'),

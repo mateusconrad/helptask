@@ -33,7 +33,13 @@ class _LoginState extends State<Login> {
                     "images/abase.jpg",
                     height: 200,
                   )),
-              SizedBox(height: 50),
+              SizedBox(height: 25),
+              Text("Help Task", style: TextStyle(
+                fontFamily: 'Nasalization',
+                fontSize: 24,
+
+              ), ),
+              SizedBox(height: 25),
               _widgetText(iconField = Icons.person, "login", "Digite o usuário",
                   controller: _cLogin),
               SizedBox(height: 15.0),
