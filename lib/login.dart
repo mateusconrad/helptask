@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'home.dart';
 
 class Login extends StatefulWidget {
@@ -55,6 +57,11 @@ class _LoginState extends State<Login> {
               SizedBox(
                 height: 15.0,
               ),
+              GoogleSignInButton(
+                onPressed: (){
+                  onClickGoogle();
+                },
+              )
             ],
           ),
         ),
@@ -62,6 +69,9 @@ class _LoginState extends State<Login> {
     ));
   }
 
+  onClickGoogle(){
+    print("oioioi");
+  }
   Material _loginButton(BuildContext context, String label) {
     return Material(
       elevation: 10,
