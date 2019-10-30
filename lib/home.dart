@@ -5,6 +5,7 @@ import 'tabs/pausados.dart';
 import 'tabs/andamento.dart';
 import 'tabs/finalizado.dart';
 import 'package:app_vai/abrir_chamado.dart';
+import 'package:app_vai/netflix/TesteFlix.dart';
 
 class TabBarHome extends StatelessWidget {
   String nomeTab = "Chamados";
@@ -56,6 +57,7 @@ class TabBarHome extends StatelessWidget {
             icon: Icon(Icons.add),
             label: Text("Novo"),
             onPressed: (){
+                //Navigator.push(context, MaterialPageRoute(builder: (context)=> AbrirChamado()));
                 Navigator.push(context, MaterialPageRoute(builder: (context)=> AbrirChamado()));
             },
           ),
