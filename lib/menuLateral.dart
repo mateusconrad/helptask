@@ -1,28 +1,28 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+
 class MenuLateral extends StatefulWidget {
+
   @override
   _MenuLateralState createState() => _MenuLateralState();
 }
 
 class _MenuLateralState extends State<MenuLateral> {
+//  final FirebaseAuth auth = FirebaseAuth.instance;
+//  FirebaseUser user ;
+
+
   @override
   Widget build(BuildContext context) {
     Future<FirebaseUser> future = FirebaseAuth.instance.currentUser();
     return Drawer(
       child: ListView(
         children: <Widget>[
-          FutureBuilder<FirebaseUser>(
-            future: future,
-            builder: (context, snapshot){
-              FirebaseUser user= snapshot.data;
-              return  user != null ? MenuLateral() : Container();
-              },
-          ),
+
           UserAccountsDrawerHeader(
             accountName: Text(""),
-            accountEmail: Text("yoda@sw.uni.verse"),
+            accountEmail: Text(""),
             currentAccountPicture: CircleAvatar(
               backgroundImage: AssetImage("images/yoda.jpg"),
             ),

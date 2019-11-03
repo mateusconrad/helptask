@@ -31,6 +31,8 @@ class _LoginState extends State<Login> {
     FirebaseUser userDetails = (await _auth.signInWithCredential(credential));
     ProviderDetails providerInfo = new ProviderDetails(userDetails.providerId);
     print("signed in " + userDetails.displayName);
+    print("signed in " + userDetails.email);
+    print("signed in " + userDetails.photoUrl);
 
     List<ProviderDetails> providerData = new List<ProviderDetails>();
     providerData.add(providerInfo);
@@ -44,10 +46,10 @@ class _LoginState extends State<Login> {
     );
 
     final user = UserDetails;
-    Navigator.push(
+    Navigator.pushReplacement(
       context,
       new MaterialPageRoute(
-        builder: (context) => new TabBarHome(),//userDetails: details
+        builder: (context) => new TabBarHome(user),//userDetails: details
       ),
     );
     return userDetails;

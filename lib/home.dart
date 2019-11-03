@@ -1,5 +1,6 @@
 import 'package:app_vai/menuLateral.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'tabs/espera.dart';
 import 'tabs/pausados.dart';
@@ -10,6 +11,9 @@ import 'package:app_vai/tabs/abrir_chamado.dart';
 class TabBarHome extends StatelessWidget {
   String nomeTab = "Chamados";
   DocumentSnapshot dadosBranco;
+
+  TabBarHome(Type user);
+
 
 
   @override
