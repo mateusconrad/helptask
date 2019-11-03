@@ -13,9 +13,7 @@ class AbrirChamado extends StatefulWidget {
 
 class _AbrirChamadoState extends State<AbrirChamado> {
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
-  var _valuePrioridade;
   var _valueClassificacao;
-  var _tiposPrioridades = ["Baixa", "Média", "Alta", "Critica"];
   var _tiposClassificacao = ["Hardware","Software","Rede","Impressoras","Telefonia"];
 
 //  @override
@@ -46,15 +44,6 @@ class _AbrirChamadoState extends State<AbrirChamado> {
               _tituloChamado("Título"),
               _sizedBox(15, 15),
               _descricaoChamado("Descrição"),
-              Row(
-                children: <Widget>[
-                  Text(
-                    "Prioridade: ",
-                  ),
-                  _sizedBox(20, 10),
-                  _prioridadeMenu(),
-                ],
-              ),
               Row(
                 children: <Widget>[
                   Text("Classificação"),
@@ -99,26 +88,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
     );
   }
 
-  DropdownButton _prioridadeMenu() => DropdownButton<String>(
-        items: _tiposPrioridades.map((String dropDownStringItem) {
-          return DropdownMenuItem<String>(
-            value: dropDownStringItem,
-            child: Text(dropDownStringItem),
-          );
-        }).toList(),
 
-        onChanged: (value) {
-          setState(() {
-            _valuePrioridade = value;
-          });
-        },
-
-        value: _valuePrioridade,
-        elevation: 2,
-        //style: TextStyle(color: Colors.black, fontSize: 30),
-        //isDense: true,
-        iconSize: 40.0,
-      );
 
   RaisedButton _botaoAbrirChamado() {
     return RaisedButton(

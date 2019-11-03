@@ -1,3 +1,4 @@
+import 'package:app_vai/telas/atenderChamado.dart';
 import 'package:app_vai/telas/showInfo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -67,7 +68,7 @@ class _EsperaState extends State<Espera> {
                                     ),
                                     OutlineButton(
                                       child: const Text('Atender'),
-                                      onPressed: () {/* ... */},
+                                      onPressed: () => atenderChamado(context, index, snapshot),
                                     ),
                                     IconButton(
                                       icon: Icon(Icons.info),
