@@ -135,7 +135,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
           "titulo": tituloChamado.text,
           "descricao": descricaoChamado.text,
         });
-//        Navigator.of(context).pop();
+        Navigator.of(context).pop();
       },
     );
   }
