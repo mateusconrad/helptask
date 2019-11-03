@@ -35,7 +35,7 @@ class _FilmesEditarState extends State<FilmesEditar> {
     return Scaffold(
       appBar: AppBar(
 //        title: Text("Edição de filmes"),
-          title: Text(widget.tipoEdicao=="inc" ? "Inclusao de Filmes" : "Alteração de Filmes"),
+          title: Text(widget.tipoEdicao=="inc" ? "Inclusao de Filmes" : "Alteração de Filmes"), //if ternário
 //           shape: ShapeBorder(),
         ),
 
@@ -45,6 +45,7 @@ class _FilmesEditarState extends State<FilmesEditar> {
           key: formkey,
           child: Column(
             children: <Widget>[
+
               TextFormField(
                 decoration: InputDecoration(labelText: "Nome Filme", border: OutlineInputBorder()),
                 controller: nomeFilme,
@@ -54,7 +55,8 @@ class _FilmesEditarState extends State<FilmesEditar> {
                   }return null;
                 },
               ),
-              SizedBox(height: 15,),
+
+
               TextFormField(
                 decoration: InputDecoration(labelText: "Preço Filme", border: OutlineInputBorder()),
                 controller: precoFilme,
@@ -64,7 +66,8 @@ class _FilmesEditarState extends State<FilmesEditar> {
                   }return null;
                 },
               ),
-              SizedBox(height: 15,),
+
+
               TextFormField(
                 controller: idGenero,
                 decoration: InputDecoration(labelText: "Gênero Filme", border: OutlineInputBorder()),
@@ -74,7 +77,8 @@ class _FilmesEditarState extends State<FilmesEditar> {
                   }return null;
                 },
               ),
-              SizedBox(height: 15,),
+
+
               RaisedButton(
                 child: Text("gravar"),
                 onPressed: () {

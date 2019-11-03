@@ -57,8 +57,8 @@ class TabBarHome extends StatelessWidget {
             icon: Icon(Icons.add),
             label: Text("Novo"),
             onPressed: (){
-                //Navigator.push(context, MaterialPageRoute(builder: (context)=> AbrirChamado()));
                 Navigator.push(context, MaterialPageRoute(builder: (context)=> AbrirChamado()));
+                //Navigator.push(context, MaterialPageRoute(builder: (context)=> Netflix   ()));
             },
           ),
           drawer: MenuLateral(),

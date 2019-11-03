@@ -50,13 +50,12 @@ class _AbrirChamadoState extends State<AbrirChamado> {
                 IconButton(
                   icon: Icon(Icons.camera_alt),
                   iconSize: 50,
-                  onPressed: (){},
+                  onPressed: () {},
                 ),
                 _sizedBox(10, 100),
-
                 ButtonBar(
                   children: <Widget>[
-                    _botaoAbrirChamado("Cancelar", Colors.red),
+                    _botaoCancelarChamado("Cancelar", Colors.red),
                     _botaoAbrirChamado("Concluir", Colors.indigo),
                   ],
                 ),
@@ -120,18 +119,18 @@ class _AbrirChamadoState extends State<AbrirChamado> {
       child: Text(text),
       color: cor,
       onPressed: () {
-        return AlertDialog(
-          title: Text("certeza??"),
-          content: Text("certoo"),
-          actions: <Widget>[
-            new FlatButton(
-              child: new Text("Fechar"),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
+
+        Navigator.of(context).pop();
+      },
+    );
+  }
+
+  RaisedButton _botaoCancelarChamado(String text, Color cor) {
+    return RaisedButton(
+      child: Text(text),
+      color: cor,
+      onPressed: () {
+        
       },
     );
   }
