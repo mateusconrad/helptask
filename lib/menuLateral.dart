@@ -29,15 +29,15 @@ class _MenuLateralState extends State<MenuLateral> {
           ),
           //SizedBox(height:100,),
 
-          _ListTile(context, Icons.help, "Ajuda", "mais informações...", Icons.live_help),
-          _ListTile(context, Icons.transit_enterexit, "Sair", "Fazer Logout", Icons.power_settings_new),
+          _listTile(context, Icons.help, "Ajuda", "mais informações...", Icons.live_help),
+          _listTile(context, Icons.transit_enterexit, "Sair", "Fazer Logout", Icons.power_settings_new),
 
         ],
       ),
     );
   }
 
-  ListTile _ListTile(BuildContext context, IconData iconField, String title, String subTitle, IconData iconTrail) {
+  ListTile _listTile(BuildContext context, IconData iconField, String title, String subTitle, IconData iconTrail) {
     return ListTile(
           leading: Icon(iconField),
           title: Text(title),

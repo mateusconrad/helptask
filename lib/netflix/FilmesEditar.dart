@@ -55,8 +55,6 @@ class _FilmesEditarState extends State<FilmesEditar> {
                   }return null;
                 },
               ),
-
-
               TextFormField(
                 decoration: InputDecoration(labelText: "Preço Filme", border: OutlineInputBorder()),
                 controller: precoFilme,
@@ -66,8 +64,6 @@ class _FilmesEditarState extends State<FilmesEditar> {
                   }return null;
                 },
               ),
-
-
               TextFormField(
                 controller: idGenero,
                 decoration: InputDecoration(labelText: "Gênero Filme", border: OutlineInputBorder()),
@@ -77,7 +73,6 @@ class _FilmesEditarState extends State<FilmesEditar> {
                   }return null;
                 },
               ),
-
 
               RaisedButton(
                 child: Text("gravar"),

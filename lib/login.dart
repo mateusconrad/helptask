@@ -1,4 +1,4 @@
-import 'package:app_vai/firebase/userDetails.dart';
+import 'package:app_vai/userDetails/userDetails.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -18,7 +18,7 @@ class _LoginState extends State<Login> {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  Future<FirebaseUser> _SignIn() async {
+  Future<FirebaseUser> _signIn() async {
 
     final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
     final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
@@ -89,7 +89,7 @@ class _LoginState extends State<Login> {
 
   GoogleSignInButton botaoLogin() {
     return GoogleSignInButton(
-              onPressed: () => _SignIn()
+              onPressed: () => _signIn()
                   .then((FirebaseUser user) => print(user))
                   .catchError((e) => print(e)),
             );

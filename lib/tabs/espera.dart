@@ -7,10 +7,12 @@ class Espera extends StatefulWidget {
 }
 
 class _EsperaState extends State<Espera> {
+  DocumentSnapshot dadosBranco;
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
+      /*child: Column(
         children: <Widget>[
             StreamBuilder (
               stream: Firestore.instance
@@ -80,7 +82,7 @@ class _EsperaState extends State<Espera> {
               },
             ),
         ],
-      ),
+      ),*/
     );
   }
 }

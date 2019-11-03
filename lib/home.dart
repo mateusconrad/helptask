@@ -1,14 +1,16 @@
 import 'package:app_vai/menuLateral.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'tabs/espera.dart';
 import 'tabs/pausados.dart';
 import 'tabs/andamento.dart';
 import 'tabs/finalizado.dart';
-import 'package:app_vai/abrir_chamado.dart';
+import 'package:app_vai/tabs/abrir_chamado.dart';
 import 'package:app_vai/netflix/TesteFlix.dart';
 
 class TabBarHome extends StatelessWidget {
   String nomeTab = "Chamados";
+  DocumentSnapshot dadosBranco;
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +59,7 @@ class TabBarHome extends StatelessWidget {
             icon: Icon(Icons.add),
             label: Text("Novo"),
             onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> AbrirChamado()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> AbrirChamado("inc",dadosBranco)));
           //      Navigator.push(context, MaterialPageRoute(builder: (context)=> Netflix   ()));
             },
           ),
