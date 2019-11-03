@@ -16,54 +16,48 @@ class _AbrirChamadoState extends State<AbrirChamado> {
         title: Text("Abrir Chamado"),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.only(left: 10, right: 10, top: 15),
-        child: Center(
-          child: Container(
-            width: 350,
-            child: Column(
-              //mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
+        padding: EdgeInsets.only(left: 10, right: 10, top: 20, bottom: 20),
+        child: Column(
+          //mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            _textoChamado("Título"),
+            _sizedBox(15, 15),
+            _textoDescr("Descrição"),
+            Column(
               children: <Widget>[
-                _sizedBox(30, 30),
-                _textoChamado("Título"),
-                _sizedBox(15, 15),
-                _textoDescr("Descrição"),
-                _sizedBox(0, 20),
-                Column(
+                Row(
                   children: <Widget>[
-                    Row(
-                      children: <Widget>[
-                        Text(
-                          "Prioridade: ",
-                        ),
-                        _sizedBox(20, 10),
-                        _prioridadeMenu(),
-                      ],
+                    Text(
+                      "Prioridade: ",
                     ),
-                    Row(
-                      children: <Widget>[
-                        Text("Classificação"),
-                        _sizedBox(10, 10),
-                        _categoriaMenu(),
-                      ],
-                    ),
+                    _sizedBox(20, 10),
+                    _prioridadeMenu(),
                   ],
                 ),
-                IconButton(
-                  icon: Icon(Icons.camera_alt),
-                  iconSize: 50,
-                  onPressed: () {},
-                ),
-                _sizedBox(10, 100),
-                ButtonBar(
+                Row(
                   children: <Widget>[
-                    _botaoCancelarChamado("Cancelar", Colors.red),
-                    _botaoAbrirChamado("Concluir", Colors.indigo),
+                    Text("Classificação"),c
+                    _sizedBox(10, 10),
+                    _categoriaMenu(),
                   ],
                 ),
               ],
             ),
-          ),
+
+            IconButton(
+              icon: Icon(Icons.camera_alt),
+              iconSize: 50,
+              onPressed: () {},
+            ),
+
+            ButtonBar(
+              children: <Widget>[
+                _botaoCancelarChamado("Cancelar", Colors.red),
+                _botaoAbrirChamado("Concluir", Colors.indigo),
+              ],
+            ),
+          ],
         ),
       ),
     );
@@ -116,7 +110,6 @@ class _AbrirChamadoState extends State<AbrirChamado> {
     );
   }
 
-
   DropdownButton _prioridadeMenu() => DropdownButton<String>(
         items: [
           DropdownMenuItem<String>(
@@ -162,7 +155,6 @@ class _AbrirChamadoState extends State<AbrirChamado> {
       child: Text(text),
       color: cor,
       onPressed: () {
-
         Navigator.of(context).pop();
       },
     );
@@ -172,17 +164,14 @@ class _AbrirChamadoState extends State<AbrirChamado> {
     return RaisedButton(
       child: Text(text),
       color: cor,
-      onPressed: () {
-
-      },
+      onPressed: () {},
     );
   }
-
 
   TextFormField _textoChamado(String label) {
     return TextFormField(
       decoration:
-      InputDecoration(labelText: label, border: OutlineInputBorder()),
+          InputDecoration(labelText: label, border: OutlineInputBorder()),
     );
   }
 
@@ -197,11 +186,10 @@ class _AbrirChamadoState extends State<AbrirChamado> {
   }
 
   SizedBox _sizedBox(double largura, double altura) => SizedBox(
-    height: altura,
-    width: largura,
-  );
+        height: altura,
+        width: largura,
+      );
 }
-
 
 //cor vermelho abase(169, 36, 37)
 //cor azul abase (62, 64, 149)
