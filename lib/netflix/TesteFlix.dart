@@ -50,45 +50,45 @@ class _NetflixState extends State<Netflix> {
                           itemCount: snapshot.data.documents.length,
                           itemBuilder: (context, index) {
                             return Card(
-                                // Lista os produtos
                                 child: ListTile(
-                                  //snapshot.data.documents[index].documentID.toString() - pega o ID
-                                  title: Text(
+                              //snapshot.data.documents[index].documentID.toString()
+                              // - pega o ID
+                              title: Text(
                                   snapshot
                                       .data.documents[index].data["nomeFilme"],
                                   style: TextStyle(fontSize: 25)),
-                                  subtitle: Text(
+                              subtitle: Text(
                                   "R\$ " +
                                       snapshot.data.documents[index]
                                           .data["precoFilme"]
                                           .toString(),
                                   style: TextStyle(fontSize: 20)),
 
-                                  trailing: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: <Widget>[
-                                      IconButton(
-                                        icon: Icon(Icons.edit),
-                                        color: Colors.black,
-                                        onPressed: () {
-                                          //  Navigator.push(context, MaterialPageRoute(builder: (context) => FilmesEditar("inc",dadosBranco)));
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      FilmesEditar(
-                                                          "alt",
-                                                          snapshot.data
-                                                              .documents[index])));
-                                        },
-                                      ),
-                                      IconButton(
-                                        icon: Icon(Icons.delete),
-                                        color: Colors.black,
-                                        onPressed: () {
-                                          confirmaExclusao(
-                                              context, index, snapshot);
-                                        },
+                              trailing: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: <Widget>[
+                                  IconButton(
+                                    icon: Icon(Icons.edit),
+                                    color: Colors.black,
+                                    onPressed: () {
+                                      //  Navigator.push(context, MaterialPageRoute(builder: (context) => FilmesEditar("inc",dadosBranco)));
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  FilmesEditar(
+                                                      "alt",
+                                                      snapshot.data
+                                                          .documents[index])));
+                                    },
+                                  ),
+                                  IconButton(
+                                    icon: Icon(Icons.delete),
+                                    color: Colors.black,
+                                    onPressed: () {
+                                      confirmaExclusao(
+                                          context, index, snapshot);
+                                    },
                                   ),
                                 ],
                               ),

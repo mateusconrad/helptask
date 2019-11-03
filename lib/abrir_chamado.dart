@@ -6,7 +6,8 @@ class AbrirChamado extends StatefulWidget {
 }
 
 class _AbrirChamadoState extends State<AbrirChamado> {
-  var _value;
+  var _valuePrioridade;
+  var _valueClassificacao;
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +16,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
         title: Text("Abrir Chamado"),
       ),
       body: SingleChildScrollView(
+        padding: EdgeInsets.only(left: 10, right: 10, top: 15),
         child: Center(
           child: Container(
             width: 350,
@@ -103,10 +105,10 @@ class _AbrirChamadoState extends State<AbrirChamado> {
       ],
       onChanged: (value) {
         setState(() {
-          _value = value;
+          _valuePrioridade = value;
         });
       },
-      value: _value,
+      value: _valuePrioridade,
       elevation: 2,
       //style: TextStyle(color: Colors.black, fontSize: 30),
       //isDense: true,
@@ -114,48 +116,6 @@ class _AbrirChamadoState extends State<AbrirChamado> {
     );
   }
 
-  RaisedButton _botaoAbrirChamado(String text, Color cor) {
-    return RaisedButton(
-      child: Text(text),
-      color: cor,
-      onPressed: () {
-
-        Navigator.of(context).pop();
-      },
-    );
-  }
-
-  RaisedButton _botaoCancelarChamado(String text, Color cor) {
-    return RaisedButton(
-      child: Text(text),
-      color: cor,
-      onPressed: () {
-        
-      },
-    );
-  }
-
-  SizedBox _sizedBox(double largura, double altura) => SizedBox(
-        height: altura,
-        width: largura,
-      );
-
-  TextFormField _textoChamado(String label) {
-    return TextFormField(
-      decoration:
-          InputDecoration(labelText: label, border: OutlineInputBorder()),
-    );
-  }
-
-  TextField _textoDescr(String label) {
-    return TextField(
-      keyboardType: TextInputType.multiline,
-      minLines: 2,
-      maxLines: 10,
-      decoration: InputDecoration(
-          labelText: label, hintMaxLines: 10, border: OutlineInputBorder()),
-    );
-  }
 
   DropdownButton _prioridadeMenu() => DropdownButton<String>(
         items: [
@@ -187,16 +147,61 @@ class _AbrirChamadoState extends State<AbrirChamado> {
 
         onChanged: (value) {
           setState(() {
-            _value = value;
+            _valueClassificacao = value;
           });
         },
-        value: _value,
+
+        value: _valueClassificacao,
         elevation: 2,
         //style: TextStyle(color: Colors.black, fontSize: 30),
         //isDense: true,
         iconSize: 40.0,
       );
+  RaisedButton _botaoAbrirChamado(String text, Color cor) {
+    return RaisedButton(
+      child: Text(text),
+      color: cor,
+      onPressed: () {
+
+        Navigator.of(context).pop();
+      },
+    );
+  }
+
+  RaisedButton _botaoCancelarChamado(String text, Color cor) {
+    return RaisedButton(
+      child: Text(text),
+      color: cor,
+      onPressed: () {
+
+      },
+    );
+  }
+
+
+  TextFormField _textoChamado(String label) {
+    return TextFormField(
+      decoration:
+      InputDecoration(labelText: label, border: OutlineInputBorder()),
+    );
+  }
+
+  TextField _textoDescr(String label) {
+    return TextField(
+      keyboardType: TextInputType.multiline,
+      minLines: 2,
+      maxLines: 10,
+      decoration: InputDecoration(
+          labelText: label, hintMaxLines: 10, border: OutlineInputBorder()),
+    );
+  }
+
+  SizedBox _sizedBox(double largura, double altura) => SizedBox(
+    height: altura,
+    width: largura,
+  );
 }
+
 
 //cor vermelho abase(169, 36, 37)
 //cor azul abase (62, 64, 149)

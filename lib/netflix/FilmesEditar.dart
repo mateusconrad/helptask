@@ -44,8 +44,8 @@ class _FilmesEditarState extends State<FilmesEditar> {
         child: Form(
           key: formkey,
           child: Column(
-            children: <Widget>[
 
+            children: <Widget>[
               TextFormField(
                 decoration: InputDecoration(labelText: "Nome Filme", border: OutlineInputBorder()),
                 controller: nomeFilme,
