@@ -99,6 +99,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
           "titulo": tituloChamado.text,
           "descricao": descricaoChamado.text,
           "classificacao": _valueClassificacao,
+          "status": "1",
         });
 
         Navigator.of(context).pop();
