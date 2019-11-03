@@ -16,13 +16,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
   var _valuePrioridade;
   var _valueClassificacao;
   var _tiposPrioridades = ["Baixa", "Média", "Alta", "Critica"];
-  var _tiposClassificacao = [
-    "Hardware",
-    "Software",
-    "Rede",
-    "Impressoras",
-    "Telefonia"
-  ];
+  var _tiposClassificacao = ["Hardware","Software","Rede","Impressoras","Telefonia"];
 
 //  @override
 //  void initState() {
@@ -134,7 +128,9 @@ class _AbrirChamadoState extends State<AbrirChamado> {
         Firestore.instance.collection("chamados").add({
           "titulo": tituloChamado.text,
           "descricao": descricaoChamado.text,
+          "classificacao": _valueClassificacao,
         });
+
         Navigator.of(context).pop();
       },
     );

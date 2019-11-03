@@ -1,8 +1,8 @@
-import 'package:app_vai/widgets/showInfo.dart';
+import 'package:app_vai/telas/showInfo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:app_vai/finalizarChamado.dart';
+import 'package:app_vai/telas/finalizarChamado.dart';
 
 class Andamento extends StatefulWidget {
   @override
