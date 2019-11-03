@@ -54,9 +54,9 @@ class _AndamentoState extends State<Andamento> {
                                         snapshot
                                             .data.documents[index].data["titulo"],
                                         style: TextStyle(fontSize: 25)),
-                                    subtitle: Text(snapshot
-                                        .data.documents[index].data["descricao"]
-                                        .toString()),
+//                                    subtitle: Text(snapshot
+//                                        .data.documents[index].data["descricao"]
+//                                        .toString()),
                                   ),
                                   ButtonTheme.bar(
                                     child: ButtonBar(
