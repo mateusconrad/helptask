@@ -14,8 +14,6 @@ class TabBarHome extends StatelessWidget {
 
   TabBarHome(Type user);
 
-
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -63,13 +61,15 @@ class TabBarHome extends StatelessWidget {
           floatingActionButton: FloatingActionButton.extended(
             icon: Icon(Icons.add),
             label: Text("Novo"),
-            onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> AbrirChamado("inc",dadosBranco)));
-          //      Navigator.push(context, MaterialPageRoute(builder: (context)=> Netflix   ()));
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => AbrirChamado("inc", dadosBranco)));
+              //      Navigator.push(context, MaterialPageRoute(builder: (context)=> Netflix   ()));
             },
           ),
           drawer: MenuLateral(),
-
         ),
       ),
     );
