@@ -1,5 +1,3 @@
-import 'package:app_vai/netflix/FilmesEditar.dart';
-import 'package:app_vai/tabs/abrir_chamado.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 

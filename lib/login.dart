@@ -14,7 +14,6 @@ class _LoginState extends State<Login> {
   final String title = "login";
   TextStyle style = TextStyle(fontSize: 20.0);
 
-
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
 

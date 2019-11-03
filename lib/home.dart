@@ -6,11 +6,11 @@ import 'tabs/pausados.dart';
 import 'tabs/andamento.dart';
 import 'tabs/finalizado.dart';
 import 'package:app_vai/tabs/abrir_chamado.dart';
-import 'package:app_vai/netflix/TesteFlix.dart';
 
 class TabBarHome extends StatelessWidget {
   String nomeTab = "Chamados";
   DocumentSnapshot dadosBranco;
+
 
   @override
   Widget build(BuildContext context) {
