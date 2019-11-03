@@ -50,6 +50,7 @@ class TabBarHome extends StatelessWidget {
               ],
             ),
             title: Text(nomeTab),
+            centerTitle: true,
           ),
           body: TabBarView(
             children: [
