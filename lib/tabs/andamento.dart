@@ -1,3 +1,4 @@
+import 'package:app_vai/widgets/showInfo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -70,7 +71,7 @@ class _AndamentoState extends State<Andamento> {
                                         ),
                                         IconButton(
                                           icon: Icon(Icons.info),
-                                          onPressed: () {},
+                                          onPressed: () => showInfo(context, index, snapshot),
                                         ),
                                       ],
                                     ),

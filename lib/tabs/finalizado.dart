@@ -1,3 +1,4 @@
+import 'package:app_vai/widgets/showInfo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
@@ -60,7 +61,7 @@ class _FinalizadoState extends State<Finalizado> {
                                       children: <Widget>[
                                         IconButton(
                                           icon: Icon(Icons.info),
-                                          onPressed: () {},
+                                          onPressed: () => showInfo(context, index, snapshot),
                                         ),
                                       ],
                                     ),
@@ -74,4 +75,5 @@ class _FinalizadoState extends State<Finalizado> {
       ],
     );
   }
+
 }

@@ -1,3 +1,4 @@
+import 'package:app_vai/widgets/showInfo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
@@ -70,7 +71,7 @@ class _EsperaState extends State<Espera> {
                                     ),
                                     IconButton(
                                       icon: Icon(Icons.info),
-                                      onPressed: () {},
+                                        onPressed: () => showInfo(context, index, snapshot),
                                     ),
                                   ],
                                 ),
