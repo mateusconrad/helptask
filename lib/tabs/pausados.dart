@@ -31,7 +31,7 @@ class _PausaState extends State<Pausa> {
                         child: Text(
                           "Não há dados!",
                           style:
-                          TextStyle(color: Colors.redAccent, fontSize: 20),
+                              TextStyle(color: Colors.redAccent, fontSize: 20),
                         ),
                       );
                     }
@@ -43,38 +43,34 @@ class _PausaState extends State<Pausa> {
                         itemBuilder: (context, index) {
                           return Card(
                               child: Column(
-                                children: <Widget>[
-                                  ListTile(
-                                    //snapshot.data.documents[index].documentID.toString()
-                                    // - pega o ID
-                                    title: Text(
-                                        snapshot
-                                            .data.documents[index].data["titulo"],
-                                        style: TextStyle(fontSize: 25)),
-                                    subtitle: Text(snapshot
-                                        .data.documents[index].data["descricao"]
-                                        .toString()),
-                                  ),
-                                  ButtonTheme.bar(
-                                    child: ButtonBar(
-                                      children: <Widget>[
-                                        OutlineButton(
-                                          child: const Text('Finalizar'),
-                                          onPressed: () {},
-                                        ),
-                                        OutlineButton(
-                                          child: const Text('Atender'),
-                                          onPressed: () {/* ... */},
-                                        ),
-                                        IconButton(
-                                          icon: Icon(Icons.info),
-                                          onPressed: () {},
-                                        ),
-                                      ],
+                              children: <Widget>[
+                              ListTile(
+                                //snapshot.data.documents[index].documentID.toString()
+                                // - pega o ID
+                                title: Text(
+                                    snapshot
+                                        .data.documents[index].data["titulo"],
+                                    style: TextStyle(fontSize: 25)),
+                                subtitle: Text(snapshot
+                                    .data.documents[index].data["descricao"]
+                                    .toString()),
+                              ),
+                              ButtonTheme.bar(
+                                child: ButtonBar(
+                                  children: <Widget>[
+                                    OutlineButton(
+                                      child: const Text('Retomar'),
+                                      onPressed: () {},
                                     ),
-                                  ),
-                                ],
-                              ));
+                                    IconButton(
+                                      icon: Icon(Icons.info),
+                                      onPressed: () {},
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ));
                         });
                 }
               }),

@@ -65,7 +65,7 @@ class _AndamentoState extends State<Andamento> {
                                           onPressed: () {},
                                         ),
                                         OutlineButton(
-                                          child: const Text('Atender'),
+                                          child: const Text('Pausar'),
                                           onPressed: () {/* ... */},
                                         ),
                                         IconButton(
