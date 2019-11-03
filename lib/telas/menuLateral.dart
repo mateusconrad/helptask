@@ -29,9 +29,9 @@ class _MenuLateralState extends State<MenuLateral> {
           ),
           //SizedBox(height:100,),
 
-          _listTile(context, Icons.help, "Ajuda", "mais informações...", Icons.live_help),
-          _listTile(context, Icons.transit_enterexit, "Sair", "Fazer Logout", Icons.power_settings_new),
-
+          _listTile(context, Icons.help, "Ajuda", "mais informações...", null),
+          _listTile(context, Icons.power_settings_new, "Sair", "Fazer Logout", null),
+          _listTile(context, Icons.graphic_eq, "Estatísticas", "Graficos de uso", null)
         ],
       ),
     );
