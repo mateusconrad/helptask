@@ -21,32 +21,34 @@ class _MenuLateralState extends State<MenuLateral> {
         children: <Widget>[
 
           UserAccountsDrawerHeader(
-            accountName: Text(""),
-            accountEmail: Text(""),
+            accountName: Text("NOME AQUI POR FAVOVR"),
+            accountEmail: Text("LEMBRADECOLOCAR@EMAIL.COM"),
             currentAccountPicture: CircleAvatar(
               backgroundImage: AssetImage("images/yoda.jpg"),
             ),
           ),
           //SizedBox(height:100,),
 
-          _listTile(context, Icons.help, "Ajuda", "mais informações...", null),
-          _listTile(context, Icons.power_settings_new, "Sair", "Fazer Logout", null),
-          _listTile(context, Icons.graphic_eq, "Estatísticas", "Graficos de uso", null)
+          _listTile(context, Icons.help, "Ajuda", "mais informações..."),
+          _divisor(),
+          _listTile(context, Icons.graphic_eq, "Estatísticas", "Graficos de uso"),
+          _divisor(),
+          _listTile(context, Icons.power_settings_new, "Sair", "Fazer Logout"),
+          _divisor(),
         ],
       ),
     );
   }
 
-  ListTile _listTile(BuildContext context, IconData iconField, String title, String subTitle, IconData iconTrail) {
+  Divider _divisor() => Divider();
+
+  ListTile _listTile(BuildContext context, IconData iconField, String title, String subTitle /*Parãmetro do onTap()=> aqui*/      ) {
     return ListTile(
-          leading: Icon(iconField),
-          title: Text(title),
-          subtitle: Text(subTitle),
-          trailing: Icon(iconTrail),
-          onTap: () {
-            print("Item 1");
-//            Navigator.pop(context);
-          },
-        );
+        leading: Icon(iconField),
+        title: Text(title),
+        subtitle: Text(subTitle),
+        onTap: () => print("Item 1")
+    );
   }
-}
+
+  }

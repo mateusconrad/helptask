@@ -16,6 +16,7 @@ class _PausaState extends State<Pausa> {
           child: StreamBuilder(
               stream: Firestore.instance
                   .collection("chamados")
+                  .where("status", isEqualTo: "2")
                   .orderBy("titulo")
                   .snapshots(),
               builder: (context, snapshot) {

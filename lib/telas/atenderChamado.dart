@@ -1,3 +1,5 @@
+import 'package:app_vai/telas/prioridadeMenu.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 atenderChamado(BuildContext context, index, snapshot) {
@@ -14,10 +16,11 @@ atenderChamado(BuildContext context, index, snapshot) {
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
                   Text("Prioridade"),
                   SizedBox(width: 15,),
-
+                  PrioridadeMenu(),
                 ],
               ),
             ],
@@ -33,9 +36,16 @@ atenderChamado(BuildContext context, index, snapshot) {
             FlatButton(
               child: Text('Atender'),
               onPressed: () {
-//                Firestore.instance.collection("chamados").add({
-//                  "prioridade": ,
-//                });
+////                Firestore.instance.collection("chamados").add({
+//                Firestore.instance.collection("chamados")
+//                    .document(context.dadosFilme.documentID)
+//                    .updateData(
+//                    {
+//                      "status": "3",
+//                    }
+//                );
+//
+//
                 print(context.widget);
 
               },

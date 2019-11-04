@@ -17,8 +17,10 @@ class _EsperaState extends State<Espera> {
       children: <Widget>[
         Expanded(
           child: StreamBuilder(
+              
               stream: Firestore.instance
                   .collection("chamados")
+                  .where("status", isEqualTo: "1")
                   .orderBy("titulo")
                   .snapshots(),
               builder: (context, snapshot) {
@@ -41,6 +43,7 @@ class _EsperaState extends State<Espera> {
                     }
 
                     return ListView.builder(
+
                         itemCount: snapshot.data.documents.length,
                         padding: EdgeInsets.only(
                             top: 5, left: 5, right: 5, bottom: 10),

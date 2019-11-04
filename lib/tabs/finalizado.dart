@@ -16,6 +16,7 @@ class _FinalizadoState extends State<Finalizado> {
           child: StreamBuilder(
               stream: Firestore.instance
                   .collection("chamados")
+                  .where("status", isEqualTo: "4")
                   .orderBy("titulo")
                   .snapshots(),
               builder: (context, snapshot) {
