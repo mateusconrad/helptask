@@ -119,6 +119,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
 
   TextFormField _tituloChamado(String label) {
     return TextFormField(
+//      textInputAction: TextInputAction.next,
       decoration:
           InputDecoration(labelText: label, border: OutlineInputBorder()),
       controller: tituloChamado,

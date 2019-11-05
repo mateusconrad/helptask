@@ -1,7 +1,7 @@
 import 'package:app_vai/telas/prioridadeMenu.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
+import 'abrir_chamado.dart';
 atenderChamado(BuildContext context, index, snapshot) {
   showDialog<void>(
       context: context,
@@ -36,14 +36,13 @@ atenderChamado(BuildContext context, index, snapshot) {
             FlatButton(
               child: Text('Atender'),
               onPressed: () {
-////                Firestore.instance.collection("chamados").add({
-//                Firestore.instance.collection("chamados")
-//                    .document(context.dadosFilme.documentID)
-//                    .updateData(
-//                    {
-//                      "status": "3",
-//                    }
-//                );
+                Firestore.instance.collection("chamados")
+                    .document(context.widget.toString())
+                    .updateData(
+                    {
+                      "status": "3",
+                    }
+                );
 //
 //
                 print(context.widget);
