@@ -10,8 +10,10 @@ showInfo(BuildContext context, index, snapshot){
           toUpperCase()),
           content: Column(
             children: <Widget>[
-              Text(snapshot.data.documents[index].data["descricao"].
-              toString()),
+              Text("Classificação: "+snapshot.data.documents[index].data["classificacao"].toString()),
+              Text("Tipo: "+snapshot.data.documents[index].data["tipo"].toString()),
+              Text("Descrição: \n"+snapshot.data.documents[index].data["descricao"].toString()),
+
             ],
           ),
         );

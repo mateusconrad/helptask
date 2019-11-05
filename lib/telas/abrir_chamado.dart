@@ -16,6 +16,9 @@ class _AbrirChamadoState extends State<AbrirChamado> {
   var _valueClassificacao;
   var _tiposClassificacao = ["Hardware","Software","Rede","Impressoras","Telefonia"];
 
+  var _valueTipoChamado;
+  var _tipoChamado = ["Incidente", "Melhoria", "Requisição de Serviço"];
+
 //  @override
 //  void initState() {
 //    super.initState();
@@ -49,6 +52,14 @@ class _AbrirChamadoState extends State<AbrirChamado> {
                   Text("Classificação"),
                   _sizedBox(10, 10),
                   _categoriaMenu(),
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  Text("Tipo"),
+                    _sizedBox(50, 10),
+
+                  _tipoServicoMenu()
                 ],
               ),
               IconButton(
@@ -87,7 +98,24 @@ class _AbrirChamadoState extends State<AbrirChamado> {
       iconSize: 40.0,
     );
   }
-
+  DropdownButton<String> _tipoServicoMenu() {
+    return DropdownButton<String>(
+      items: _tipoChamado.map((String dropDownStringItem) {
+        return DropdownMenuItem<String>(
+          value: dropDownStringItem,
+          child: Text(dropDownStringItem),
+        );
+      }).toList(),
+      onChanged: (value) {
+        setState(() {
+          _valueTipoChamado = value;
+        });
+      },
+      value: _valueTipoChamado,
+      elevation: 2,
+      iconSize: 40.0,
+    );
+  }
 
 
   RaisedButton _botaoAbrirChamado() {
@@ -99,6 +127,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
           "titulo": tituloChamado.text,
           "descricao": descricaoChamado.text,
           "classificacao": _valueClassificacao,
+          "tipo": _valueTipoChamado,
           "status": "1",
         });
 
