@@ -1,4 +1,5 @@
 import 'package:app_vai/telas/atenderChamado.dart';
+import 'package:app_vai/telas/prioridadeMenu.dart';
 import 'package:app_vai/telas/showInfo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,6 @@ class _EsperaState extends State<Espera> {
       children: <Widget>[
         Expanded(
           child: StreamBuilder(
-              
               stream: Firestore.instance
                   .collection("chamados")
                   .where("status", isEqualTo: "1")
@@ -43,25 +43,20 @@ class _EsperaState extends State<Espera> {
                     }
 
                     return ListView.builder(
-
                         itemCount: snapshot.data.documents.length,
                         padding: EdgeInsets.only(
                             top: 5, left: 5, right: 5, bottom: 10),
                         itemBuilder: (context, index) {
                           return Card(
                               child: Column(
-                            children: <Widget>[
-                              ListTile(
-                                //snapshot.data.documents[index].documentID.toString()
-                                // - pega o ID
+                              children: <Widget>[
+                                ListTile(//snapshot.data.documents[index].documentID.toString() -- pega o ID
                                 title: Text(
                                     snapshot
                                         .data.documents[index].data["titulo"],
                                     style: TextStyle(fontSize: 25)),
-//                                subtitle: Text(snapshot
-//                                    .data.documents[index].data["descricao"]
-//                                    .toString()),
                               ),
+//                              Text(snapshot.data),
                               ButtonTheme.bar(
                                 child: ButtonBar(
                                   children: <Widget>[
@@ -71,11 +66,17 @@ class _EsperaState extends State<Espera> {
                                     ),
                                     OutlineButton(
                                       child: const Text('Atender'),
-                                      onPressed: () => atenderChamado(context, index, snapshot),
+                                      onPressed: () => atenderChamado(
+                                          context,
+                                          index,
+                                          snapshot.data.documents[index]),
+//                          snapshot.data
+//                              .documents[index])
                                     ),
                                     IconButton(
                                       icon: Icon(Icons.info),
-                                        onPressed: () => showInfo(context, index, snapshot),
+                                      onPressed: () =>
+                                          showInfo(context, index, snapshot),
                                     ),
                                   ],
                                 ),
@@ -89,4 +90,55 @@ class _EsperaState extends State<Espera> {
       ],
     );
   }
+
+  atenderChamado(BuildContext context, index, snapshot) {
+    showDialog<void>(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(snapshot.data.documents[index].data["titulo"]
+                .toString()
+                .toUpperCase()),
+            content: Column(
+              children: <Widget>[
+                Text(snapshot.data.documents[index].data["descricao"].toString()),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget>[
+                    Text("Prioridade"),
+                    SizedBox(width: 15,),
+                    PrioridadeMenu(),
+                  ],
+                ),
+              ],
+
+            ),
+            actions: <Widget>[
+              //prioridade menu goes here
+              FlatButton(
+                child: Text('Cancelar'),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+
+              FlatButton(
+                child: Text('Atender'),
+                onPressed: () {
+                  Firestore.instance
+                      .collection("chamados")
+                      .document(snapshot.data.context[index].documentID.toString())
+                      .updateData(
+                      {
+                        "status": "3",
+                      }
+                  );
+                },
+              )
+            ],
+          );
+        });
+  }
+
+
 }

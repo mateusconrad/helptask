@@ -1,5 +1,6 @@
 import 'package:app_vai/home.dart';
 import 'package:app_vai/login.dart';
+import 'package:app_vai/netflix/TesteFlix.dart';
 import 'package:app_vai/telas/abrir_chamado.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class _MenuLateralState extends State<MenuLateral> {
 
   @override
   Widget build(BuildContext context) {
-    Future<FirebaseUser> future = FirebaseAuth.instance.currentUser();
+//    Future<FirebaseUser> future = FirebaseAuth.instance.currentUser();
     return Drawer(
       child: ListView(
         children: <Widget>[
@@ -32,26 +33,28 @@ class _MenuLateralState extends State<MenuLateral> {
           ),
           //SizedBox(height:100,),
 
-          _listTile(context, Icons.help, "Ajuda", "mais informações...", _onPressed()),
+          _listTile(context, Icons.help, "Ajuda", "mais informações..."),
           _divisor(),
-//          _listTile(context, Icons.graphic_eq, "Estatísticas", "Graficos de uso"),
-//          _divisor(),
-//          _listTile(context, Icons.power_settings_new, "Sair", "Fazer Logout"),
+          _listTile(context, Icons.graphic_eq, "Estatísticas", "Graficos de uso"),
+          _divisor(),
+          _listTile(context, Icons.power_settings_new, "Sair", "Fazer Logout"),
           _divisor(),
         ],
-      ),
-    );
+        ),
+      );
   }
 
   Divider _divisor() => Divider();
 
-  ListTile _listTile(BuildContext context, IconData iconField, String title, String subTitle, _onPressed/*Parãmetro do onTap()=> aqui*/      ) {
+  ListTile _listTile(BuildContext context, IconData iconField, String title, String subTitle/*Parãmetro do onTap()=> aqui*/      ) {
     return ListTile(
         leading: Icon(iconField),
         title: Text(title),
-        subtitle: Text(subTitle),
-        onTap: () => _onPressed//userDetails: details
-        );
+        subtitle: Text(subTitle)
+    );
+//        onTap: () => print("aaaa")
+//        //_onPressed//userDetails: details
+//        );
 
 //        ajuda,
 //    );
@@ -61,9 +64,7 @@ class _MenuLateralState extends State<MenuLateral> {
     Navigator.push(
         context,
          MaterialPageRoute(
-            builder: (context) => Login()));
-
-    return null;
+            builder: (context) => Netflix()));
   }
 
   }
