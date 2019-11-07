@@ -129,14 +129,15 @@ class _EsperaState extends State<Espera> {
               FlatButton(
                 child: Text('Atender'),
                 onPressed: () {
-                  Firestore.instance
-                      .collection("chamados")
-                      .document(snapshot.data.context[index].documentID.toString())
+                  snapshot.data.documents[index].data["chamados"].toString();
+                  Firestore.instance.collection("chamados").document(
+                      snapshot.data.documents[index].documentID.toString())
                       .updateData(
                       {
                         "status": "3",
                       }
-                  );
+                      );
+                  Navigator.pop(context);
                 },
               )
             ],
