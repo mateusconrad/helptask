@@ -35,26 +35,7 @@ class _TabBarHomeState extends State<TabBarHome> {
         length: 4,
         child: Scaffold(
           appBar: AppBar(
-            bottom: TabBar(
-              tabs: [
-                Tab(
-                  icon: Icon(Icons.hourglass_full),
-                  text: ("em espera"),
-                ),
-                Tab(
-                  icon: Icon(Icons.pause),
-                  text: ("pausados"),
-                ),
-                Tab(
-                  icon: Icon(Icons.build),
-                  text: ("atendendo"),
-                ),
-                Tab(
-                  icon: Icon(Icons.check),
-                  text: ("Finalizados"),
-                ),
-              ],
-            ),
+            bottom: buildTabBar(),
             title: Text(nomeTab),
             centerTitle: true,
           ),
@@ -66,21 +47,48 @@ class _TabBarHomeState extends State<TabBarHome> {
               Finalizado(),
             ],
           ),
-          floatingActionButton: FloatingActionButton.extended(
-            icon: Icon(Icons.add),
-            label: Text("Novo"),
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => AbrirChamado("inc", dadosBranco)));
-              //      Navigator.push(context, MaterialPageRoute(builder: (context)=> Netflix   ()));
-            },
-          ),
+          floatingActionButton: _AddChamado(context),
           drawer: MenuLateral(),
         ),
       ),
     );
+  }
+
+  TabBar buildTabBar() {
+    return TabBar(
+            tabs: [
+              Tab(
+                icon: Icon(Icons.hourglass_full),
+                text: ("em espera"),
+              ),
+              Tab(
+                icon: Icon(Icons.pause),
+                text: ("pausados"),
+              ),
+              Tab(
+                icon: Icon(Icons.build),
+                text: ("atendendo"),
+              ),
+              Tab(
+                icon: Icon(Icons.check),
+                text: ("finalizados"),
+              ),
+            ],
+          );
+  }
+
+  FloatingActionButton _AddChamado(BuildContext context) {
+    return FloatingActionButton.extended(
+          icon: Icon(Icons.add),
+          label: Text("Novo"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => AbrirChamado("inc", dadosBranco)));
+            //      Navigator.push(context, MaterialPageRoute(builder: (context)=> Netflix   ()));
+          },
+        );
   }
 
 

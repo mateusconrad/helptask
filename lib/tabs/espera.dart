@@ -1,4 +1,3 @@
-import 'package:app_vai/telas/atenderChamado.dart';
 import 'package:app_vai/telas/prioridadeMenu.dart';
 import 'package:app_vai/telas/showInfo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -52,9 +51,12 @@ class _EsperaState extends State<Espera> {
                               children: <Widget>[
                                 ListTile(//snapshot.data.documents[index].documentID.toString() -- pega o ID
                                 title: Text(
-                                    snapshot
-                                        .data.documents[index].data["titulo"],
+                                    snapshot.data.documents[index].data["titulo"].toString(),
                                     style: TextStyle(fontSize: 25)),
+//                                  Text("Confirma a exclusão de : \n" +
+//                                      snapshot.data.documents[index].data["nomeFilme"]
+//                                          .toString()
+//                                          .toUpperCase()),
                               ),
 //                              Text(snapshot.data),
                               ButtonTheme.bar(
@@ -69,7 +71,7 @@ class _EsperaState extends State<Espera> {
                                       onPressed: () => atenderChamado(
                                           context,
                                           index,
-                                          snapshot.data.documents[index]),
+                                          snapshot),
 //                          snapshot.data
 //                              .documents[index])
                                     ),
@@ -96,7 +98,9 @@ class _EsperaState extends State<Espera> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text(snapshot.data.documents[index].data["titulo"]
+            title: Text(
+              //  Firestore.instance.collection("chamados").getDocuments()
+                snapshot.data.documents[index].data["titulo"]
                 .toString()
                 .toUpperCase()),
             content: Column(

@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Nov 07 01:08:02 BRST 2019
+#Thu Nov 07 13:33:51 BRST 2019
 5.base=/home/luke/dev/projects/interdisciplinar/app_vai/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 42.base=/home/luke/dev/projects/interdisciplinar/app_vai/build/app/intermediates/transforms/dexMerger/debug/19
 22.path=classes.dex
