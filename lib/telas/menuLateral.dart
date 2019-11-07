@@ -1,70 +1,84 @@
-import 'package:app_vai/home.dart';
-import 'package:app_vai/login.dart';
-import 'package:app_vai/netflix/TesteFlix.dart';
-import 'package:app_vai/telas/abrir_chamado.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-
 class MenuLateral extends StatefulWidget {
-
   @override
   _MenuLateralState createState() => _MenuLateralState();
 }
 
 class _MenuLateralState extends State<MenuLateral> {
-//  final FirebaseAuth auth = FirebaseAuth.instance;
-//  FirebaseUser user ;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  FirebaseUser user;
 
+  @override
+  void initState() {
+    super.initState();
+    initUser();
+  }
+
+  initUser() async {
+    user = await _auth.currentUser();
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
-//    Future<FirebaseUser> future = FirebaseAuth.instance.currentUser();
+    Future<FirebaseUser> future = FirebaseAuth.instance.currentUser();
     return Drawer(
       child: ListView(
         children: <Widget>[
-
           UserAccountsDrawerHeader(
-            accountName: Text("NOME AQUI POR FAVOVR"),
-            accountEmail: Text("LEMBRADECOLOCAR@EMAIL.COM"),
+            accountName: Text("${user?.displayName}"),
+            accountEmail: Text("${user?.email}"),
             currentAccountPicture: CircleAvatar(
-              backgroundImage: AssetImage("images/yoda.jpg"),
+              backgroundImage: NetworkImage("${user?.photoUrl}"),
             ),
           ),
           //SizedBox(height:100,),
 
-          _listTile(context, Icons.help, "Ajuda", "mais informações..."),
+          _listTileHelp(context, Icons.help, "Ajuda", "mais informações..."),
           _divisor(),
-          _listTile(context, Icons.graphic_eq, "Estatísticas", "Graficos de uso"),
+          _listTileGraphics(
+              context, Icons.graphic_eq, "Estatísticas", "Graficos de uso"),
           _divisor(),
-          _listTile(context, Icons.power_settings_new, "Sair", "Fazer Logout"),
+          _listTileLogout(
+              context, Icons.power_settings_new, "Sair", "Fazer Logout"),
           _divisor(),
+          ListTile(),
+
         ],
-        ),
-      );
+      ),
+    );
   }
 
   Divider _divisor() => Divider();
+}
 
-  ListTile _listTile(BuildContext context, IconData iconField, String title, String subTitle/*Parãmetro do onTap()=> aqui*/      ) {
-    return ListTile(
-        leading: Icon(iconField),
-        title: Text(title),
-        subtitle: Text(subTitle)
-    );
-//        onTap: () => print("aaaa")
-//        //_onPressed//userDetails: details
-//        );
+//  Divider _divisor() => Divider();
 
-//        ajuda,
-//    );
-  }
+ListTile _listTileHelp(BuildContext context, IconData iconField, String title, String subTitle ) {
+  return ListTile(
+    leading: Icon(iconField),
+    title: Text(title),
+    subtitle: Text(subTitle),
+    onTap: () => null,
+  );
+}
 
-  VoidCallback _onPressed(){
-    Navigator.push(
-        context,
-         MaterialPageRoute(
-            builder: (context) => Netflix()));
-  }
+ListTile _listTileGraphics(BuildContext context, IconData iconField,String title, String subTitle) {
+  return ListTile(
+    leading: Icon(iconField),
+    title: Text(title),
+    subtitle: Text(subTitle),
+    onTap: () => null,
+  );
+}
 
-  }
+ListTile _listTileLogout(BuildContext context, IconData iconField, String title, String subTitle ) {
+  return ListTile(
+    leading: Icon(iconField),
+    title: Text(title),
+    subtitle: Text(subTitle),
+    onTap: () => null,
+  );
+}

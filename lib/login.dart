@@ -50,7 +50,7 @@ class _LoginState extends State<Login> {
       context,
       new MaterialPageRoute(
 
-        builder: (context) => new TabBarHome(user),//userDetails: details
+        builder: (context) => new TabBarHome( ),//userDetails: details
       ),
     );
     return userDetails;

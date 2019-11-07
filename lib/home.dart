@@ -1,5 +1,7 @@
+import 'package:app_vai/login.dart';
 import 'package:app_vai/telas/menuLateral.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'tabs/espera.dart';
 import 'tabs/pausados.dart';
@@ -7,13 +9,20 @@ import 'tabs/andamento.dart';
 import 'tabs/finalizado.dart';
 import 'package:app_vai/telas/abrir_chamado.dart';
 
-class TabBarHome extends StatelessWidget {
+class TabBarHome extends StatefulWidget {
+  @override
+  _TabBarHomeState createState() => _TabBarHomeState();
+}
+
+class _TabBarHomeState extends State<TabBarHome> {
   String nomeTab = "Chamados";
+
   DocumentSnapshot dadosBranco;
 
-  TabBarHome(Type user);
+
 
   @override
+
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -73,4 +82,8 @@ class TabBarHome extends StatelessWidget {
       ),
     );
   }
-}
+
+
+  }
+
+//        userDetails: details);
