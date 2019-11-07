@@ -34,7 +34,7 @@ class _AndamentoState extends State<Andamento> {
                         child: Text(
                           "Não há dados!",
                           style:
-                          TextStyle(color: Colors.redAccent, fontSize: 20),
+                              TextStyle(color: Colors.redAccent, fontSize: 20),
                         ),
                       );
                     }
@@ -46,43 +46,133 @@ class _AndamentoState extends State<Andamento> {
                         itemBuilder: (context, index) {
                           return Card(
                               child: Column(
-                                children: <Widget>[
-                                  ListTile(
-                                    //snapshot.data.documents[index].documentID.toString()
-                                    // - pega o ID
-                                    title: Text(
-                                        snapshot
-                                            .data.documents[index].data["titulo"],
-                                        style: TextStyle(fontSize: 25)),
+                            children: <Widget>[
+                              ListTile(
+                                //snapshot.data.documents[index].documentID.toString()
+                                // - pega o ID
+                                title: Text(
+                                    snapshot
+                                        .data.documents[index].data["titulo"],
+                                    style: TextStyle(fontSize: 25)),
 //                                    subtitle: Text(snapshot
 //                                        .data.documents[index].data["descricao"]
 //                                        .toString()),
-                                  ),
-                                  ButtonTheme.bar(
-                                    child: ButtonBar(
-                                      children: <Widget>[
-                                        OutlineButton(
-                                          child: const Text('Finalizar'),
-                                          onPressed: () {},
-                                        ),
-                                        OutlineButton(
-                                          child: const Text('Pausar'),
-                                          onPressed: () {/* ... */},
-                                        ),
-                                        IconButton(
-                                          icon: Icon(Icons.info),
-                                          onPressed: () => showInfo(context, index, snapshot),
-                                        ),
-                                      ],
+                              ),
+                              ButtonTheme.bar(
+                                child: ButtonBar(
+                                  children: <Widget>[
+                                    OutlineButton(
+                                      child: const Text('Finalizar'),
+//
+                                      onPressed: () {
+                                        finalizarChamado(context, index, snapshot);
+                                      }
                                     ),
-                                  ),
-                                ],
-                              ));
+                                    OutlineButton(
+                                      child: const Text('Pausar'),
+                                      onPressed: () {
+                                        pausarChamado(context, index, snapshot);
+                                      },
+                                    ),
+                                    IconButton(
+                                      icon: Icon(Icons.info),
+                                      onPressed: () =>
+                                          showInfo(context, index, snapshot),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ));
                         });
                 }
               }),
         ),
       ],
     );
+  }
+  finalizarChamado(BuildContext context, index, snapshot) {
+    showDialog<void>(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(
+              //  Firestore.instance.collection("chamados").getDocuments()
+                snapshot.data.documents[index].data["titulo"]
+                    .toString()
+                    .toUpperCase()),
+            content: Column(
+              children: <Widget>[
+                Text(snapshot.data.documents[index].data["descricao"].toString()),
+
+              ],
+
+            ),
+            actions: <Widget>[
+              //prioridade menu goes here
+              FlatButton(
+                child: Text('Cancelar'),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+
+              FlatButton(
+                child: Text('Concluir'),
+                onPressed: () {
+                  snapshot.data.documents[index].data["chamados"].toString();
+                  Firestore.instance.collection("chamados").document(
+                      snapshot.data.documents[index].documentID.toString())
+                      .updateData(
+                      {
+                        "status": "4",
+                      }
+                  );
+                  Navigator.pop(context);
+                },
+              )
+            ],
+          );
+        });
+  }
+  pausarChamado(BuildContext context, index, snapshot) {
+    showDialog<void>(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(
+              //  Firestore.instance.collection("chamados").getDocuments()
+                snapshot.data.documents[index].data["titulo"]
+                    .toString()
+                    .toUpperCase()),
+            content: Column(
+              children: <Widget>[
+                Text(snapshot.data.documents[index].data["descricao"].toString()),
+
+              ],
+
+            ),
+            actions: <Widget>[
+              //prioridade menu goes here
+              FlatButton(
+                child: Text('Cancelar'),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+
+              FlatButton(
+                child: Text('Concluir'),
+                onPressed: () {
+                  snapshot.data.documents[index].data["chamados"].toString();
+                  Firestore.instance.collection("chamados").document(
+                      snapshot.data.documents[index].documentID.toString())
+                      .updateData(
+                      {
+                        "status": "2",
+                      }
+                  );
+                  Navigator.pop(context);
+                },
+              )
+            ],
+          );
+        });
   }
 }

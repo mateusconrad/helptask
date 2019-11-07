@@ -64,7 +64,9 @@ class _EsperaState extends State<Espera> {
                                   children: <Widget>[
                                     OutlineButton(
                                       child: const Text('Finalizar'),
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        finalizarChamado(context, index, snapshot);
+                                      },
                                     ),
                                     OutlineButton(
                                       child: const Text('Atender'),
@@ -145,5 +147,47 @@ class _EsperaState extends State<Espera> {
         });
   }
 
+  finalizarChamado(BuildContext context, index, snapshot) {
+    showDialog<void>(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(
+              //  Firestore.instance.collection("chamados").getDocuments()
+                snapshot.data.documents[index].data["titulo"]
+                    .toString()
+                    .toUpperCase()),
+            content: Column(
+              children: <Widget>[
+                Text(snapshot.data.documents[index].data["descricao"].toString()),
+
+              ],
+
+            ),
+            actions: <Widget>[
+              //prioridade menu goes here
+              FlatButton(
+                child: Text('Cancelar'),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+
+              FlatButton(
+                child: Text('Concluir'),
+                onPressed: () {
+                  snapshot.data.documents[index].data["chamados"].toString();
+                  Firestore.instance.collection("chamados").document(
+                      snapshot.data.documents[index].documentID.toString())
+                      .updateData(
+                      {
+                        "status": "4",
+                      }
+                  );
+                  Navigator.pop(context);
+                },
+              )
+            ],
+          );
+        });
+  }
 
 }

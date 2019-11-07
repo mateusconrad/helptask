@@ -83,10 +83,11 @@ ListTile _listTileLogout(BuildContext context, IconData iconField, String title,
     subtitle: Text(subTitle),
     onTap: () {
       FirebaseAuth.instance.signOut();
-      Navigator.pop(context);
+     /* Navigator.pop(context);
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-              builder: (context) => Login()));    }
+              builder: (context) => Login()));
+    */}
   );
 }

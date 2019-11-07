@@ -62,7 +62,7 @@ class _PausaState extends State<Pausa> {
                                   children: <Widget>[
                                     OutlineButton(
                                       child: const Text('Retomar'),
-                                      onPressed: () {},
+                                      onPressed: () => retomarChamado(context, index, snapshot),
                                     ),
                                     IconButton(
                                       icon: Icon(Icons.info),
@@ -79,5 +79,47 @@ class _PausaState extends State<Pausa> {
         ),
       ],
     );
+  }
+  retomarChamado(BuildContext context, index, snapshot) {
+    showDialog<void>(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(
+              //  Firestore.instance.collection("chamados").getDocuments()
+                snapshot.data.documents[index].data["titulo"]
+                    .toString()
+                    .toUpperCase()),
+            content: Column(
+              children: <Widget>[
+                Text(snapshot.data.documents[index].data["descricao"].toString()),
+
+              ],
+
+            ),
+            actions: <Widget>[
+              //prioridade menu goes here
+              FlatButton(
+                child: Text('Cancelar'),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+
+              FlatButton(
+                child: Text('Retomar'),
+                onPressed: () {
+                  snapshot.data.documents[index].data["chamados"].toString();
+                  Firestore.instance.collection("chamados").document(
+                      snapshot.data.documents[index].documentID.toString())
+                      .updateData(
+                      {
+                        "status": "3",
+                      }
+                  );
+                  Navigator.pop(context);
+                },
+              )
+            ],
+          );
+        });
   }
 }
