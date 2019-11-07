@@ -1,3 +1,5 @@
+import 'package:app_vai/home.dart';
+import 'package:app_vai/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -79,6 +81,12 @@ ListTile _listTileLogout(BuildContext context, IconData iconField, String title,
     leading: Icon(iconField),
     title: Text(title),
     subtitle: Text(subTitle),
-    onTap: () => null,
+    onTap: () {
+      FirebaseAuth.instance.signOut();
+      Navigator.pop(context);
+      Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+              builder: (context) => Login()));    }
   );
 }
