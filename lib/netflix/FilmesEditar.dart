@@ -76,7 +76,7 @@ class _FilmesEditarState extends State<FilmesEditar> {
 
               RaisedButton(
                 child: Text("gravar"),
-                onPressed: () {
+                onPressed: () {if (formkey.currentState.validate()){
                 if (widget.tipoEdicao=="inc"){
                   Firestore.instance.collection("filmes").add({
                     "nomeFilme": nomeFilme.text,
@@ -96,7 +96,7 @@ class _FilmesEditarState extends State<FilmesEditar> {
                       );
                   Navigator.pop(context);
                 }
-                }
+                }}
               )
             ],
           ),

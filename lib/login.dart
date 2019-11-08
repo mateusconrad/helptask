@@ -30,9 +30,9 @@ class _LoginState extends State<Login> {
 
     FirebaseUser userDetails = (await _auth.signInWithCredential(credential));
     ProviderDetails providerInfo = new ProviderDetails(userDetails.providerId);
-    print("signed in " + userDetails.displayName);
-    print("signed in " + userDetails.email);
-    print("signed in " + userDetails.photoUrl);
+    print("Nome " + userDetails.displayName +"\n");
+    print("Email " + userDetails.email+"\n");
+    print("Photo URL" + userDetails.photoUrl+"\n");
 
     List<ProviderDetails> providerData = new List<ProviderDetails>();
     providerData.add(providerInfo);

@@ -1,4 +1,4 @@
-#Thu Nov 07 20:28:47 BRST 2019
+#Thu Nov 07 21:42:47 BRST 2019
 base.10=/home/luke/dev/projects/interdisciplinar/app_vai/build/app/intermediates/transforms/dexMerger/debug/9
 base.9=/home/luke/dev/projects/interdisciplinar/app_vai/build/app/intermediates/transforms/dexMerger/debug/23
 base.8=/home/luke/dev/projects/interdisciplinar/app_vai/build/app/intermediates/transforms/dexMerger/debug/21
