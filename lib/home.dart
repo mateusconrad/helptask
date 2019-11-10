@@ -16,12 +16,7 @@ class TabBarHome extends StatefulWidget {
 
 class _TabBarHomeState extends State<TabBarHome> {
   String nomeTab = "Chamados";
-
   DocumentSnapshot dadosBranco;
-
-
-
-  @override
 
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -56,42 +51,42 @@ class _TabBarHomeState extends State<TabBarHome> {
 
   TabBar buildTabBar() {
     return TabBar(
-            tabs: [
-              Tab(
-                icon: Icon(Icons.hourglass_full),
-                text: ("em espera"),
-              ),
-              Tab(
-                icon: Icon(Icons.pause),
-                text: ("pausados"),
-              ),
-              Tab(
-                icon: Icon(Icons.build),
-                text: ("atendendo"),
-              ),
-              Tab(
-                icon: Icon(Icons.check),
-                text: ("finalizados"),
-              ),
-            ],
-          );
+      tabs: [
+        Tab(
+          icon: Icon(Icons.hourglass_full),
+          text: ("em espera"),
+        ),
+        Tab(
+          icon: Icon(Icons.pause),
+          text: ("pausados"),
+        ),
+        Tab(
+          icon: Icon(Icons.build),
+          text: ("atendendo"),
+        ),
+        Tab(
+          icon: Icon(Icons.check),
+          text: ("finalizados"),
+        ),
+      ],
+    );
   }
 
   FloatingActionButton _AddChamado(BuildContext context) {
     return FloatingActionButton.extended(
-          icon: Icon(Icons.add),
-          label: Text("Novo"),
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => AbrirChamado("inc", dadosBranco)));
-            //      Navigator.push(context, MaterialPageRoute(builder: (context)=> Netflix   ()));
-          },
-        );
+      icon: Icon(Icons.add),
+      label: Text("Novo"),
+      onPressed: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => AbrirChamado("inc", dadosBranco)));
+        //      Navigator.push(context, MaterialPageRoute(builder: (context)=> Netflix   ()));
+      },
+    );
   }
 
 
-  }
+}
 
 //        userDetails: details);

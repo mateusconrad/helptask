@@ -19,17 +19,10 @@ class _AbrirChamadoState extends State<AbrirChamado> {
   var _valueTipoChamado;
   var _tipoChamado = ["Incidente", "Melhoria", "Requisição de Serviço"];
 
-//  @override
-//  void initState() {
-//    super.initState();
-//
-//    tituloChamado.text = widget.dadosChamado.data["titulo"].toString();
-//    descricaoChamado.text = widget.dadosChamado.data["descricao"];
-//
-//  }
-
   TextEditingController tituloChamado = TextEditingController();
   TextEditingController descricaoChamado = TextEditingController();
+  TextEditingController tipoChamado  = TextEditingController();
+  TextEditingController classificacao  = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -42,43 +35,22 @@ class _AbrirChamadoState extends State<AbrirChamado> {
         child: Form(
           key: formkey,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               _tituloChamado("Título"),
               _sizedBox(15, 15),
               _descricaoChamado("Descrição"),
-              Row(
-                children: <Widget>[
-                  Text("Classificação"),
-                  _sizedBox(10, 10),
-                  _categoriaMenu(),
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  Text("Tipo"),
-                    _sizedBox(50, 10),
-
-                  _tipoServicoMenu()
-                ],
-              ),
-              IconButton(
-                icon: Icon(Icons.camera_alt),
-                iconSize: 50,
-                onPressed: () {},
-              ),
-              ButtonBar(
-                children: <Widget>[
-                  _botaoCancelarChamado(),
-                  _botaoAbrirChamado(),
-                ],
-              ),
+              _categoriaMenu(),
+              _tipoServicoMenu(),
+              buttonCamera(),
+              buttonBarAbrirCancelar(),
             ],
           ),
         ),
       ),
     );
   }
+
 
   DropdownButton<String> _categoriaMenu() {
     return DropdownButton<String>(
@@ -88,16 +60,20 @@ class _AbrirChamadoState extends State<AbrirChamado> {
           child: Text(dropDownStringItem),
         );
       }).toList(),
+      hint: Text("selecione uma categoria"),
       onChanged: (value) {
         setState(() {
           _valueClassificacao = value;
         });
       },
+      isExpanded: true,
       value: _valueClassificacao,
       elevation: 2,
       iconSize: 40.0,
+
     );
   }
+
   DropdownButton<String> _tipoServicoMenu() {
     return DropdownButton<String>(
       items: _tipoChamado.map((String dropDownStringItem) {
@@ -111,27 +87,46 @@ class _AbrirChamadoState extends State<AbrirChamado> {
           _valueTipoChamado = value;
         });
       },
+      isExpanded: true,
+      hint: Text("Selecione um tipo"),
       value: _valueTipoChamado,
       elevation: 2,
       iconSize: 40.0,
     );
   }
 
+  IconButton buttonCamera() {
+    return IconButton(
+              icon: Icon(Icons.camera_alt),
+              iconSize: 50,
+              onPressed: () {},
+            );
+  }
+
+  ButtonBar buttonBarAbrirCancelar() {
+    return ButtonBar(
+              children: <Widget>[
+                _botaoCancelarChamado(),
+                _botaoAbrirChamado(),
+              ],
+            );
+  }
 
   RaisedButton _botaoAbrirChamado() {
     return RaisedButton(
       child: Text("Concluir"),
       color: Colors.indigo,
       onPressed: () {
-        Firestore.instance.collection("chamados").add({
-          "titulo": tituloChamado.text,
-          "descricao": descricaoChamado.text,
-          "classificacao": _valueClassificacao,
-          "tipo": _valueTipoChamado,
-          "status": "1",
-        });
-
-        Navigator.of(context).pop();
+        if (formkey.currentState.validate()){
+          Firestore.instance.collection("chamados").add({
+            "titulo": tituloChamado.text,
+            "descricao": descricaoChamado.text,
+            "classificacao": _valueClassificacao,
+            "tipo": _valueTipoChamado,
+            "status": "1",
+          });
+          Navigator.of(context).pop();
+        }
       },
     );
   }
@@ -146,12 +141,14 @@ class _AbrirChamadoState extends State<AbrirChamado> {
     );
   }
 
-  TextFormField _tituloChamado(String label) {
+  TextFormField _descricaoChamado(String label) {
     return TextFormField(
-//      textInputAction: TextInputAction.next,
-      decoration:
-          InputDecoration(labelText: label, border: OutlineInputBorder()),
-      controller: tituloChamado,
+      keyboardType: TextInputType.multiline,
+      minLines: 2,
+      maxLines: 10,
+      decoration: InputDecoration(
+          labelText: label, hintMaxLines: 10, border: OutlineInputBorder()),
+      controller: descricaoChamado,
       validator: (value) {
         if (value.isEmpty) {
           return "infome o título!";
@@ -161,14 +158,12 @@ class _AbrirChamadoState extends State<AbrirChamado> {
     );
   }
 
-  TextFormField _descricaoChamado(String label) {
+  TextFormField _tituloChamado(String label) {
     return TextFormField(
-      keyboardType: TextInputType.multiline,
-      minLines: 2,
-      maxLines: 10,
-      decoration: InputDecoration(
-          labelText: label, hintMaxLines: 10, border: OutlineInputBorder()),
-      controller: descricaoChamado,
+//      textInputAction: TextInputAction.next,
+      decoration:
+          InputDecoration(labelText: label, border: OutlineInputBorder()),
+      controller: tituloChamado,
       validator: (value) {
         if (value.isEmpty) {
           return "infome o título!";

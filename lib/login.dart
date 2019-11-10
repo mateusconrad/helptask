@@ -49,7 +49,6 @@ class _LoginState extends State<Login> {
     Navigator.pushReplacement(
       context,
       new MaterialPageRoute(
-
         builder: (context) => new TabBarHome( ),//userDetails: details
       ),
     );

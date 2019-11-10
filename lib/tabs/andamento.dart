@@ -9,6 +9,9 @@ class Andamento extends StatefulWidget {
 }
 
 class _AndamentoState extends State<Andamento> {
+  GlobalKey<FormState> formkey = GlobalKey<FormState>();
+  TextEditingController resolucaoChamado  = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -48,36 +51,25 @@ class _AndamentoState extends State<Andamento> {
                               child: Column(
                             children: <Widget>[
                               ListTile(
-                                //snapshot.data.documents[index].documentID.toString()
-                                // - pega o ID
                                 title: Text(
-                                    snapshot
-                                        .data.documents[index].data["titulo"],
+                                    snapshot.data.documents[index].data["titulo"],
                                     style: TextStyle(fontSize: 25)),
-//                                    subtitle: Text(snapshot
-//                                        .data.documents[index].data["descricao"]
-//                                        .toString()),
                               ),
                               ButtonTheme.bar(
                                 child: ButtonBar(
                                   children: <Widget>[
                                     OutlineButton(
                                       child: const Text('Finalizar'),
-//
-                                      onPressed: () {
-                                        finalizarChamado(context, index, snapshot);
-                                      }
+                                      onPressed: () => finalizarChamado(context, index, snapshot),
+
                                     ),
                                     OutlineButton(
                                       child: const Text('Pausar'),
-                                      onPressed: () {
-                                        pausarChamado(context, index, snapshot);
-                                      },
+                                      onPressed: () => pausarChamado(context, index, snapshot),
                                     ),
                                     IconButton(
                                       icon: Icon(Icons.info),
-                                      onPressed: () =>
-                                          showInfo(context, index, snapshot),
+                                      onPressed: () => showInfo(context, index, snapshot),
                                     ),
                                   ],
                                 ),
@@ -91,6 +83,7 @@ class _AndamentoState extends State<Andamento> {
       ],
     );
   }
+
   finalizarChamado(BuildContext context, index, snapshot) {
     showDialog<void>(
         context: context,
@@ -104,7 +97,7 @@ class _AndamentoState extends State<Andamento> {
             content: Column(
               children: <Widget>[
                 Text(snapshot.data.documents[index].data["descricao"].toString()),
-
+                _resolucaoChamado("Resolução"),
               ],
 
             ),
@@ -174,5 +167,22 @@ class _AndamentoState extends State<Andamento> {
             ],
           );
         });
+  }
+
+  _resolucaoChamado(String label) {
+    return TextFormField(
+      keyboardType: TextInputType.multiline,
+      minLines: 2,
+      maxLines: 10,
+      decoration: InputDecoration(
+          labelText: label, hintMaxLines: 10, border: OutlineInputBorder()),
+      controller: resolucaoChamado,
+      validator: (value) {
+        if (value.isEmpty) {
+          return "infome o título!";
+        }
+        return null;
+      },
+    );
   }
 }
