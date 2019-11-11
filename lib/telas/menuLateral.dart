@@ -1,8 +1,9 @@
-import 'package:app_vai/home.dart';
+
 import 'package:app_vai/login.dart';
-import 'package:app_vai/main.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class MenuLateral extends StatefulWidget {
   @override
@@ -21,7 +22,9 @@ class _MenuLateralState extends State<MenuLateral> {
 
   initUser() async {
     user = await _auth.currentUser();
-    setState(() {});
+    setState(() {
+      initUser();
+    });
   }
 
   @override
@@ -34,8 +37,9 @@ class _MenuLateralState extends State<MenuLateral> {
             accountName: Text("${user?.displayName}"),
             accountEmail: Text("${user?.email}"),
             currentAccountPicture: CircleAvatar(
-              backgroundImage: NetworkImage("${user?.photoUrl}"),
+              backgroundImage:  NetworkImage("${user?.photoUrl}"),
             ),
+
           ),
           //SizedBox(height:100,),
 
@@ -84,6 +88,7 @@ ListTile _listTileLogout(BuildContext context, IconData iconField, String title,
     subtitle: Text(subTitle),
     onTap: () {
       FirebaseAuth.instance.signOut();
+      GoogleSignIn.channel.invokeMethod("signOut");
       Navigator.pop(context);
       Navigator.pushReplacement(
           context,
@@ -92,3 +97,5 @@ ListTile _listTileLogout(BuildContext context, IconData iconField, String title,
     }
   );
 }
+
+

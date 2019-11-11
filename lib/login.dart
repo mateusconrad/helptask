@@ -17,6 +17,13 @@ class _LoginState extends State<Login> {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
+
+  @override
+  void initState() {
+    super.initState();
+    
+  }
+
   Future<FirebaseUser> _signIn() async {
 
     final GoogleSignInAccount googleUser = await _googleSignIn.signIn();

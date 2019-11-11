@@ -10,31 +10,101 @@
       <change beforePath="$PROJECT_DIR$/android/.gradle/4.10.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.10.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/4.10.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.10.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/4.10.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.10.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/4.10.2/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.10.2/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/4.10.2/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.10.2/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/4.10.2/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.10.2/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/4.10.2/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.10.2/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/4.10.2/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.10.2/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/4.10.2/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.10.2/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/app.dill.track.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/app.dill" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app.dill.track.dill.incremental.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/app.dill.track.dill.incremental.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-arm64/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-arm64/flutter_assets/kernel_blob.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-x86/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-x86/flutter_assets/kernel_blob.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/generated/source/buildConfig/androidTest/debug/com/interdisciplinar/app_vai/test/BuildConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-arm/flutter_assets/AssetManifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-arm/flutter_assets/FontManifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-arm/flutter_assets/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-arm/flutter_assets/fonts/MaterialIcons-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-arm/flutter_assets/images/abase.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-arm/flutter_assets/images/yoda.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-arm/flutter_assets/isolate_snapshot_data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-arm/flutter_assets/kernel_blob.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-arm/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-arm/flutter_assets/packages/flutter_auth_buttons/fonts/Roboto-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-arm/flutter_assets/packages/flutter_auth_buttons/fonts/SF-Pro-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-arm/flutter_assets/packages/flutter_auth_buttons/graphics/Twitter_Logo_Blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-arm/flutter_assets/packages/flutter_auth_buttons/graphics/apple_logo_black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-arm/flutter_assets/packages/flutter_auth_buttons/graphics/apple_logo_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-arm/flutter_assets/packages/flutter_auth_buttons/graphics/flogo-HexRBG-Wht-100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-arm/flutter_assets/packages/flutter_auth_buttons/graphics/google-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-arm/flutter_assets/packages/flutter_auth_buttons/graphics/ms-symbollockup_mssymbol_19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-arm/flutter_assets/vm_snapshot_data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-arm/snapshot_blob.bin.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-x86/flutter_assets/AssetManifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-x86/flutter_assets/FontManifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-x86/flutter_assets/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-x86/flutter_assets/fonts/MaterialIcons-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-x86/flutter_assets/images/abase.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-x86/flutter_assets/images/yoda.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-x86/flutter_assets/isolate_snapshot_data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-x86/flutter_assets/kernel_blob.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-x86/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-x86/flutter_assets/packages/flutter_auth_buttons/fonts/Roboto-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-x86/flutter_assets/packages/flutter_auth_buttons/fonts/SF-Pro-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-x86/flutter_assets/packages/flutter_auth_buttons/graphics/Twitter_Logo_Blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-x86/flutter_assets/packages/flutter_auth_buttons/graphics/apple_logo_black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-x86/flutter_assets/packages/flutter_auth_buttons/graphics/apple_logo_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-x86/flutter_assets/packages/flutter_auth_buttons/graphics/flogo-HexRBG-Wht-100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-x86/flutter_assets/packages/flutter_auth_buttons/graphics/google-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-x86/flutter_assets/packages/flutter_auth_buttons/graphics/ms-symbollockup_mssymbol_19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-x86/flutter_assets/vm_snapshot_data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/android-x86/snapshot_blob.bin.d" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/libs.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/libs.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/V5ZaY3SOK95EmgXL+8vSzGZIR6Q=" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/i25Eu3Ggax9gvzERLVQIwplzwpA=" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/i25Eu3Ggax9gvzERLVQIwplzwpA=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJniLibs/zip-cache/V5ZaY3SOK95EmgXL+8vSzGZIR6Q=" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJniLibs/zip-cache/i25Eu3Ggax9gvzERLVQIwplzwpA=" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJniLibs/zip-cache/i25Eu3Ggax9gvzERLVQIwplzwpA=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/file-input-save-data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/file-input-save-data.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/zip-cache/bQd3nB1LJHI8jxBVAnHu5rJAbrM=" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/zip-cache/bQd3nB1LJHI8jxBVAnHu5rJAbrM=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out/flutter_assets/kernel_blob.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/legacy_multidex_aapt_derived_proguard_rules/debug/processDebugResources/manifest_keep.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/legacy_multidex_main_dex_list/debug/transformClassesWithMultidexlistForDebug/mainDexList.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/merged_manifests/debugAndroidTest/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/merged_manifests/debugAndroidTest/output.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/transforms/mergeJavaRes/debug/0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/transforms/mergeJavaRes/debug/0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/transforms/mergeJniLibs/debug/0/lib/armeabi-v7a/libflutter.so" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/outputs/apk/app.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/apk/app.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/outputs/apk/app.apk.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/apk/app.apk.sha1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/apk/debug/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cloud_firestore/generated/source/buildConfig/androidTest/debug/io/flutter/plugins/firebase/firestore/test/BuildConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cloud_firestore/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/cloud_firestore/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cloud_firestore/intermediates/incremental/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/cloud_firestore/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cloud_firestore/intermediates/merged_manifests/debugAndroidTest/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cloud_firestore/intermediates/merged_manifests/debugAndroidTest/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/firebase_auth/generated/source/buildConfig/androidTest/debug/io/flutter/plugins/firebaseauth/test/BuildConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/firebase_auth/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/firebase_auth/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/firebase_auth/intermediates/incremental/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/firebase_auth/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/firebase_auth/intermediates/merged_manifests/debugAndroidTest/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/firebase_auth/intermediates/merged_manifests/debugAndroidTest/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/firebase_core/generated/source/buildConfig/androidTest/debug/io/flutter/plugins/firebase/core/test/BuildConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/firebase_core/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/firebase_core/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/firebase_core/intermediates/incremental/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/firebase_core/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/firebase_core/intermediates/merged_manifests/debugAndroidTest/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/firebase_core/intermediates/merged_manifests/debugAndroidTest/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/firebase_storage/generated/source/buildConfig/androidTest/debug/io/flutter/plugins/firebase/storage/test/BuildConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/firebase_storage/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/firebase_storage/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/firebase_storage/intermediates/incremental/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/firebase_storage/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/firebase_storage/intermediates/merged_manifests/debugAndroidTest/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/firebase_storage/intermediates/merged_manifests/debugAndroidTest/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/google_sign_in/generated/source/buildConfig/androidTest/debug/io/flutter/plugins/googlesignin/test/BuildConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/google_sign_in/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/google_sign_in/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/google_sign_in/intermediates/incremental/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/google_sign_in/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/google_sign_in/intermediates/merged_manifests/debugAndroidTest/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/google_sign_in/intermediates/merged_manifests/debugAndroidTest/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/image_picker/generated/source/buildConfig/androidTest/debug/io/flutter/plugins/imagepicker/test/BuildConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/image_picker/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/image_picker/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/image_picker/intermediates/incremental/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/image_picker/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/image_picker/intermediates/merged_manifests/debugAndroidTest/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/image_picker/intermediates/merged_manifests/debugAndroidTest/output.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/login.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/tabs/andamento.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/tabs/andamento.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/telas/abrir_chamado.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/telas/abrir_chamado.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/telas/menuLateral.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/telas/menuLateral.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -49,114 +119,43 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="1dab2861" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3_API_28" />
   <component name="ExportToHTMLSettings">
     <option name="printScope" value="1" />
     <option name="OUTPUT_DIRECTORY" value="$USER_HOME$/Desktop" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/home.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1292">
-              <caret line="89" column="1" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/main.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/telas/atenderChamado.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-              <folding>
-                <element signature="e#0#51#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/login.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/telas/menuLateral.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="86" selection-start-line="86" selection-end-line="86" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/tabs/espera.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="67" column="83" selection-start-line="67" selection-start-column="83" selection-end-line="67" selection-end-column="83" />
-              <folding>
-                <element signature="e#0#51#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/tabs/andamento.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="101" selection-start-line="101" selection-end-line="101" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-                <element signature="e#5320#6659#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/tabs/pausados.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1995">
-              <caret line="107" column="36" selection-start-line="107" selection-start-column="36" selection-end-line="107" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../../flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.11.0+2/lib/src/query.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1501">
-              <caret line="81" column="24" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/lib/telas/menuLateral.dart">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="349">
+                  <caret line="89" column="6" selection-start-line="89" selection-start-column="6" selection-end-line="89" selection-end-column="6" />
+                  <folding>
+                    <element signature="e#1#37#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/lib/login.dart">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="96">
+                  <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -167,8 +166,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>textf</find>
-      <find>dad</find>
       <find>dadosbranco</find>
       <find>length</find>
       <find>confirma</find>
@@ -184,7 +181,6 @@
       <find>prio</find>
       <find>priori</find>
       <find>auth</find>
-      <find>user</find>
       <find>drawe</find>
       <find>index</find>
       <find>inde</find>
@@ -197,6 +193,9 @@
       <find>tituloChamado</find>
       <find>desc</find>
       <find>_tabController</find>
+      <find>user</find>
+      <find>then</find>
+      <find>image</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -247,13 +246,13 @@
         <option value="$PROJECT_DIR$/lib/telas/abrir_chamado.dart" />
         <option value="$PROJECT_DIR$/lib/tabs/andamento.dart" />
         <option value="$PROJECT_DIR$/lib/home.dart" />
-        <option value="$PROJECT_DIR$/lib/telas/menuLateral.dart" />
         <option value="$PROJECT_DIR$/lib/login.dart" />
+        <option value="$PROJECT_DIR$/lib/telas/menuLateral.dart" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-496" />
+    <option name="x" value="-53" />
     <option name="y" value="100" />
     <option name="width" value="1912" />
     <option name="height" value="984" />
@@ -264,9 +263,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -274,27 +270,13 @@
               <item name="app_vai" type="b2602c69:ProjectViewProjectNode" />
               <item name="app_vai" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="app_vai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app_vai" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app_vai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app_vai" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="tabs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app_vai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app_vai" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="telas" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -408,7 +390,7 @@
     <frame x="-4" y="0" width="1928" height="1042" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15450644" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15450644" />
       <window_info id="Captures" order="1" side_tool="true" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -418,21 +400,21 @@
       <window_info id="Capture Tool" order="7" />
       <window_info id="Favorites" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Dart Analysis" order="0" sideWeight="0.49248928" weight="0.3047404" />
-      <window_info active="true" anchor="bottom" id="Run" order="1" sideWeight="0.68186694" visible="true" weight="0.248307" />
+      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.68133044" visible="true" weight="0.248307" />
       <window_info anchor="bottom" id="TODO" order="2" sideWeight="0.49946353" weight="0.3295711" />
       <window_info anchor="bottom" id="Android Profiler" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Logcat" order="4" sideWeight="0.49839056" weight="0.3295711" />
       <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.49946353" weight="0.4571106" />
       <window_info anchor="bottom" id="Version Control" order="6" sideWeight="0.49409872" weight="0.37246048" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49034336" weight="0.24379233" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.31813306" side_tool="true" visible="true" weight="0.248307" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4892704" weight="0.24379233" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.31866953" side_tool="true" weight="0.24774775" />
       <window_info anchor="bottom" id="Flutter Performance" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.14559819" />
       <window_info anchor="bottom" id="Find" order="11" weight="0.04288939" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info anchor="right" id="Flutter Inspector" order="3" visible="true" weight="0.3299356" />
+      <window_info anchor="right" id="Flutter Inspector" order="3" weight="0.3299356" />
       <window_info anchor="right" id="Flutter Outline" order="4" weight="0.3299356" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
     </layout>
@@ -446,16 +428,16 @@
       <window_info id="Resources Explorer" order="6" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Favorites" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Dart Analysis" order="0" sideWeight="0.4946352" weight="0.41309255" />
-      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.4946352" visible="true" weight="0.24379233" />
+      <window_info anchor="bottom" id="Dart Analysis" order="0" sideWeight="0.49248928" weight="0.3047404" />
+      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.68133044" weight="0.248307" />
       <window_info anchor="bottom" id="TODO" order="2" sideWeight="0.49946353" weight="0.3295711" />
       <window_info anchor="bottom" id="Android Profiler" order="3" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Logcat" order="4" sideWeight="0.49946353" weight="0.32995495" />
+      <window_info anchor="bottom" id="Logcat" order="4" sideWeight="0.49839056" weight="0.3295711" />
       <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.49946353" weight="0.4571106" />
-      <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.49356222" weight="0.24887387" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5005365" side_tool="true" weight="0.3295711" />
-      <window_info anchor="bottom" id="Flutter Performance" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49570817" weight="0.1772009" />
+      <window_info anchor="bottom" id="Version Control" order="6" sideWeight="0.49409872" weight="0.37246048" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4892704" weight="0.24379233" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.31866953" side_tool="true" visible="true" weight="0.24774775" />
+      <window_info anchor="bottom" id="Flutter Performance" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.14559819" />
       <window_info anchor="bottom" id="Find" order="11" weight="0.04288939" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
@@ -490,13 +472,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../../flutter/bin/cache/pkg/sky_engine/lib/ui/hooks.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="228" column="24" selection-start-line="228" selection-start-column="24" selection-end-line="228" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.4.0+9/lib/src/firebase_app.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -592,13 +567,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/auth.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -716,65 +684,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tabs/pausados.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1995">
-          <caret line="107" column="36" selection-start-line="107" selection-start-column="36" selection-end-line="107" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.11.0+2/lib/src/query.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1501">
-          <caret line="81" column="24" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tabs/espera.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="67" column="83" selection-start-line="67" selection-start-column="83" selection-end-line="67" selection-end-column="83" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/telas/atenderChamado.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../flutter/packages/flutter/lib/src/widgets/editable_text.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
           <caret line="124" column="2" selection-start-line="124" selection-start-column="2" selection-end-line="124" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tabs/andamento.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-            <element signature="e#5320#6659#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/main.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -796,26 +709,6 @@
           <caret line="78" column="31" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="67" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/home.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="89" column="1" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/telas/menuLateral.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="86" selection-start-line="86" selection-end-line="86" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -844,10 +737,98 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/main.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/telas/atenderChamado.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/tabs/espera.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1216">
+          <caret line="67" column="83" selection-start-line="67" selection-start-column="83" selection-end-line="67" selection-end-column="83" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/tabs/andamento.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1862">
+          <caret line="101" selection-start-line="101" selection-end-line="101" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/tabs/pausados.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1995">
+          <caret line="107" column="36" selection-start-line="107" selection-start-column="36" selection-end-line="107" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.11.0+2/lib/src/query.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1501">
+          <caret line="81" column="24" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/auth.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/home.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1406">
+          <caret line="89" column="1" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/login.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+        <state relative-caret-position="96">
+          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="631">
+          <caret line="323" column="19" selection-start-line="323" selection-start-column="19" selection-end-line="323" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/telas/menuLateral.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="89" column="6" selection-start-line="89" selection-start-column="6" selection-end-line="89" selection-end-column="6" />
+          <folding>
+            <element signature="e#1#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
