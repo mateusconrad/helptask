@@ -99,8 +99,10 @@ class _AbrirChamadoState extends State<AbrirChamado> {
     return IconButton(
               icon: Icon(Icons.camera_alt),
               iconSize: 50,
-              onPressed: () {},
-            );
+              onPressed: () {
+                AlertDialog(content: Text("ainda não carai"));
+              },
+    );
   }
 
   ButtonBar buttonBarAbrirCancelar() {
@@ -149,12 +151,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
       decoration: InputDecoration(
           labelText: label, hintMaxLines: 10, border: OutlineInputBorder()),
       controller: descricaoChamado,
-      validator: (value) {
-        if (value.isEmpty) {
-          return "infome o título!";
-        }
-        return null;
-      },
+      validator: (value) => value.isEmpty ? "infome a descrição!" :  null
     );
   }
 
@@ -164,12 +161,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
       decoration:
           InputDecoration(labelText: label, border: OutlineInputBorder()),
       controller: tituloChamado,
-      validator: (value) {
-        if (value.isEmpty) {
-          return "infome o título!";
-        }
-        return null;
-      },
+      validator: (value) => value.isEmpty ? "infome o título!" :  null,
     );
   }
 
