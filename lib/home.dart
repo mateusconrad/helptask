@@ -1,7 +1,5 @@
-import 'package:app_vai/login.dart';
 import 'package:app_vai/telas/menuLateral.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'tabs/espera.dart';
 import 'tabs/pausados.dart';
@@ -42,7 +40,7 @@ class _TabBarHomeState extends State<TabBarHome> {
               Finalizado(),
             ],
           ),
-          floatingActionButton: _AddChamado(context),
+          floatingActionButton: _addChamado(context),
           drawer: MenuLateral(),
         ),
       ),
@@ -72,7 +70,7 @@ class _TabBarHomeState extends State<TabBarHome> {
     );
   }
 
-  FloatingActionButton _AddChamado(BuildContext context) {
+  FloatingActionButton _addChamado(BuildContext context) {
     return FloatingActionButton.extended(
       icon: Icon(Icons.add),
       label: Text("Novo"),

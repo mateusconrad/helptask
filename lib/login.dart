@@ -21,7 +21,7 @@ class _LoginState extends State<Login> {
   @override
   void initState() {
     super.initState();
-    
+
   }
 
   Future<FirebaseUser> _signIn() async {
@@ -44,6 +44,7 @@ class _LoginState extends State<Login> {
     List<ProviderDetails> providerData = new List<ProviderDetails>();
     providerData.add(providerInfo);
 
+    // ignore: unused_local_variable
     UserDetails details = new UserDetails(
       userDetails.providerId,
       userDetails.displayName,
@@ -52,6 +53,7 @@ class _LoginState extends State<Login> {
       providerData,
     );
 
+    // ignore: unused_local_variable
     final user = UserDetails;
     Navigator.pushReplacement(
       context,

@@ -1,6 +1,4 @@
-
 import 'package:app_vai/login.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -29,6 +27,7 @@ class _MenuLateralState extends State<MenuLateral> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     Future<FirebaseUser> future = FirebaseAuth.instance.currentUser();
     return Drawer(
       child: ListView(
@@ -37,7 +36,7 @@ class _MenuLateralState extends State<MenuLateral> {
             accountName: Text("${user?.displayName}"),
             accountEmail: Text("${user?.email}"),
             currentAccountPicture: CircleAvatar(
-              backgroundImage:  NetworkImage("${user?.photoUrl}"),
+              backgroundImage:  NetworkImage("${user?.photoUrl}", scale: 1.0),
             ),
 
           ),
@@ -77,7 +76,10 @@ ListTile _listTileGraphics(BuildContext context, IconData iconField,String title
     leading: Icon(iconField),
     title: Text(title),
     subtitle: Text(subTitle),
-    onTap: () => null,
+    onTap: () {
+//      Navigator.push(context,MaterialPageRoute(
+//      builder: (context) => (grafics2())));
+    }
   );
 }
 
@@ -88,6 +90,7 @@ ListTile _listTileLogout(BuildContext context, IconData iconField, String title,
     subtitle: Text(subTitle),
     onTap: () {
       FirebaseAuth.instance.signOut();
+      // ignore: invalid_use_of_visible_for_testing_member
       GoogleSignIn.channel.invokeMethod("signOut");
       Navigator.pop(context);
       Navigator.pushReplacement(
