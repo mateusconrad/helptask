@@ -41,7 +41,6 @@ class _MenuLateralState extends State<MenuLateral> {
 
           ),
           //SizedBox(height:100,),
-
           _listTileHelp(context, Icons.help, "Ajuda", "mais informações..."),
           _divisor(),
           _listTileGraphics(
@@ -50,17 +49,15 @@ class _MenuLateralState extends State<MenuLateral> {
           _listTileLogout(
               context, Icons.power_settings_new, "Sair", "Fazer Logout"),
           _divisor(),
-          ListTile(),
-
         ],
       ),
     );
   }
 
-  Divider _divisor() => Divider();
 }
 
 //  Divider _divisor() => Divider();
+Divider _divisor() => Divider();
 
 ListTile _listTileHelp(BuildContext context, IconData iconField, String title, String subTitle ) {
   return ListTile(

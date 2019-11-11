@@ -80,7 +80,10 @@ class _LoginState extends State<Login> {
               _sBox(),
               _logoAbase(),
               tituloApp(),
-              _sBox(),
+//              _sBox(),
+              TextField(),
+              TextField(),
+              RaisedButton(),
               botaoLogin()
             ],
           ),
