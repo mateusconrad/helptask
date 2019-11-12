@@ -23,6 +23,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
   TextEditingController descricaoChamado = TextEditingController();
   TextEditingController tipoChamado  = TextEditingController();
   TextEditingController classificacao  = TextEditingController();
+  TextEditingController setorChamado = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -40,8 +41,11 @@ class _AbrirChamadoState extends State<AbrirChamado> {
               _tituloChamado("Título"),
               _sizedBox(15, 15),
               _descricaoChamado("Descrição"),
+              _sizedBox(15, 15),
+              _setorChamado("Setor"),
               _categoriaMenu(),
               _tipoServicoMenu(),
+
               buttonCamera(),
               buttonBarAbrirCancelar(),
             ],
@@ -50,6 +54,8 @@ class _AbrirChamadoState extends State<AbrirChamado> {
       ),
     );
   }
+
+
 
 
   DropdownButton<String> _categoriaMenu() {
@@ -123,6 +129,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
           Firestore.instance.collection("chamados").add({
             "titulo": tituloChamado.text,
             "descricao": descricaoChamado.text,
+            "setor": setorChamado.text,
             "classificacao": _valueClassificacao,
             "tipo": _valueTipoChamado,
             "status": "1",
@@ -165,6 +172,15 @@ class _AbrirChamadoState extends State<AbrirChamado> {
     );
   }
 
+  TextFormField _setorChamado(String label) {
+    return TextFormField(
+//      textInputAction: TextInputAction.next,
+      decoration:
+      InputDecoration(labelText: label, border: OutlineInputBorder()),
+      controller: setorChamado,
+      validator: (value) => value.isEmpty ? "infome o título!" :  null,
+    );
+  }
   SizedBox _sizedBox(double largura, double altura) => SizedBox(
         height: altura,
         width: largura,

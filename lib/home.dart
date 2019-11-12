@@ -1,4 +1,4 @@
-import 'package:app_vai/telas/menuLateral.dart';
+import 'package:app_vai/drawer/menuLateral.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'tabs/espera.dart';

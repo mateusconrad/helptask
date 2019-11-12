@@ -53,7 +53,11 @@ class _AndamentoState extends State<Andamento> {
                               ListTile(
                                 title: Text(
                                     snapshot.data.documents[index].data["titulo"],
-                                    style: TextStyle(fontSize: 25)),
+                                    style: TextStyle(fontSize: 25)
+                                ),
+                                subtitle: Text(
+                                  snapshot.data.documents[index].data["prioridade"],
+                                ),
                               ),
                               ButtonTheme.bar(
                                 child: ButtonBar(
@@ -61,7 +65,6 @@ class _AndamentoState extends State<Andamento> {
                                     OutlineButton(
                                       child: const Text('Finalizar'),
                                       onPressed: () => finalizarChamado(context, index, snapshot),
-
                                     ),
                                     OutlineButton(
                                       child: const Text('Pausar'),
@@ -117,6 +120,7 @@ class _AndamentoState extends State<Andamento> {
                       .updateData(
                       {
                         "status": "4",
+                        "resolucao":resolucaoChamado.text,
                       }
                   );
                   Navigator.pop(context);

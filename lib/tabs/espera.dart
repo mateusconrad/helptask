@@ -13,6 +13,7 @@ class _EsperaState extends State<Espera> {
 
   var _valuePrioridade;
   var _tiposPrioridades = ["Baixa", "Média", "Alta", "Critica"];
+  TextEditingController resolucaoChamado  = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +57,7 @@ class _EsperaState extends State<Espera> {
                                 title: Text(
                                     snapshot.data.documents[index].data["titulo"].toString(),
                                     style: TextStyle(fontSize: 25)),
+
 //                                  Text("Confirma a exclusão de : \n" +
 //                                      snapshot.data.documents[index].data["nomeFilme"]
 //                                          .toString()
@@ -164,6 +166,7 @@ class _EsperaState extends State<Espera> {
             content: Column(
               children: <Widget>[
                 Text(snapshot.data.documents[index].data["descricao"].toString()),
+                _resolucaoChamado("Resolução"),
 
               ],
 
@@ -184,6 +187,7 @@ class _EsperaState extends State<Espera> {
                       .updateData(
                       {
                         "status": "4",
+                        "resolucao": resolucaoChamado.text,
                       }
                   );
                   Navigator.pop(context);
@@ -215,6 +219,22 @@ class _EsperaState extends State<Espera> {
       //style: TextStyle(color: Colors.black, fontSize: 30),
       //isDense: true,
       iconSize: 40.0,
+    );
+  }
+  _resolucaoChamado(String label) {
+    return TextFormField(
+      keyboardType: TextInputType.multiline,
+      minLines: 2,
+      maxLines: 10,
+      decoration: InputDecoration(
+          labelText: label, hintMaxLines: 10, border: OutlineInputBorder()),
+      controller: resolucaoChamado,
+      validator: (value) {
+        if (value.isEmpty) {
+          return "infome o título!";
+        }
+        return null;
+      },
     );
   }
 
