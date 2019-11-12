@@ -11,6 +11,9 @@ class Espera extends StatefulWidget {
 class _EsperaState extends State<Espera> {
   DocumentSnapshot dadosBranco;
 
+  var _valuePrioridade;
+  var _tiposPrioridades = ["Baixa", "Média", "Alta", "Critica"];
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -115,7 +118,7 @@ class _EsperaState extends State<Espera> {
                   children: <Widget>[
                     Text("Prioridade"),
                     SizedBox(width: 15,),
-                    PrioridadeMenu(),
+                    _DropdownPriodade(),
                   ],
                 ),
               ],
@@ -137,6 +140,7 @@ class _EsperaState extends State<Espera> {
                       .updateData(
                       {
                         "status": "3",
+                        "prioridade":_valuePrioridade,
                       }
                       );
                   Navigator.pop(context);
@@ -188,6 +192,30 @@ class _EsperaState extends State<Espera> {
             ],
           );
         });
+  }
+
+  _DropdownPriodade() {
+    return DropdownButton<String>(
+      items: _tiposPrioridades.map((String dropDownStringItem) {
+        return DropdownMenuItem<String>(
+          value: dropDownStringItem,
+          child: Text(dropDownStringItem),
+        );
+      }).toList(),
+
+
+      onChanged: (value) {
+        setState(() {
+          _valuePrioridade = value;
+        });
+      },
+
+      value: _valuePrioridade,
+      elevation: 2,
+      //style: TextStyle(color: Colors.black, fontSize: 30),
+      //isDense: true,
+      iconSize: 40.0,
+    );
   }
 
 }
