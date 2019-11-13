@@ -105,9 +105,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
     return IconButton(
               icon: Icon(Icons.camera_alt),
               iconSize: 50,
-              onPressed: () {
-                AlertDialog(content: Text("ainda não carai"));
-              },
+              onPressed: () {},
     );
   }
 

@@ -16,6 +16,51 @@ class _TabBarHomeState extends State<TabBarHome> {
   String nomeTab = "Chamados";
   DocumentSnapshot dadosBranco;
 
+  var _valueFiltro;
+  var _tiposFiltro = ["Titulo A-Z", "Titulo Z-A", "Data Asc", "Data Desc", "Prioridade Alta", "Prioridade Baixa"];
+
+
+
+
+  Widget _simplePopup() => PopupMenuButton<int>(
+    itemBuilder: (context) => [
+      PopupMenuItem(
+        value: 1,
+        child: Text("Titulo A-Z"),
+      ),
+      PopupMenuItem(
+        value: 2,
+        child: Text("Titulo Z-A"),
+      ),
+      PopupMenuItem(
+        value: 3,
+        child: Text("Data Asc"),
+      ),
+      PopupMenuItem(
+        value: 4,
+        child: Text("Data Desc"),
+      ),
+      PopupMenuItem(
+        value: 5,
+        child: Text("Prioridade Alta"),
+      ),
+      PopupMenuItem(
+        value: 6,
+        child: Text( "Prioridade Baixa"),
+      ),
+    ],
+  );
+//  PopupMenuButton<String> _filtroMenu(){
+//    return PopupMenuButton<String>(
+//       offset: _tiposFiltro.map((String popUpStringItem){
+//        return PopupMenuItem<String>(
+//          value:  popUpStringItem,
+//          child:  Text(popUpStringItem),
+//        );
+//      }).toList(),
+//    )
+//  }
+
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -31,6 +76,14 @@ class _TabBarHomeState extends State<TabBarHome> {
             bottom: buildTabBar(),
             title: Text(nomeTab),
             centerTitle: true,
+            actions: <Widget>[
+              FlatButton(
+                child: Icon(Icons.filter_list),
+                onPressed:(){
+                  _simplePopup();
+                },
+              ),
+            ],
           ),
           body: TabBarView(
             children: [

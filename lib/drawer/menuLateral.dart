@@ -1,3 +1,4 @@
+import 'package:app_vai/drawer/graficos.dart';
 import 'package:app_vai/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -74,8 +75,8 @@ ListTile _listTileGraphics(BuildContext context, IconData iconField,String title
     title: Text(title),
     subtitle: Text(subTitle),
     onTap: () {
-//      Navigator.push(context,MaterialPageRoute(
-//      builder: (context) => (grafics2())));
+      Navigator.push(context,MaterialPageRoute(
+      builder: (context) =>  Graficos()));
     }
   );
 }
