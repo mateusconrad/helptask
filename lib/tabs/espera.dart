@@ -1,4 +1,4 @@
-import 'package:app_vai/telas/prioridadeMenu.dart';
+
 import 'package:app_vai/telas/showInfo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';

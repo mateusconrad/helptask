@@ -16,8 +16,8 @@ class _TabBarHomeState extends State<TabBarHome> {
   String nomeTab = "Chamados";
   DocumentSnapshot dadosBranco;
 
-  var _valueFiltro;
-  var _tiposFiltro = ["Titulo A-Z", "Titulo Z-A", "Data Asc", "Data Desc", "Prioridade Alta", "Prioridade Baixa"];
+//  var _valueFiltro;
+//  var _tiposFiltro = ["Titulo A-Z", "Titulo Z-A", "Data Asc", "Data Desc", "Prioridade Alta", "Prioridade Baixa"];
 
 
 
@@ -66,7 +66,7 @@ class _TabBarHomeState extends State<TabBarHome> {
       debugShowCheckedModeBanner: false,
       //showSemanticsDebugger: true,
       theme: ThemeData(
-        brightness: Brightness.dark,
+        brightness: Brightness.light,
       ),
 
       home: DefaultTabController(

@@ -120,7 +120,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
               icon: Icon(Icons.camera_alt),
               iconSize: 50,
               onPressed: () {
-                getImage;
+                getImage();
                 tooltip: 'Pick Image';
               },
     );

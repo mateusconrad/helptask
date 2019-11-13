@@ -85,8 +85,12 @@ class _LoginState extends State<Login> {
               TextField(),
               RaisedButton(
                 onPressed: (){
-//                  Navigator.push(context, MaterialPageRoute())
-                },
+                  Navigator.pushReplacement(
+                    context,
+                    new MaterialPageRoute(
+                      builder: (context) => new TabBarHome( ),//userDetails: details
+                    ),
+                  );                },
               ),
               botaoLogin()
             ],

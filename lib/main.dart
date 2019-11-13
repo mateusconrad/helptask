@@ -7,7 +7,7 @@ void main() {
     debugShowCheckedModeBanner: false,
     home: Login(),
     theme: ThemeData(
-      brightness: Brightness.dark,
+      brightness: Brightness.light,
     ),
   ));
 }
