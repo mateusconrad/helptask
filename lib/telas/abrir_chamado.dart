@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -25,6 +27,17 @@ class _AbrirChamadoState extends State<AbrirChamado> {
   TextEditingController tipoChamado  = TextEditingController();
   TextEditingController classificacao  = TextEditingController();
   TextEditingController setorChamado = TextEditingController();
+
+  File _image;
+
+  Future getImage() async {
+    var image = await ImagePicker.pickImage(source: ImageSource.camera);
+
+    setState(() {
+      _image = image;
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -106,7 +119,10 @@ class _AbrirChamadoState extends State<AbrirChamado> {
     return IconButton(
               icon: Icon(Icons.camera_alt),
               iconSize: 50,
-              onPressed: () {},
+              onPressed: () {
+                getImage;
+                tooltip: 'Pick Image';
+              },
     );
   }
 
@@ -183,8 +199,27 @@ class _AbrirChamadoState extends State<AbrirChamado> {
   SizedBox _sizedBox(double largura, double altura) => SizedBox(
         height: altura,
         width: largura,
-      );
+  );
+  Future<void> retrieveLostData() async {
+    final LostDataResponse response =
+    await ImagePicker.retrieveLostData();
+    if (response == null) {
+      return;
+    }
+//    if (response.file != null) {
+//      setState(() {
+//        if (response.type == RetrieveType.video) {
+//          _handleVideo(response.file);
+//        } else {
+//          _handleImage(response.file);
+//        }
+//      });
+//    } else {
+//      _handleError(response.exception);
+//    }
+  }
 }
+
 
 //cor vermelho abase(169, 36, 37)
 //cor azul abase (62, 64, 149)
