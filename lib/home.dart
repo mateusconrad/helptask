@@ -18,6 +18,13 @@ class _TabBarHomeState extends State<TabBarHome> {
 
   List<Filtro> filtros = List();
 
+
+  @override
+  void initState() {
+    super.initState();
+    buildTabBar();
+  }
+
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -82,12 +89,23 @@ class _TabBarHomeState extends State<TabBarHome> {
                   ],
                   onSelected: (int resultado) {
                     setState(() {
-                      if (resultado == 1) {
-                        Firestore.instance.collection("chamados").orderBy("titulo", descending: false);
-                        //filtros.sort((a, b) {return a.nome.toLowerCase().compareTo(b.nome.toLowerCase());});
-                      } else if (resultado == 2) {
-
+                      switch (resultado) {
+                        case 1:
+                          Firestore.instance.collection("chamados").orderBy(
+                              "titulo", descending: false);
+                          break;
+                        case 1:
+                          Firestore.instance.collection("chamados").orderBy(
+                              "titulo", descending: true);
+                          break;
                       }
+//                      }
+//                      if (resultado == 1) {
+//                        Firestore.instance.collection("chamados").orderBy("titulo", descending: false);
+//                        //filtros.sort((a, b) {return a.nome.toLowerCase().compareTo(b.nome.toLowerCase());});
+//                      } else if (resultado == 2) {
+//
+//                      }
                     });
                   },
                 );
