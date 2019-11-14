@@ -16,57 +16,14 @@ class _TabBarHomeState extends State<TabBarHome> {
   String nomeTab = "Chamados";
   DocumentSnapshot dadosBranco;
 
-//  var _valueFiltro;
-//  var _tiposFiltro = ["Titulo A-Z", "Titulo Z-A", "Data Asc", "Data Desc", "Prioridade Alta", "Prioridade Baixa"];
-
-
-
-
-  Widget _simplePopup() => PopupMenuButton<int>(
-    itemBuilder: (context) => [
-      PopupMenuItem(
-        value: 1,
-        child: Text("Titulo A-Z"),
-      ),
-      PopupMenuItem(
-        value: 2,
-        child: Text("Titulo Z-A"),
-      ),
-      PopupMenuItem(
-        value: 3,
-        child: Text("Data Asc"),
-      ),
-      PopupMenuItem(
-        value: 4,
-        child: Text("Data Desc"),
-      ),
-      PopupMenuItem(
-        value: 5,
-        child: Text("Prioridade Alta"),
-      ),
-      PopupMenuItem(
-        value: 6,
-        child: Text( "Prioridade Baixa"),
-      ),
-    ],
-  );
-//  PopupMenuButton<String> _filtroMenu(){
-//    return PopupMenuButton<String>(
-//       offset: _tiposFiltro.map((String popUpStringItem){
-//        return PopupMenuItem<String>(
-//          value:  popUpStringItem,
-//          child:  Text(popUpStringItem),
-//        );
-//      }).toList(),
-//    )
-//  }
+  List<Filtro> filtros = List();
 
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       //showSemanticsDebugger: true,
       theme: ThemeData(
-        brightness: Brightness.light,
+        brightness: Brightness.dark,
       ),
 
       home: DefaultTabController(
@@ -77,13 +34,8 @@ class _TabBarHomeState extends State<TabBarHome> {
             title: Text(nomeTab),
             centerTitle: true,
             actions: <Widget>[
-              FlatButton(
-                child: Icon(Icons.filter_list),
-                onPressed:(){
-                  _simplePopup();
-                },
-              ),
-            ],
+              _filtroPopup(),
+          ],
           ),
           body: TabBarView(
             children: [
@@ -98,6 +50,47 @@ class _TabBarHomeState extends State<TabBarHome> {
         ),
       ),
     );
+  }
+
+  PopupMenuButton<int> _filtroPopup() {
+    return PopupMenuButton<int>(
+                  itemBuilder: (context) => <PopupMenuEntry<int>>[
+                    PopupMenuItem<int>(
+                      child: Text("Titulo A-Z"),
+                      value: 1,
+                    ),
+                    PopupMenuItem<int>(
+                      child: Text("Titulo Z-A"),
+                      value: 2,
+                    ),
+                    PopupMenuItem<int>(
+                      child: Text("Data Asc"),
+                      value: 3,
+                    ),
+                    PopupMenuItem<int>(
+                      child: Text("Data Desc"),
+                      value: 4,
+                    ),
+                    PopupMenuItem<int>(
+                      child: Text("Prioridade Alta"),
+                      value: 5,
+                    ),
+                    PopupMenuItem<int>(
+                      child: Text("Prioridade Baixa"),
+                      value: 6,
+                    ),
+                  ],
+                  onSelected: (int resultado) {
+                    setState(() {
+                      if (resultado == 1) {
+                        Firestore.instance.collection("chamados").orderBy("titulo", descending: false);
+                        //filtros.sort((a, b) {return a.nome.toLowerCase().compareTo(b.nome.toLowerCase());});
+                      } else if (resultado == 2) {
+
+                      }
+                    });
+                  },
+                );
   }
 
   TabBar buildTabBar() {
@@ -141,3 +134,10 @@ class _TabBarHomeState extends State<TabBarHome> {
 }
 
 //        userDetails: details);
+
+class Filtro {
+  String nome;
+  int idade;
+
+  Filtro(this.nome, this.idade);
+}
