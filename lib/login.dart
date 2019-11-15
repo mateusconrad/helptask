@@ -1,4 +1,4 @@
-import 'package:app_vai/userDetails/userDetails.dart';
+import 'package:app_vai/drawer/userDetails.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 import 'package:google_sign_in/google_sign_in.dart';

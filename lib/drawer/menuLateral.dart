@@ -1,4 +1,4 @@
-import 'package:app_vai/drawer/graficos.dart';
+import 'package:app_vai/drawer/Tiles/Graficos/graficos.dart';
 import 'package:app_vai/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

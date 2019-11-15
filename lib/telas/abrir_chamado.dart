@@ -16,11 +16,13 @@ class AbrirChamado extends StatefulWidget {
 
 class _AbrirChamadoState extends State<AbrirChamado> {
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
-  var _valueClassificacao;
+  var _valueClassificacao="Hardware";
   var _tiposClassificacao = ["Hardware","Software","Rede","Impressoras","Telefonia"];
 
-  var _valueTipoChamado;
+  var _valueTipoChamado="Incidente";
   var _tipoChamado = ["Incidente", "Melhoria", "Requisição de Serviço"];
+
+
 
   TextEditingController tituloChamado = TextEditingController();
   TextEditingController descricaoChamado = TextEditingController();
@@ -28,13 +30,17 @@ class _AbrirChamadoState extends State<AbrirChamado> {
   TextEditingController classificacao  = TextEditingController();
   TextEditingController setorChamado = TextEditingController();
 
-  File _image;
+  File _image ;
 
   Future getImage() async {
-    var image = await ImagePicker.pickImage(source: ImageSource.camera);
+    var image = await ImagePicker.pickImage(source: ImageSource.gallery );
+    //                                                ImageSource.gallery
 
     setState(() {
       _image = image;
+      if (_image == null){
+        _image = Image.asset("images/abase.jpg") as File;
+      }
     });
   }
 
@@ -59,9 +65,10 @@ class _AbrirChamadoState extends State<AbrirChamado> {
               _setorChamado("Setor"),
               _categoriaMenu(),
               _tipoServicoMenu(),
-
               buttonCamera(),
               buttonBarAbrirCancelar(),
+              ArquivoImagem(image: _image,),
+//              Container(child: ArquivoImagem(image: _image),)
             ],
           ),
         ),
@@ -122,6 +129,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
               onPressed: () {
                 getImage();
                 tooltip: 'Pick Image';
+
               },
     );
   }
@@ -196,27 +204,37 @@ class _AbrirChamadoState extends State<AbrirChamado> {
       validator: (value) => value.isEmpty ? "infome o título!" :  null,
     );
   }
+
   SizedBox _sizedBox(double largura, double altura) => SizedBox(
         height: altura,
         width: largura,
   );
+
   Future<void> retrieveLostData() async {
     final LostDataResponse response =
     await ImagePicker.retrieveLostData();
     if (response == null) {
       return;
     }
-//    if (response.file != null) {
-//      setState(() {
-//        if (response.type == RetrieveType.video) {
-//          _handleVideo(response.file);
-//        } else {
-//          _handleImage(response.file);
-//        }
-//      });
-//    } else {
-//      _handleError(response.exception);
-//    }
+
+  }
+}
+
+class ArquivoImagem extends StatelessWidget {
+  const ArquivoImagem({
+    Key key,
+    @required File image,
+  }) : _image = image, super(key: key);
+
+  final File _image;
+  
+  @override
+  Widget build(BuildContext context) {
+    if (Image.file(_image) != null){
+      return new Image.file(_image);
+    }else{
+      Placeholder(color: Colors.indigo,);
+    }
   }
 }
 

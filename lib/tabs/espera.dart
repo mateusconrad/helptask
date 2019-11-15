@@ -1,4 +1,5 @@
 
+import 'package:app_vai/home.dart';
 import 'package:app_vai/telas/showInfo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -24,8 +25,10 @@ class _EsperaState extends State<Espera> {
               stream: Firestore.instance
                   .collection("chamados")
                   .where("status", isEqualTo: "1")
-                  .orderBy("titulo")
+//                  .orderBy("titulo")
+//                  .orderBy("prioridade", descending: true)
                   .snapshots(),
+
               builder: (context, snapshot) {
                 switch (snapshot.connectionState) {
                   case ConnectionState.none:
@@ -57,12 +60,7 @@ class _EsperaState extends State<Espera> {
                                 title: Text(
                                     snapshot.data.documents[index].data["titulo"].toString(),
                                     style: TextStyle(fontSize: 25)),
-
-//                                  Text("Confirma a exclusão de : \n" +
-//                                      snapshot.data.documents[index].data["nomeFilme"]
-//                                          .toString()
-//                                          .toUpperCase()),
-                              ),
+                                ),
 //                              Text(snapshot.data),
                               ButtonTheme.bar(
                                 child: ButtonBar(

@@ -94,7 +94,7 @@ class _TabBarHomeState extends State<TabBarHome> {
                           Firestore.instance.collection("chamados").orderBy(
                               "titulo", descending: false);
                           break;
-                        case 1:
+                        case 2:
                           Firestore.instance.collection("chamados").orderBy(
                               "titulo", descending: true);
                           break;
