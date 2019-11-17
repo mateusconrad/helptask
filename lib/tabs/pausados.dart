@@ -53,9 +53,9 @@ class _PausaState extends State<Pausa> {
                                     snapshot
                                         .data.documents[index].data["titulo"],
                                     style: TextStyle(fontSize: 25)),
-//                                subtitle: Text(snapshot
-//                                    .data.documents[index].data["descricao"]
-//                                    .toString()),
+                                subtitle: Text(
+                                  snapshot.data.documents[index].data["prioridade"],
+                                ),
                               ),
                               ButtonTheme.bar(
                                 child: ButtonBar(
