@@ -24,7 +24,7 @@ class _LoginState extends State<Login> {
 
   }
 
-  Future<FirebaseUser> _signIn() async {
+  Future<FirebaseUser> _signInWithGoogle() async {
 
     final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
     final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
@@ -67,7 +67,8 @@ class _LoginState extends State<Login> {
   IconData iconField;
 
   @override
-  Widget build(BuildContext context) {
+  Widget  build(BuildContext context) {
+
     return Scaffold(
         body: SingleChildScrollView(
       child: Center(
@@ -77,28 +78,22 @@ class _LoginState extends State<Login> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+
               _sBox(),
-              _logoAbase(),
-              tituloApp(),
-//              _sBox(),
-              TextField(),
-              TextField(),
-              RaisedButton(
-                onPressed: (){
-                  Navigator.pushReplacement(
-                    context,
-                    new MaterialPageRoute(
-                      builder: (context) => new TabBarHome( ),//userDetails: details
-                    ),
-                  );                },
-              ),
-              botaoLogin()
+              _logoAbase(),SizedBox(height: 10,),
+              tituloApp(),SizedBox(height: 10,),
+              _loginField(),SizedBox(height: 10,),
+              _passwordField(),
+              loginAtendente(context),
+              botaoLoginGoogle()
             ],
           ),
         ),
       ),
     ));
   }
+
+
 
   Text tituloApp() {
     return Text("Help Task",
@@ -108,9 +103,46 @@ class _LoginState extends State<Login> {
             );
   }
 
-  GoogleSignInButton botaoLogin() {
+  TextField _loginField() => TextField(
+    obscureText: false,
+    style: style,
+    decoration: InputDecoration(
+        contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+        hintText: "Email",
+        border:
+        OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
+  );
+
+  TextField _passwordField() => TextField(
+    obscureText: true,
+    style: style,
+    decoration: InputDecoration(
+        contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+        hintText: "senha",
+        border:
+        OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))
+    ),
+  );
+
+  MaterialButton loginAtendente(BuildContext context) {
+    return MaterialButton(
+      elevation: 5.0,
+      child: Text("Login"),
+      color: Color(0xff01A0C7),
+      minWidth: MediaQuery.of(context).size.width - 182,
+      onPressed: (){
+        Navigator.pushReplacement(
+          context,
+          new MaterialPageRoute(
+            builder: (context) => new TabBarHome( ),//userDetails: details
+          ),
+        );                },
+    );
+  }
+
+  GoogleSignInButton botaoLoginGoogle() {
     return GoogleSignInButton(
-              onPressed: () => _signIn()
+              onPressed: () => _signInWithGoogle()
                   .then((FirebaseUser user) => print(user))
                   .catchError((e) => print(e)),
             );
