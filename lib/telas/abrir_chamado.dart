@@ -1,6 +1,6 @@
 import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -16,6 +16,7 @@ class AbrirChamado extends StatefulWidget {
 
 class _AbrirChamadoState extends State<AbrirChamado> {
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
+
   var _valueClassificacao="Hardware";
   var _tiposClassificacao = ["Hardware","Software","Rede","Impressoras","Telefonia"];
 
@@ -23,27 +24,30 @@ class _AbrirChamadoState extends State<AbrirChamado> {
   var _tipoChamado = ["Incidente", "Melhoria", "Requisição de Serviço"];
 
 
-
   TextEditingController tituloChamado = TextEditingController();
   TextEditingController descricaoChamado = TextEditingController();
-  TextEditingController tipoChamado  = TextEditingController();
-  TextEditingController classificacao  = TextEditingController();
   TextEditingController setorChamado = TextEditingController();
 
   File _image ;
 
   Future getImage() async {
     var image = await ImagePicker.pickImage(source: ImageSource.gallery );
-    //                                                ImageSource.gallery
 
     setState(() {
       _image = image;
-      if (_image == null){
-        _image = Image.asset("images/abase.jpg") as File;
-      }
     });
   }
 
+  Future uploadPic(BuildContext context) async{
+    String fileName = _image.path;
+    StorageReference firebaseStorageRef = FirebaseStorage.instance.ref().child(fileName);
+    StorageUploadTask uploadTask = firebaseStorageRef.putFile(_image);
+    StorageTaskSnapshot taskSnapshot=await uploadTask.onComplete;
+    setState(() {
+      print("Profile Picture uploaded");
+      Scaffold.of(context).showSnackBar(SnackBar(content: Text('Profile Picture Uploaded')));
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,33 +55,41 @@ class _AbrirChamadoState extends State<AbrirChamado> {
       appBar: AppBar(
         title: Text("Abrir Chamado"),
       ),
-      body: SingleChildScrollView(
-        padding: EdgeInsets.only(left: 10, right: 10, top: 20, bottom: 20),
-        child: Form(
-          key: formkey,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              _tituloChamado("Título"),
-              _sizedBox(15, 15),
-              _descricaoChamado("Descrição"),
-              _sizedBox(15, 15),
-              _setorChamado("Setor"),
-              _categoriaMenu(),
-              _tipoServicoMenu(),
-              buttonCamera(),
-              buttonBarAbrirCancelar(),
-              ArquivoImagem(image: _image,),
-//              Container(child: ArquivoImagem(image: _image),)
-            ],
+      body: Builder(
+        builder: (context)=>SingleChildScrollView(
+          padding: EdgeInsets.only(left: 10, right: 10, top: 20, bottom: 20),
+          child: Form(
+            key: formkey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                _tituloChamado("Título"),
+                _sizedBox(15, 15),
+                _descricaoChamado("Descrição"),
+                _sizedBox(15, 15),
+                _setorChamado("Setor / Local da ocorrência"),
+                _sizedBox(15, 15),
+                Text("Categoria: "),
+                _categoriaMenu(),
+                _sizedBox(15, 15),
+                Text("Tipo: "),
+                _tipoServicoMenu(),
+                buttonBarAbrirCancelar(),
+                Container(
+                  child: (_image!=null)?Image.file(
+                    _image,
+                    fit: BoxFit.fill,
+                  ):Text("Nenhum arquivo Anexado", style: TextStyle(color: Colors.red,),),
+                )
+
+              ],
+            ),
           ),
         ),
       ),
     );
+
   }
-
-
-
 
   DropdownButton<String> _categoriaMenu() {
     return DropdownButton<String>(
@@ -87,6 +99,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
           child: Text(dropDownStringItem),
         );
       }).toList(),
+
       hint: Text("selecione uma categoria"),
       onChanged: (value) {
         setState(() {
@@ -124,11 +137,11 @@ class _AbrirChamadoState extends State<AbrirChamado> {
 
   IconButton buttonCamera() {
     return IconButton(
-              icon: Icon(Icons.camera_alt),
+              icon: Icon(Icons.attach_file),
               iconSize: 50,
               onPressed: () {
                 getImage();
-                tooltip: 'Pick Image';
+//                tooltip: 'Pick Image';
 
               },
     );
@@ -136,7 +149,13 @@ class _AbrirChamadoState extends State<AbrirChamado> {
 
   ButtonBar buttonBarAbrirCancelar() {
     return ButtonBar(
+
               children: <Widget>[
+                Column(children: <Widget>[
+                  Text("Anexar"),
+                  buttonCamera(),
+                ],),
+
                 _botaoCancelarChamado(),
                 _botaoAbrirChamado(),
               ],
@@ -148,6 +167,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
       child: Text("Concluir"),
       color: Colors.indigo,
       onPressed: () {
+
         if (formkey.currentState.validate()){
           Firestore.instance.collection("chamados").add({
             "titulo": tituloChamado.text,
@@ -156,7 +176,9 @@ class _AbrirChamadoState extends State<AbrirChamado> {
             "classificacao": _valueClassificacao,
             "tipo": _valueTipoChamado,
             "status": "1",
+            "urlImagem": _image.path,
           });
+          uploadPic(context);
           Navigator.of(context).pop();
         }
       },
@@ -224,20 +246,20 @@ class ArquivoImagem extends StatelessWidget {
   const ArquivoImagem({
     Key key,
     @required File image,
-  }) : _image = image, super(key: key);
+  })
+      : _image = image,
+        super(key: key);
 
   final File _image;
-  
+
   @override
   Widget build(BuildContext context) {
-    if (Image.file(_image) != null){
+    if (Image.file(_image) != null) {
       return new Image.file(_image);
-    }else{
-      Placeholder(color: Colors.indigo,);
-    }
+    }return new Image.asset("images/abase.jpg");
   }
-}
 
 
 //cor vermelho abase(169, 36, 37)
 //cor azul abase (62, 64, 149)
+}

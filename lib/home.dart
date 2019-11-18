@@ -45,6 +45,7 @@ class _TabBarHomeState extends State<TabBarHome> {
           ],
           ),
           body: TabBarView(
+            physics: FixedExtentScrollPhysics(),
             children: [
               Espera(),
               Pausa(),

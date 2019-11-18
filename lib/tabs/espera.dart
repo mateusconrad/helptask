@@ -1,5 +1,5 @@
 
-import 'package:app_vai/home.dart';
+
 import 'package:app_vai/telas/showInfo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -118,7 +118,7 @@ class _EsperaState extends State<Espera> {
                   children: <Widget>[
                     Text("Prioridade"),
                     SizedBox(width: 15,),
-                    _DropdownPriodade(),
+                    _dropdownPriodade(),
                   ],
                 ),
               ],
@@ -196,7 +196,7 @@ class _EsperaState extends State<Espera> {
         });
   }
 
-  _DropdownPriodade() {
+  _dropdownPriodade() {
     return DropdownButton<String>(
       items: _tiposPrioridades.map((String dropDownStringItem) {
         return DropdownMenuItem<String>(
