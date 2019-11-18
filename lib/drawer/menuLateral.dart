@@ -1,4 +1,4 @@
-import 'package:app_vai/drawer/Tiles/Graficos/graficos.dart';
+import 'package:app_vai/drawer/Tiles/graficos.dart';
 import 'package:app_vai/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -88,11 +88,9 @@ ListTile _listTileLogout(BuildContext context, IconData iconField, String title,
     subtitle: Text(subTitle),
     onTap: () {
       FirebaseAuth.instance.signOut();
-      // ignore: invalid_use_of_visible_for_testing_member
-      GoogleSignIn.channel.invokeMethod("signOut");
+      GoogleSignIn.standard().signOut();
       Navigator.pop(context);
-      Navigator.pushReplacement(
-          context,
+      Navigator.pushReplacement(context,
           MaterialPageRoute(
               builder: (context) => (Login())));
     }

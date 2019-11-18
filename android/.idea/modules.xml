@@ -6,10 +6,10 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../../flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.11.0+2/android/cloud_firestore.iml" filepath="$PROJECT_DIR$/../../../../flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.11.0+2/android/cloud_firestore.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../../flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.11.1+12/android/firebase_auth.iml" filepath="$PROJECT_DIR$/../../../../flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.11.1+12/android/firebase_auth.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../../flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.4.0+9/android/firebase_core.iml" filepath="$PROJECT_DIR$/../../../../flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.4.0+9/android/firebase_core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../../flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage-3.0.6/android/firebase_storage.iml" filepath="$PROJECT_DIR$/../../../../flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage-3.0.6/android/firebase_storage.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../../flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-4.0.7/android/google_sign_in.iml" filepath="$PROJECT_DIR$/../../../../flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-4.0.7/android/google_sign_in.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../../flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.6.1+8/android/image_picker.iml" filepath="$PROJECT_DIR$/../../../../flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.6.1+8/android/image_picker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.4.1+5/android/firebase_core.iml" filepath="$PROJECT_DIR$/../../../../flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.4.1+5/android/firebase_core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage-3.0.8/android/firebase_storage.iml" filepath="$PROJECT_DIR$/../../../../flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage-3.0.8/android/firebase_storage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-4.0.14/android/google_sign_in.iml" filepath="$PROJECT_DIR$/../../../../flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-4.0.14/android/google_sign_in.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.6.1+11/android/image_picker.iml" filepath="$PROJECT_DIR$/../../../../flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.6.1+11/android/image_picker.iml" />
     </modules>
   </component>
 </project>
