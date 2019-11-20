@@ -45,7 +45,7 @@ class _PausaState extends State<Pausa> {
                         itemBuilder: (context, index) {
                           return Card(
                               child: Column(
-                              children: <Widget>[
+                            children: <Widget>[
                               ListTile(
                                 //snapshot.data.documents[index].documentID.toString()
                                 // - pega o ID
@@ -54,7 +54,8 @@ class _PausaState extends State<Pausa> {
                                         .data.documents[index].data["titulo"],
                                     style: TextStyle(fontSize: 25)),
                                 subtitle: Text(
-                                  snapshot.data.documents[index].data["prioridade"],
+                                  snapshot
+                                      .data.documents[index].data["prioridade"],
                                 ),
                               ),
                               ButtonTheme.bar(
@@ -62,11 +63,13 @@ class _PausaState extends State<Pausa> {
                                   children: <Widget>[
                                     OutlineButton(
                                       child: const Text('Retomar'),
-                                      onPressed: () => retomarChamado(context, index, snapshot),
+                                      onPressed: () => retomarChamado(
+                                          context, index, snapshot),
                                     ),
                                     IconButton(
                                       icon: Icon(Icons.info),
-                                        onPressed: () => showInfo(context, index, snapshot),
+                                      onPressed: () =>
+                                          showInfo(context, index, snapshot),
                                     ),
                                   ],
                                 ),
@@ -80,22 +83,22 @@ class _PausaState extends State<Pausa> {
       ],
     );
   }
+
   retomarChamado(BuildContext context, index, snapshot) {
     showDialog<void>(
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
             title: Text(
-              //  Firestore.instance.collection("chamados").getDocuments()
+                //  Firestore.instance.collection("chamados").getDocuments()
                 snapshot.data.documents[index].data["titulo"]
                     .toString()
                     .toUpperCase()),
             content: Column(
               children: <Widget>[
-                Text(snapshot.data.documents[index].data["descricao"].toString()),
-
+                Text(snapshot.data.documents[index].data["descricao"]
+                    .toString()),
               ],
-
             ),
             actions: <Widget>[
               //prioridade menu goes here
@@ -108,13 +111,13 @@ class _PausaState extends State<Pausa> {
                 child: Text('Retomar'),
                 onPressed: () {
                   snapshot.data.documents[index].data["chamados"].toString();
-                  Firestore.instance.collection("chamados").document(
-                      snapshot.data.documents[index].documentID.toString())
-                      .updateData(
-                      {
-                        "status": "3",
-                      }
-                  );
+                  Firestore.instance
+                      .collection("chamados")
+                      .document(
+                          snapshot.data.documents[index].documentID.toString())
+                      .updateData({
+                    "status": "3",
+                  });
                   Navigator.pop(context);
                 },
               )

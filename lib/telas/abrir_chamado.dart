@@ -76,6 +76,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
                 _tipoServicoMenu(),
                 buttonBarAbrirCancelar(),
                 Container(
+                  //snapshot.data.documents.lenght
                   child: (_image!=null)?Image.file(
                     _image,
                     fit: BoxFit.fill,
@@ -177,6 +178,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
             "tipo": _valueTipoChamado,
             "status": "1",
             "urlImagem": _image.path,
+            //colocar a hora e data aqui
           });
           uploadPic(context);
           Navigator.of(context).pop();

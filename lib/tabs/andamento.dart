@@ -37,7 +37,7 @@ class _AndamentoState extends State<Andamento> {
                         child: Text(
                           "Não há dados!",
                           style:
-                              TextStyle(color: Colors.redAccent, fontSize: 20),
+                          TextStyle(color: Colors.redAccent, fontSize: 20),
                         ),
                       );
                     }
@@ -49,36 +49,36 @@ class _AndamentoState extends State<Andamento> {
                         itemBuilder: (context, index) {
                           return Card(
                               child: Column(
-                            children: <Widget>[
-                              ListTile(
-                                title: Text(
-                                    snapshot.data.documents[index].data["titulo"],
-                                    style: TextStyle(fontSize: 25)
-                                ),
-                                subtitle: Text(
-                                  snapshot.data.documents[index].data["prioridade"],
-                                ),
-                              ),
-                              ButtonTheme.bar(
-                                child: ButtonBar(
-                                  children: <Widget>[
-                                    OutlineButton(
-                                      child: const Text('Finalizar'),
-                                      onPressed: () => finalizarChamado(context, index, snapshot),
+                                children: <Widget>[
+                                  ListTile(
+                                    title: Text(
+                                        snapshot.data.documents[index].data["titulo"],
+                                        style: TextStyle(fontSize: 25)
                                     ),
-                                    OutlineButton(
-                                      child: const Text('Pausar'),
-                                      onPressed: () => pausarChamado(context, index, snapshot),
+                                    subtitle: Text(
+                                      snapshot.data.documents[index].data["prioridade"],
                                     ),
-                                    IconButton(
-                                      icon: Icon(Icons.info),
-                                      onPressed: () => showInfo(context, index, snapshot),
+                                  ),
+                                  ButtonTheme.bar(
+                                    child: ButtonBar(
+                                      children: <Widget>[
+                                        OutlineButton(
+                                          child: const Text('Finalizar'),
+                                          onPressed: () => finalizarChamado(context, index, snapshot),
+                                        ),
+                                        OutlineButton(
+                                          child: const Text('Pausar'),
+                                          onPressed: () => pausarChamado(context, index, snapshot),
+                                        ),
+                                        IconButton(
+                                          icon: Icon(Icons.info),
+                                          onPressed: () => showInfo(context, index, snapshot),
+                                        ),
+                                      ],
                                     ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ));
+                                  ),
+                                ],
+                              ));
                         });
                 }
               }),

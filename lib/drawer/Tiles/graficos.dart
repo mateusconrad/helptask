@@ -1,5 +1,4 @@
 import 'package:charts_flutter/flutter.dart' as charts;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class Graficos extends StatefulWidget {
@@ -13,7 +12,7 @@ class _GraficosState extends State<Graficos> {
 
   @override
   Widget build(BuildContext context) {
-//    var qtdeAberto = Firestore.instance
+    //    var qtdeAberto = Firestore.instance
 //        .collection("chamados")
 //        .where("status", isEqualTo: "1")
 //        .orderBy("titulo")

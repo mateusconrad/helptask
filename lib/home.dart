@@ -16,9 +16,6 @@ class _TabBarHomeState extends State<TabBarHome> {
   String nomeTab = "Chamados";
   DocumentSnapshot dadosBranco;
 
-  List<Filtro> filtros = List();
-
-
   @override
   void initState() {
     super.initState();
@@ -42,7 +39,7 @@ class _TabBarHomeState extends State<TabBarHome> {
             centerTitle: true,
             actions: <Widget>[
               _filtroPopup(),
-          ],
+            ],
           ),
           body: TabBarView(
             physics: FixedExtentScrollPhysics(),
@@ -62,44 +59,45 @@ class _TabBarHomeState extends State<TabBarHome> {
 
   PopupMenuButton<int> _filtroPopup() {
     return PopupMenuButton<int>(
-                  itemBuilder: (context) => <PopupMenuEntry<int>>[
-                    PopupMenuItem<int>(
-                      child: Text("Titulo A-Z"),
-                      value: 1,
-                    ),
-                    PopupMenuItem<int>(
-                      child: Text("Titulo Z-A"),
-                      value: 2,
-                    ),
-                    PopupMenuItem<int>(
-                      child: Text("Data Asc"),
-                      value: 3,
-                    ),
-                    PopupMenuItem<int>(
-                      child: Text("Data Desc"),
-                      value: 4,
-                    ),
-                    PopupMenuItem<int>(
-                      child: Text("Prioridade Alta"),
-                      value: 5,
-                    ),
-                    PopupMenuItem<int>(
-                      child: Text("Prioridade Baixa"),
-                      value: 6,
-                    ),
-                  ],
-                  onSelected: (int resultado) {
-                    setState(() {
-                      switch (resultado) {
-                        case 1:
-                          Firestore.instance.collection("chamados").orderBy(
-                              "titulo", descending: false);
-                          break;
-                        case 2:
-                          Firestore.instance.collection("chamados").orderBy(
-                              "titulo", descending: true);
-                          break;
-                      }
+      itemBuilder: (context) => <PopupMenuEntry<int>>[
+        PopupMenuItem<int>(
+          child: Text("Titulo A-Z"),
+          value: 1,
+        ),
+        PopupMenuItem<int>(
+          child: Text("Titulo Z-A"),
+          value: 2,
+        ),
+        PopupMenuItem<int>(
+          child: Text("Data Asc"),
+          value: 3,
+        ),
+        PopupMenuItem<int>(
+          child: Text("Data Desc"),
+          value: 4,
+        ),
+        PopupMenuItem<int>(
+          child: Text("Prioridade Alta"),
+          value: 5,
+        ),
+        PopupMenuItem<int>(
+          child: Text("Prioridade Baixa"),
+          value: 6,
+        ),
+      ],
+      onSelected: (int resultado) {
+        setState(() {
+          switch (resultado) {
+            case 1:
+
+              Firestore.instance.collection("chamados").orderBy(
+                  "titulo", descending: false);
+              break;
+            case 2:
+              Firestore.instance.collection("chamados").orderBy(
+                  "titulo", descending: true);
+              break;
+          }
 //                      }
 //                      if (resultado == 1) {
 //                        Firestore.instance.collection("chamados").orderBy("titulo", descending: false);
@@ -107,9 +105,9 @@ class _TabBarHomeState extends State<TabBarHome> {
 //                      } else if (resultado == 2) {
 //
 //                      }
-                    });
-                  },
-                );
+        });
+      },
+    );
   }
 
   TabBar buildTabBar() {
@@ -153,10 +151,3 @@ class _TabBarHomeState extends State<TabBarHome> {
 }
 
 //        userDetails: details);
-
-class Filtro {
-  String nome;
-  int idade;
-
-  Filtro(this.nome, this.idade);
-}

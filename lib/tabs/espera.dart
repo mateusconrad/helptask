@@ -1,5 +1,7 @@
 
 
+import 'dart:io';
+
 import 'package:app_vai/telas/showInfo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +10,8 @@ class Espera extends StatefulWidget {
   @override
   _EsperaState createState() => _EsperaState();
 }
+
+
 
 class _EsperaState extends State<Espera> {
   DocumentSnapshot dadosBranco;
@@ -22,10 +26,11 @@ class _EsperaState extends State<Espera> {
       children: <Widget>[
         Expanded(
           child: StreamBuilder(
+
               stream: Firestore.instance
                   .collection("chamados")
                   .where("status", isEqualTo: "1")
-//                  .orderBy("titulo")
+                  .orderBy("titulo")
 //                  .orderBy("prioridade", descending: true)
                   .snapshots(),
 
