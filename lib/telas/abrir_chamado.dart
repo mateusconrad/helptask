@@ -178,8 +178,8 @@ class _AbrirChamadoState extends State<AbrirChamado> {
             "tipo": _valueTipoChamado,
             "status": "1",
             "urlImagem": _image.path,
-            "data": getDiaMesAno(),
-            //colocar a hora e data aqui
+            "dataAbertura": getDiaMesAno(),
+
           });
           uploadPic(context);
           Navigator.of(context).pop();
@@ -250,6 +250,15 @@ class _AbrirChamadoState extends State<AbrirChamado> {
     String diamesano = (dia + '/' + mes + '/' + ano);
 
     return diamesano;
+  }
+
+  String getHoraMinuto() {
+    String hora = DateTime.now().hour.toString();
+    String minuto = DateTime.now().minute.toString();
+
+    String horaChamado = (hora+ ':' + minuto);
+
+    return horaChamado;
   }
 
 }
