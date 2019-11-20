@@ -181,6 +181,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
             "dataAbertura": getDiaMesAno(),
             "horaAbertura": getHoraMinuto(),
           });
+
           uploadPic(context);
           Navigator.of(context).pop();
         }

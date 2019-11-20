@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 showInfo(BuildContext context, index, snapshot){
   var resolucao = snapshot.data.documents[index].data["resolucao"].toString();
   var urlImagem = snapshot.data.documents[index].data["urlImagem"].toString();
-  var data = snapshot.data.documents[index].data["data"].toString();
+  var data = snapshot.data.documents[index].data["dataAbertura"].toString();
+  var hora = snapshot.data.documents[index].data["horaAbertura"].toString();
+
   showDialog<void>(
       context: context,
       builder: (BuildContext context) {
@@ -19,8 +21,8 @@ showInfo(BuildContext context, index, snapshot){
               Text("Classificação: "+snapshot.data.documents[index].data["classificacao"].toString()),
               Text("Tipo: "+snapshot.data.documents[index].data["tipo"].toString()),
               Text("Descrição: "+snapshot.data.documents[index].data["descricao"].toString()),
-              Text("Resolução: "+ resolucao,),
-              Text("Resolução: "+ data,),
+              Text("Abertura: "+ data + " " + hora),
+              Text("Resolução: " + resolucao,),
 //              Image.network(urlImagem, width: 150,),
             ],
           ),
