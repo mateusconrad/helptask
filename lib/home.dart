@@ -13,8 +13,9 @@ class TabBarHome extends StatefulWidget {
 }
 
 class _TabBarHomeState extends State<TabBarHome> {
-  String nomeTab = "Chamados";
+  String nomeTab = "Help Task";
   DocumentSnapshot dadosBranco;
+  TextStyle estilo = TextStyle(fontSize: 12);
 
   @override
   void initState() {
@@ -115,19 +116,19 @@ class _TabBarHomeState extends State<TabBarHome> {
       tabs: [
         Tab(
           icon: Icon(Icons.hourglass_full),
-          text: ("em espera"),
+          child: Text("Em espera", style: estilo,),
         ),
         Tab(
           icon: Icon(Icons.pause),
-          text: ("pausados"),
+          child: Text("Pausados", style: estilo,),
         ),
         Tab(
           icon: Icon(Icons.build),
-          text: ("atendendo"),
+          child: Text("Atendendo", style: estilo,),
         ),
         Tab(
           icon: Icon(Icons.check),
-          text: ("finalizados"),
+          child: Text("Finalizados", style: estilo,),
         ),
       ],
     );
@@ -142,7 +143,6 @@ class _TabBarHomeState extends State<TabBarHome> {
             context,
             MaterialPageRoute(
                 builder: (context) => AbrirChamado("inc", dadosBranco)));
-        //      Navigator.push(context, MaterialPageRoute(builder: (context)=> Netflix   ()));
       },
     );
   }
