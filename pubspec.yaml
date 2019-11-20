@@ -21,7 +21,7 @@ dependencies:
   firebase_core: ^0.4.0+9
   charts_flutter: ^0.8.1
   font_awesome_flutter: ^8.2.0
-
+  pdf_render: ^0.57.1
 
 #dependencias
 dev_dependencies:
@@ -31,10 +31,10 @@ dev_dependencies:
 
 
 flutter:
-
   uses-material-design: true
 
 #assets de imagens
   assets:
     - images/abase.jpg
     - images/yoda.jpg
+    - documents/docs.pdf
