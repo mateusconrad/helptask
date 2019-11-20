@@ -76,7 +76,7 @@ ListTile _listTileGraphics(BuildContext context, IconData iconField,String title
     subtitle: Text(subTitle),
     onTap: () {
       Navigator.push(context,MaterialPageRoute(
-      builder: (context) =>  Graficos()));
+      builder: (context) =>  GraficosPage()));
     }
   );
 }
