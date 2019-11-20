@@ -1,9 +1,9 @@
+import 'package:app_vai/drawer/Tiles/ajuda.dart';
 import 'package:app_vai/drawer/Tiles/graficos.dart';
 import 'package:app_vai/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-
 class MenuLateral extends StatefulWidget {
   @override
   _MenuLateralState createState() => _MenuLateralState();
@@ -65,7 +65,9 @@ ListTile _listTileHelp(BuildContext context, IconData iconField, String title, S
     leading: Icon(iconField),
     title: Text(title),
     subtitle: Text(subTitle),
-    onTap: () => null,
+    onTap: () =>
+        Navigator.push(context,MaterialPageRoute(
+        builder: (context) =>  AjudaPage())),
   );
 }
 

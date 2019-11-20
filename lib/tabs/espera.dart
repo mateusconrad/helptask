@@ -1,7 +1,3 @@
-
-
-import 'dart:io';
-
 import 'package:app_vai/telas/showInfo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -11,9 +7,8 @@ class Espera extends StatefulWidget {
   _EsperaState createState() => _EsperaState();
 }
 
-
-
 class _EsperaState extends State<Espera> {
+
   DocumentSnapshot dadosBranco;
 
   var _valuePrioridade;
