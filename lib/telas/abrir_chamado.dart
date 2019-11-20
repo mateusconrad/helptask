@@ -178,6 +178,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
             "tipo": _valueTipoChamado,
             "status": "1",
             "urlImagem": _image.path,
+            "data": getDiaMesAno(),
             //colocar a hora e data aqui
           });
           uploadPic(context);
@@ -240,8 +241,17 @@ class _AbrirChamadoState extends State<AbrirChamado> {
     if (response == null) {
       return;
     }
-
   }
+
+  String getDiaMesAno() {
+    String dia = DateTime.now().day.toString();
+    String mes = DateTime.now().month.toString();
+    String ano = DateTime.now().year.toString();
+    String diamesano = (dia + '/' + mes + '/' + ano);
+
+    return diamesano;
+  }
+
 }
 
 class ArquivoImagem extends StatelessWidget {
