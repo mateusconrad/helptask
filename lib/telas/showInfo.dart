@@ -7,6 +7,8 @@ showInfo(BuildContext context, index, snapshot){
   var data = snapshot.data.documents[index].data["dataAbertura"].toString();
   var hora = snapshot.data.documents[index].data["horaAbertura"].toString();
 
+
+
   showDialog<void>(
       context: context,
       builder: (BuildContext context) {

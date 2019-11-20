@@ -18,8 +18,7 @@ class _AjudaPageState extends State<AjudaPage> {
 //  assetName: 'documents/docs.pdf',
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new Scaffold(
+      return Scaffold(
           appBar: new AppBar(
             title: const Text('Documentação', style: TextStyle(fontFamily: "Georgia", fontSize: 15),),
             centerTitle: true,
@@ -44,7 +43,6 @@ class _AjudaPageState extends State<AjudaPage> {
                                   alignment: Alignment.bottomCenter,
                                   children: <Widget>[
                                     if (page != null) page,
-
                                     //Text('${index + 1}', style: TextStyle(fontSize: 50)) // adding page number on the bottom of rendered page
                                   ],)
                             )
@@ -53,10 +51,8 @@ class _AjudaPageState extends State<AjudaPage> {
                 ),
               )
           )
-      ),
-    );
+      );
   }
-
 
 
 }

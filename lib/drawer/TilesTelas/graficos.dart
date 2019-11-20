@@ -25,8 +25,8 @@ class _GraficosPageState extends State<GraficosPage> {
       if (!snapshot.hasData) {
         return LinearProgressIndicator();
       } else {
-        snapshot.data.documents.length.;
-        return _buildChart(context, sales);
+        snapshot.data.documents.length;
+        return null;//_buildChart(context, sales);
       }
   }
   );
