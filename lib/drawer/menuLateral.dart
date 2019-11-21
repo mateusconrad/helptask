@@ -113,7 +113,7 @@ ListTile _listTileRegistrarUsuario(BuildContext context, IconData iconField, Str
       onTap: () {
         Navigator.push(context,
             MaterialPageRoute(
-                builder: (context) => (RegistraUsuario())));
+                builder: (context) => (RegistrarAtendente())));
       }
   );
 }
