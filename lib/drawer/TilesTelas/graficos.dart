@@ -33,11 +33,11 @@ class _GraficosPageState extends State<GraficosPage> {
 }
 
 
-class chamados {
+class Chamados {
   final String statusChamados;
   final double qtdeChamados;
 
-  chamados(this.statusChamados, this.qtdeChamados);
+  Chamados(this.statusChamados, this.qtdeChamados);
 }
 
 /*
