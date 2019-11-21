@@ -49,7 +49,7 @@ class _LoginAtendenteState extends State<LoginAtendente> {
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => TabBarHome())))
+                                  builder: (context) => TabBarHomeAtendente())))
                           .catchError((err) => print(err)))
                           .catchError((err) => print(err));
                     }
@@ -68,7 +68,7 @@ class _LoginAtendenteState extends State<LoginAtendente> {
       obscureText: true,
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(labelText: "Senha", icon: Icon(Icons.lock)),
-      keyboardType: TextInputType.emailAddress,
+      keyboardType: TextInputType.visiblePassword,
       controller: senhaUsuario,
       validator: (valor) {
         if (valor.isEmpty) {
@@ -84,7 +84,7 @@ class _LoginAtendenteState extends State<LoginAtendente> {
     return TextFormField(
       decoration:
           InputDecoration(labelText: "Usuário", icon: Icon(Icons.people)),
-      keyboardType: TextInputType.text,
+      keyboardType: TextInputType.emailAddress,
       controller: nomeUsuario,
       autofocus: true,
       validator: (valor) {
