@@ -1,7 +1,6 @@
 import 'package:app_vai/Login/loginAtendente.dart';
-import 'package:app_vai/drawer/TilesTelas/registrarUsuario.dart';
 import 'package:app_vai/drawer/userDetails.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:app_vai/homeUsuarios.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -52,7 +51,7 @@ class _LoginUsuarioState extends State<LoginUsuario> {
     Navigator.pushReplacement(
       context,
       new MaterialPageRoute(
-        builder: (context) => new TabBarHome(), //userDetails: details
+        builder: (context) => new TabBarUsuario(), //userDetails: details
       ),
     );
     return userDetails;
@@ -86,41 +85,7 @@ class _LoginUsuarioState extends State<LoginUsuario> {
     ));
   }
 
-  TextFormField formSenhaAtendente(BuildContext context) {
-    return TextFormField(
-      focusNode: focusSenhaUsuario,
-      autofocus: true,
-      obscureText: true,
-      textInputAction: TextInputAction.next,
-      validator: (valor) {
-        if (valor.isEmpty) {
-          FocusScope.of(context).requestFocus(focusSenhaUsuario);
-          return "Informe a senha";
-        }
-        return null;
-      },
-      decoration: InputDecoration(labelText: "Senha", icon: Icon(Icons.lock)),
-      keyboardType: TextInputType.text,
-      controller: senhaUsuario,
-    );
-  }
-
-  TextFormField formLoginAtendente(BuildContext context) {
-    return TextFormField(
-      validator: (valor) {
-        if (valor.isEmpty) {
-          FocusScope.of(context).requestFocus(focusNomeUsuario);
-          return "Informe o nome";
-        }
-        return null;
-      },
-      decoration:
-          InputDecoration(labelText: "Usuário", icon: Icon(Icons.people)),
-      keyboardType: TextInputType.text,
-      controller: nomeUsuario,
-    );
-  }
-
+//
   Text tituloApp() {
     return Text(
       "Help Task",
@@ -150,3 +115,42 @@ class _LoginUsuarioState extends State<LoginUsuario> {
         ));
   }
 }
+
+
+
+
+
+//TextFormField formSenhaAtendente(BuildContext context) {
+//    return TextFormField(
+//      focusNode: focusSenhaUsuario,
+//      autofocus: true,
+//      obscureText: true,
+//      textInputAction: TextInputAction.next,
+//      validator: (valor) {
+//        if (valor.isEmpty) {
+//          FocusScope.of(context).requestFocus(focusSenhaUsuario);
+//          return "Informe a senha";
+//        }
+//        return null;
+//      },
+//      decoration: InputDecoration(labelText: "Senha", icon: Icon(Icons.lock)),
+//      keyboardType: TextInputType.text,
+//      controller: senhaUsuario,
+//    );
+//  }
+//
+//  TextFormField formLoginAtendente(BuildContext context) {
+//    return TextFormField(
+//      validator: (valor) {
+//        if (valor.isEmpty) {
+//          FocusScope.of(context).requestFocus(focusNomeUsuario);
+//          return "Informe o nome";
+//        }
+//        return null;
+//      },
+//      decoration:
+//          InputDecoration(labelText: "Usuário", icon: Icon(Icons.people)),
+//      keyboardType: TextInputType.text,
+//      controller: nomeUsuario,
+//    );
+//  }
