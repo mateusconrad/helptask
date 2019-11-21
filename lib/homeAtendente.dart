@@ -8,12 +8,12 @@ import 'tabs/andamento.dart';
 import 'tabs/finalizado.dart';
 import 'package:app_vai/telas/abrir_chamado.dart';
 
-class TabBarHomeAtendente extends StatefulWidget {
+class TabBarHome extends StatefulWidget {
   @override
-  _TabBarHomeAtendenteState createState() => _TabBarHomeAtendenteState();
+  _TabBarHomeState createState() => _TabBarHomeState();
 }
 
-class _TabBarHomeAtendenteState extends State<TabBarHomeAtendente> {
+class _TabBarHomeState extends State<TabBarHome> {
   String nomeTab = "Help Task";
   DocumentSnapshot dadosBranco;
   TextStyle estilo = TextStyle(fontSize: 12);

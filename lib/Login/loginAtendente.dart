@@ -17,9 +17,9 @@ class _LoginAtendenteState extends State<LoginAtendente> {
   GlobalKey<FormState> _loginFormKey = GlobalKey<FormState>();
 
   initState() {
-    final GlobalKey<FormState> _loginFormKey = GlobalKey<FormState>();
-    TextEditingController nomeUsuario = TextEditingController();
-    TextEditingController senhaUsuario = TextEditingController();
+    _loginFormKey = GlobalKey<FormState>();
+    nomeUsuario = TextEditingController();
+    senhaUsuario = TextEditingController();
   }
 
   @override
@@ -49,7 +49,7 @@ class _LoginAtendenteState extends State<LoginAtendente> {
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => TabBarHomeAtendente())))
+                                  builder: (context) => TabBarHome())))
                           .catchError((err) => print(err)))
                           .catchError((err) => print(err));
                     }

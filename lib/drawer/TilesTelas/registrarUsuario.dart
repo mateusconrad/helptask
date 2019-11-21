@@ -96,8 +96,7 @@ class _RegistrarAtendenteState extends State<RegistrarAtendente> {
                                   "fname": nomeController.text,
                                   "surname": sobrenomeController.text,
                                   "email": emailController.text,
-                                })
-                                    .then((result) => {
+                                }).then((result) => {
                                   Navigator.pushAndRemoveUntil(
                                       context,
                                       MaterialPageRoute(
