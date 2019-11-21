@@ -17,6 +17,11 @@ class _LoginUsuarioState extends State<LoginUsuario> {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
+  var focusUsuarioUsuario = new FocusNode();
+  var focusSenhaUsuario = new FocusNode();
+
+  TextEditingController usuarioUsuario = TextEditingController();
+  TextEditingController senhaUsuario = TextEditingController();
 
   @override
   void initState() {
@@ -99,19 +104,37 @@ class _LoginUsuarioState extends State<LoginUsuario> {
             );
   }
 
-  TextField _loginField() => TextField(
+  TextFormField _loginField() => TextFormField(
     obscureText: false,
     style: style,
+    controller: usuarioUsuario,
+    textInputAction: TextInputAction.next,
+    validator: (valor) {
+      if (valor.isEmpty) {
+        FocusScope.of(context).requestFocus(focusUsuarioUsuario);
+        return "Informe a senha";
+      }
+      return null;
+    },
     decoration: InputDecoration(
         contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         hintText: "Email",
         border:
         OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
+
   );
 
-  TextField _passwordField() => TextField(
+  TextFormField _passwordField() => TextFormField(
     obscureText: true,
     style: style,
+    controller: senhaUsuario,
+    validator: (valor) {
+      if (valor.isEmpty) {
+        FocusScope.of(context).requestFocus(focusSenhaUsuario);
+        return "Informe a senha";
+      }
+      return null;
+    },
     decoration: InputDecoration(
         contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         hintText: "senha",
