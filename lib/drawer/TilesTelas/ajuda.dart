@@ -15,12 +15,11 @@ class _AjudaPageState extends State<AjudaPage> {
   static const wmargin = (margin + padding) * 2;
   static final controller = ScrollController();
 
-//  assetName: 'documents/docs.pdf',
   @override
   Widget build(BuildContext context) {
       return Scaffold(
           appBar: new AppBar(
-            title: const Text('Documentação', style: TextStyle(fontFamily: "Georgia", fontSize: 15),),
+            title: const Text('Documentação', style: TextStyle(fontFamily: "Georgia", fontSize: 15, ),),
             centerTitle: true,
           ),
           backgroundColor: Colors.grey,
@@ -38,7 +37,6 @@ class _AjudaPageState extends State<AjudaPage> {
                             child: PdfPageView(
                                 pageNumber: index + 1,
                                 calculateSize: (pageWidth, pageHeight, aspectRatio) => Size(constraints.maxWidth - wmargin, (constraints.maxWidth - wmargin) / aspectRatio),
-
                                 customizer: (context, page, size) => Stack(
                                   alignment: Alignment.bottomCenter,
                                   children: <Widget>[

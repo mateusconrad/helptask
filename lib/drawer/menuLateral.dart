@@ -1,6 +1,6 @@
 import 'package:app_vai/drawer/TilesTelas/ajuda.dart';
 import 'package:app_vai/drawer/TilesTelas/graficos.dart';
-import 'package:app_vai/login.dart';
+import 'package:app_vai/Login/loginUsuario.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -95,7 +95,7 @@ ListTile _listTileLogout(BuildContext context, IconData iconField, String title,
       Navigator.pop(context);
       Navigator.pushReplacement(context,
           MaterialPageRoute(
-              builder: (context) => (Login())));
+              builder: (context) => (LoginUsuario())));
     }
   );
 }

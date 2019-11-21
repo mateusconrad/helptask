@@ -2,15 +2,15 @@ import 'package:app_vai/drawer/userDetails.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'home.dart';
+import '../home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class Login extends StatefulWidget {
+class LoginUsuario extends StatefulWidget {
   @override
-  _LoginState createState() => _LoginState();
+  _LoginUsuarioState createState() => _LoginUsuarioState();
 }
 
-class _LoginState extends State<Login> {
+class _LoginUsuarioState extends State<LoginUsuario> {
   final String title = "login";
   TextStyle style = TextStyle(fontSize: 20.0);
 
@@ -84,7 +84,7 @@ class _LoginState extends State<Login> {
               tituloApp(),SizedBox(height: 10,),
               _loginField(),SizedBox(height: 10,),
               _passwordField(),
-              loginAtendente(context),
+              loginUsuario(context),
               botaoLoginGoogle()
             ],
           ),
@@ -122,7 +122,7 @@ class _LoginState extends State<Login> {
     ),
   );
 
-  MaterialButton loginAtendente(BuildContext context) {
+  MaterialButton loginUsuario(BuildContext context) {
     return MaterialButton(
       elevation: 5.0,
       child: Text("Login"),
@@ -157,5 +157,9 @@ class _LoginState extends State<Login> {
                 ));
   }
 }
+
+
+
+
 
 
