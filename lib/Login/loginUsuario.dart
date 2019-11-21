@@ -1,4 +1,5 @@
 import 'package:app_vai/drawer/userDetails.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -17,6 +18,8 @@ class _LoginUsuarioState extends State<LoginUsuario> {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
+  GlobalKey<FormState> formkey = GlobalKey<FormState>();
+
   var focusUsuarioUsuario = new FocusNode();
   var focusSenhaUsuario = new FocusNode();
 
@@ -29,21 +32,20 @@ class _LoginUsuarioState extends State<LoginUsuario> {
   }
 
   Future<FirebaseUser> _signInWithGoogle() async {
-
     final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
-    final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+    final GoogleSignInAuthentication googleAuth =
+        await googleUser.authentication;
 
     final AuthCredential credential = GoogleAuthProvider.getCredential(
       accessToken: googleAuth.accessToken,
       idToken: googleAuth.idToken,
     );
 
-
     FirebaseUser userDetails = (await _auth.signInWithCredential(credential));
     ProviderDetails providerInfo = new ProviderDetails(userDetails.providerId);
-    print("Nome " + userDetails.displayName +"\n");
-    print("Email " + userDetails.email+"\n");
-    print("Photo URL" + userDetails.photoUrl+"\n");
+    print("Nome " + userDetails.displayName + "\n");
+    print("Email " + userDetails.email + "\n");
+    print("Photo URL" + userDetails.photoUrl + "\n");
 
     List<ProviderDetails> providerData = new List<ProviderDetails>();
     providerData.add(providerInfo);
@@ -62,7 +64,7 @@ class _LoginUsuarioState extends State<LoginUsuario> {
     Navigator.pushReplacement(
       context,
       new MaterialPageRoute(
-        builder: (context) => new TabBarHome( ),//userDetails: details
+        builder: (context) => new TabBarHome(), //userDetails: details
       ),
     );
     return userDetails;
@@ -71,10 +73,9 @@ class _LoginUsuarioState extends State<LoginUsuario> {
   IconData iconField;
 
   @override
-  Widget  build(BuildContext context) {
-
+  Widget build(BuildContext context) {
     return Scaffold(
-    body: SingleChildScrollView(
+        body: SingleChildScrollView(
       child: Center(
         child: Padding(
           padding: const EdgeInsets.all(36.0),
@@ -83,9 +84,18 @@ class _LoginUsuarioState extends State<LoginUsuario> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               _sBox(),
-              _logoAbase(),SizedBox(height: 10,),
-              tituloApp(),SizedBox(height: 10,),
-              _loginField(),SizedBox(height: 10,),
+              _logoAbase(),
+              SizedBox(
+                height: 10,
+              ),
+              tituloApp(),
+              SizedBox(
+                height: 10,
+              ),
+              _loginField(),
+              SizedBox(
+                height: 10,
+              ),
               _passwordField(),
               loginUsuario(context),
               botaoLoginGoogle()
@@ -97,51 +107,50 @@ class _LoginUsuarioState extends State<LoginUsuario> {
   }
 
   Text tituloApp() {
-    return Text("Help Task",
-              style: TextStyle(
-                fontSize: 24,
-              ),
-            );
+    return Text(
+      "Help Task",
+      style: TextStyle(
+        fontSize: 24,
+      ),
+    );
   }
 
   TextFormField _loginField() => TextFormField(
-    obscureText: false,
-    style: style,
-    controller: usuarioUsuario,
-    textInputAction: TextInputAction.next,
-    validator: (valor) {
-      if (valor.isEmpty) {
-        FocusScope.of(context).requestFocus(focusUsuarioUsuario);
-        return "Informe a senha";
-      }
-      return null;
-    },
-    decoration: InputDecoration(
-        contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        hintText: "Email",
-        border:
-        OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
-
-  );
+        obscureText: false,
+        style: style,
+        controller: usuarioUsuario,
+        textInputAction: TextInputAction.next,
+        validator: (valor) {
+          if (valor.isEmpty) {
+            FocusScope.of(context).requestFocus(focusUsuarioUsuario);
+            return "Informe a senha";
+          }
+          return null;
+        },
+        decoration: InputDecoration(
+            contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+            hintText: "Email",
+            border:
+                OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
+      );
 
   TextFormField _passwordField() => TextFormField(
-    obscureText: true,
-    style: style,
-    controller: senhaUsuario,
-    validator: (valor) {
-      if (valor.isEmpty) {
-        FocusScope.of(context).requestFocus(focusSenhaUsuario);
-        return "Informe a senha";
-      }
-      return null;
-    },
-    decoration: InputDecoration(
-        contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        hintText: "senha",
-        border:
-        OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))
-    ),
-  );
+        obscureText: true,
+        style: style,
+        controller: senhaUsuario,
+        validator: (valor) {
+          if (valor.isEmpty) {
+            FocusScope.of(context).requestFocus(focusSenhaUsuario);
+            return "Informe a senha";
+          }
+          return null;
+        },
+        decoration: InputDecoration(
+            contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+            hintText: "senha",
+            border:
+                OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
+      );
 
   MaterialButton loginUsuario(BuildContext context) {
     return MaterialButton(
@@ -149,38 +158,40 @@ class _LoginUsuarioState extends State<LoginUsuario> {
       child: Text("Login"),
       color: Color(0xff01A0C7),
       minWidth: MediaQuery.of(context).size.width - 182,
-      onPressed: (){
-        Navigator.pushReplacement(
-          context,
-          new MaterialPageRoute(
-            builder: (context) => new TabBarHome( ),//userDetails: details
-          ),
-        );                },
+      onPressed: () {
+        if (formkey.currentState.validate()) {
+          Firestore.instance
+              .collection("usuarios")
+              .where("login", isEqualTo: usuarioUsuario.text)
+              .where("senha", isEqualTo: senhaUsuario.text)
+              .getDocuments()
+              .then((QuerySnapshot doc) {
+            if (doc.documents.length != 0) {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => TabBarHome()));
+            }
+          });
+        }
+      },
     );
   }
 
   GoogleSignInButton botaoLoginGoogle() {
     return GoogleSignInButton(
-              onPressed: () => _signInWithGoogle()
-                  .then((FirebaseUser user) => print(user))
-                  .catchError((e) => print(e)),
-            );
+      onPressed: () => _signInWithGoogle()
+          .then((FirebaseUser user) => print(user))
+          .catchError((e) => print(e)),
+    );
   }
 
   SizedBox _sBox() => SizedBox(height: 100);
 
   ClipRRect _logoAbase() {
     return ClipRRect(
-                borderRadius: BorderRadius.circular(30),
-                child: Image.asset(
-                  "images/abase.jpg",
-                  height: 200,
-                ));
+        borderRadius: BorderRadius.circular(30),
+        child: Image.asset(
+          "images/abase.jpg",
+          height: 200,
+        ));
   }
 }
-
-
-
-
-
-

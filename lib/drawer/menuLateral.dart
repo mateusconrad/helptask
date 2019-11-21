@@ -101,3 +101,16 @@ ListTile _listTileLogout(BuildContext context, IconData iconField, String title,
 }
 
 
+ListTile _listTileRegistrarUsuario(BuildContext context, IconData iconField, String title, String subTitle ) {
+  return ListTile(
+      leading: Icon(iconField),
+      title: Text(title),
+      subtitle: Text(subTitle),
+      onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(
+                builder: (context) => (LoginUsuario())));
+      }
+  );
+}
+
