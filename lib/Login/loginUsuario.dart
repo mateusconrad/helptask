@@ -21,8 +21,6 @@ class _LoginUsuarioState extends State<LoginUsuario> {
   @override
   void initState() {
     super.initState();
-
-
   }
 
   Future<FirebaseUser> _signInWithGoogle() async {
