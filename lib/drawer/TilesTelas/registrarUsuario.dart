@@ -1,71 +1,171 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:app_vai/Login/loginUsuario.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+class RegistrarAtendente extends StatefulWidget {
+  RegistrarAtendente({Key key}) : super(key: key);
+
+  @override
+  _RegistrarAtendenteState createState() => _RegistrarAtendenteState();
+}
+
+class _RegistrarAtendenteState extends State<RegistrarAtendente> {
+  final GlobalKey<FormState> _keyRegistro = GlobalKey<FormState>();
+  TextEditingController nomeController;
+  TextEditingController sobrenomeController;
+  TextEditingController emailController;
+  TextEditingController senhaController;
+  TextEditingController confirmaSenhaController;
 
 
-GlobalKey<FormState> formkey = GlobalKey<FormState>();
-
-TextEditingController nomeUsuario = TextEditingController();
-TextEditingController senhaUsuario = TextEditingController();
-
-var focusNomeUsuario = new FocusNode();
-var focusSenhaUsuario = new FocusNode();
-
-class RegistraUsuario extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return AlertDialog(
-      content: Column(
-        children: <Widget>[
-          Text("registro"),
-          TextFormField(
-            validator: (valor) {
-              if (valor.isEmpty) {
-                FocusScope.of(context).requestFocus(focusNomeUsuario);
-                return "Informe o nome";
-              }
-              return null;
-            },
-            decoration: InputDecoration(
-                labelText: "Usuário", icon: Icon(Icons.people)),
-            keyboardType: TextInputType.text,
-            controller: nomeUsuario,
-          ),
-          TextFormField(
-            focusNode: focusSenhaUsuario,
-            autofocus: true,
-            obscureText: true,
-            textInputAction: TextInputAction.next,
-            validator: (valor) {
-              if (valor.isEmpty) {
-                FocusScope.of(context).requestFocus(focusSenhaUsuario);
-                return "Informe a senha";
-              }
-              return null;
-            },
-            decoration:
-            InputDecoration(labelText: "Senha", icon: Icon(Icons.lock)),
-            keyboardType: TextInputType.text,
-            controller: senhaUsuario,
-          ),
-          RaisedButton(
-              child: Text(
-                "Registrar-se",
-                style: TextStyle(color: Colors.white),
-              ),
-              color: Colors.blue,
-              onPressed: () {
-//                if (formkey.currentState.validate()) {
-                  Firestore.instance
-                      .collection("usuarios")
-                      .document()
-                      .setData({
-                    'login': nomeUsuario.text,
-                    'senha': senhaUsuario.text,
-                  });
-//                }
-              }),
-        ],
-      ),
-    );
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("Registro Atendente"),
+        ),
+        body: Container(
+            padding: const EdgeInsets.all(20.0),
+            child: SingleChildScrollView(
+                child: Form(
+                  key: _keyRegistro,
+                  child: Column(
+                    children: <Widget>[
+                      TextFormField(
+                        decoration: InputDecoration(
+                            labelText: 'Nome*', hintText: "Samuel da Silveira"),
+                        controller: nomeController,
+                        validator: (value) {
+                          if (value.length < 3) {
+                            return "Insira um nome válido!";
+                          }
+                        },
+                      ),
+                      TextFormField(
+                          decoration: InputDecoration(
+                              labelText: 'Last Name*', hintText: "Doe"),
+                          controller: sobrenomeController,
+                          validator: (value) {
+                            if (value.length < 3) {
+                              return "Insira um sobrenome válido!";
+                            }
+                          }),
+                      TextFormField(
+                        decoration: InputDecoration(
+                            labelText: 'Email', hintText: "samisempai@bol.com"),
+                        controller: emailController,
+                        keyboardType: TextInputType.emailAddress,
+                        validator: emailValidator,
+                      ),
+                      TextFormField(
+                        decoration: InputDecoration(
+                            labelText: 'Password*', hintText: "********"),
+                        controller: senhaController,
+                        obscureText: true,
+                        validator: validaSenha,
+                      ),
+                      TextFormField(
+                        decoration: InputDecoration(
+                            labelText: 'Confirm Password*', hintText: "********"),
+                        controller: confirmaSenhaController,
+                        obscureText: true,
+                        validator: validaSenha,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15),
+                        child: MaterialButton(
+                          minWidth: MediaQuery.of(context).size.width,
+                          child: Text("Registrar"),
+                          color: Colors.blueGrey,
+                          elevation: 30,
+                          textColor: Colors.white,
+                          onPressed: () {
+                            if (_keyRegistro.currentState.validate()) {
+                              if (senhaController.text ==
+                                  confirmaSenhaController.text) {
+                                FirebaseAuth.instance
+                                    .createUserWithEmailAndPassword(
+                                    email: emailController.text,
+                                    password: senhaController.text)
+                                    .then((currentUser) => Firestore.instance
+                                    .collection("users")
+                                    .document(currentUser.uid)
+                                    .setData({
+                                  "uid": currentUser.uid,
+                                  "fname": nomeController.text,
+                                  "surname": sobrenomeController.text,
+                                  "email": emailController.text,
+                                })
+                                    .then((result) => {
+                                  Navigator.pushAndRemoveUntil(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              LoginUsuario()),
+                                          (_) => false),
+                                  nomeController.clear(),
+                                  sobrenomeController.clear(),
+                                  emailController.clear(),
+                                  senhaController.clear(),
+                                  confirmaSenhaController.clear()
+                                })
+                                    .catchError((err) => print(err)))
+                                    .catchError((err) => print(err));
+                              } else {
+                                showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) {
+                                      return AlertDialog(
+                                        title: Text("Error"),
+                                        content: Text("The passwords do not match"),
+                                        actions: <Widget>[
+                                          FlatButton(
+                                            child: Text("Close"),
+                                            onPressed: () {
+                                              Navigator.of(context).pop();
+                                            },
+                                          )
+                                        ],
+                                      );
+                                    });
+                              }
+                            }
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                ))));
   }
+
+  @override
+  initState() {
+    nomeController = new TextEditingController();
+    sobrenomeController = new TextEditingController();
+    emailController = new TextEditingController();
+    senhaController = new TextEditingController();
+    confirmaSenhaController = new TextEditingController();
+    super.initState();
+  }
+
+  String emailValidator(String value) {
+    Pattern pattern =
+        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+    RegExp regex = new RegExp(pattern);
+    !regex.hasMatch(value)? 'Email inválido!': null;
+  }
+  String validaSenha(String value) => (value.length < 8)? 'A senha deve conter no mínimo 8 caracteres!' : null;
 }
+//    if (!regex.hasMatch(value)) {
+//      return 'Email inválido!';
+//    } else {
+//      return null;
+//    }
+
+//
+//    if (value.length < 8) {
+//      return 'A senha deve conter no mínimo 8 caracteres!';
+//    } else {
+//      return null;
+//    }
