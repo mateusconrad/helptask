@@ -54,7 +54,7 @@ class RegistraUsuario extends StatelessWidget {
               ),
               color: Colors.blue,
               onPressed: () {
-                if (formkey.currentState.validate()) {
+//                if (formkey.currentState.validate()) {
                   Firestore.instance
                       .collection("usuarios")
                       .document()
@@ -62,7 +62,7 @@ class RegistraUsuario extends StatelessWidget {
                     'login': nomeUsuario.text,
                     'senha': senhaUsuario.text,
                   });
-                }
+//                }
               }),
         ],
       ),

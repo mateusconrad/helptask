@@ -1,6 +1,7 @@
 import 'package:app_vai/drawer/TilesTelas/ajuda.dart';
 import 'package:app_vai/drawer/TilesTelas/graficos.dart';
 import 'package:app_vai/Login/loginUsuario.dart';
+import 'package:app_vai/drawer/TilesTelas/registrarUsuario.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -51,6 +52,9 @@ class _MenuLateralState extends State<MenuLateral> {
           _listTileLogout(
               context, Icons.power_settings_new, "Sair", "Fazer Logout"),
           _divisor(),
+          _listTileRegistrarUsuario(
+    context, Icons.person_outline, "Novo usuário", "Registrar usuario"
+          ),
         ],
       ),
     );
@@ -109,7 +113,7 @@ ListTile _listTileRegistrarUsuario(BuildContext context, IconData iconField, Str
       onTap: () {
         Navigator.push(context,
             MaterialPageRoute(
-                builder: (context) => (LoginUsuario())));
+                builder: (context) => (RegistraUsuario())));
       }
   );
 }

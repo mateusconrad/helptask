@@ -98,7 +98,7 @@ class _LoginUsuarioState extends State<LoginUsuario> {
               ),
               _passwordField(),
               loginUsuario(context),
-              botaoLoginGoogle()
+              botaoLoginGoogle(),
             ],
           ),
         ),
@@ -160,6 +160,7 @@ class _LoginUsuarioState extends State<LoginUsuario> {
       minWidth: MediaQuery.of(context).size.width - 182,
       onPressed: () {
         if (formkey.currentState.validate()) {
+
           Firestore.instance
               .collection("usuarios")
               .where("login", isEqualTo: usuarioUsuario.text)
