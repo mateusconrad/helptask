@@ -1,5 +1,6 @@
 import 'package:app_vai/drawer/menuLateral.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'tabs/espera.dart';
 import 'tabs/pausados.dart';
@@ -7,12 +8,12 @@ import 'tabs/andamento.dart';
 import 'tabs/finalizado.dart';
 import 'package:app_vai/telas/abrir_chamado.dart';
 
-class TabBarHome extends StatefulWidget {
+class TabBarHomeAtendente extends StatefulWidget {
   @override
-  _TabBarHomeState createState() => _TabBarHomeState();
+  _TabBarHomeAtendenteState createState() => _TabBarHomeAtendenteState();
 }
 
-class _TabBarHomeState extends State<TabBarHome> {
+class _TabBarHomeAtendenteState extends State<TabBarHomeAtendente> {
   String nomeTab = "Help Task";
   DocumentSnapshot dadosBranco;
   TextStyle estilo = TextStyle(fontSize: 12);
@@ -46,8 +47,8 @@ class _TabBarHomeState extends State<TabBarHome> {
             physics: FixedExtentScrollPhysics(),
             children: [
               Espera(),
-              Pausa(),
-              Andamento(),
+              if (EmailAuthProvider != null) Pausa(),
+              if (EmailAuthProvider != null) Andamento(),
               Finalizado(),
             ],
           ),
