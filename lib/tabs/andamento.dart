@@ -13,6 +13,7 @@ class _AndamentoState extends State<Andamento> {
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
   TextEditingController resolucaoChamado  = TextEditingController();
 
+//  Firestore isAdm = Firestore.instance.document("users").snapshots().where("adm", isEqual).
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -67,7 +68,7 @@ class _AndamentoState extends State<Andamento> {
                                           child: const Text('Finalizar'),
                                           onPressed: () => finalizarChamado(context, index, snapshot),
                                         ),
-                                        if (FirebaseAuth == EmailAuthProvider) OutlineButton(
+                                        if ( == EmailAuthProvider) OutlineButton(
                                           child: const Text('Pausar'),
                                           onPressed: () => pausarChamado(context, index, snapshot),
                                         ),

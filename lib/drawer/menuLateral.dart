@@ -14,6 +14,7 @@ class MenuLateral extends StatefulWidget {
 class _MenuLateralState extends State<MenuLateral> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   FirebaseUser user;
+  Divider _divisor() => Divider(color: Colors.white10,height: 30,thickness: 2,);
 
   @override
   void initState() {
@@ -42,7 +43,6 @@ class _MenuLateralState extends State<MenuLateral> {
               backgroundImage: NetworkImage("${user?.photoUrl}", scale: 1.0),
             ),
           ),
-          //SizedBox(height:100,),
           _listTileHelp(context, Icons.help, "Ajuda", "mais informações..."),
           _divisor(),
           _listTileGraphics(
@@ -51,9 +51,9 @@ class _MenuLateralState extends State<MenuLateral> {
           _listTileLogout(
               context, Icons.power_settings_new, "Sair", "Fazer Logout"),
           _divisor(),
-//          if (EmailAuthProvider == GoogleAuthProvider)
+          if (FirebaseAuth != EmailAuthProvider)
             _listTileRegistrarUsuario(context, Icons.person_outline,
-                "Novo usuário", "Registrar usuario"),
+              "Novo usuário", "Registrar usuario"),
         ],
       ),
     );
@@ -61,7 +61,6 @@ class _MenuLateralState extends State<MenuLateral> {
 }
 
 //  Divider _divisor() => Divider();
-Divider _divisor() => Divider();
 
 ListTile _listTileHelp(
     BuildContext context, IconData iconField, String title, String subTitle) {
