@@ -49,7 +49,7 @@ class _LoginAtendenteState extends State<LoginAtendente> {
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => TabBarHome())))
+                                  builder: (context) => TabBarHomeAtendente())))
                           .catchError((err) => print(err)))
                           .catchError((err) => print(err));
                     }

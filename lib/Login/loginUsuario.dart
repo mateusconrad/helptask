@@ -51,7 +51,7 @@ class _LoginUsuarioState extends State<LoginUsuario> {
     Navigator.pushReplacement(
       context,
       new MaterialPageRoute(
-        builder: (context) => new TabBarHome(), //userDetails: details
+        builder: (context) => new TabBarHomeUser(), //userDetails: details
       ),
     );
     return userDetails;
@@ -115,42 +115,3 @@ class _LoginUsuarioState extends State<LoginUsuario> {
         ));
   }
 }
-
-
-
-
-
-//TextFormField formSenhaAtendente(BuildContext context) {
-//    return TextFormField(
-//      focusNode: focusSenhaUsuario,
-//      autofocus: true,
-//      obscureText: true,
-//      textInputAction: TextInputAction.next,
-//      validator: (valor) {
-//        if (valor.isEmpty) {
-//          FocusScope.of(context).requestFocus(focusSenhaUsuario);
-//          return "Informe a senha";
-//        }
-//        return null;
-//      },
-//      decoration: InputDecoration(labelText: "Senha", icon: Icon(Icons.lock)),
-//      keyboardType: TextInputType.text,
-//      controller: senhaUsuario,
-//    );
-//  }
-//
-//  TextFormField formLoginAtendente(BuildContext context) {
-//    return TextFormField(
-//      validator: (valor) {
-//        if (valor.isEmpty) {
-//          FocusScope.of(context).requestFocus(focusNomeUsuario);
-//          return "Informe o nome";
-//        }
-//        return null;
-//      },
-//      decoration:
-//          InputDecoration(labelText: "Usuário", icon: Icon(Icons.people)),
-//      keyboardType: TextInputType.text,
-//      controller: nomeUsuario,
-//    );
-//  }

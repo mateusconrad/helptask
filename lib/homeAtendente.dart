@@ -1,22 +1,22 @@
 import 'package:app_vai/drawer/menuLateral.dart';
+import 'package:app_vai/tabs/atendente/espera.dart';
+import 'package:app_vai/tabs/atendente/pausados.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'tabs/espera.dart';
-import 'tabs/pausados.dart';
-import 'tabs/andamento.dart';
-import 'tabs/finalizado.dart';
+import 'tabs/atendente/andamento.dart';
+import 'tabs/atendente/finalizado.dart';
 import 'package:app_vai/telas/abrir_chamado.dart';
 
-class TabBarHome extends StatefulWidget {
+class TabBarHomeAtendente extends StatefulWidget {
   @override
-  _TabBarHomeState createState() => _TabBarHomeState();
+  _TabBarHomeAtendenteState createState() => _TabBarHomeAtendenteState();
 }
 
-class _TabBarHomeState extends State<TabBarHome> {
+class _TabBarHomeAtendenteState extends State<TabBarHomeAtendente> {
   String nomeTab = "Help Task";
   DocumentSnapshot dadosBranco;
   TextStyle estilo = TextStyle(fontSize: 12);
+
 
   @override
   void initState() {
@@ -47,8 +47,8 @@ class _TabBarHomeState extends State<TabBarHome> {
             physics: FixedExtentScrollPhysics(),
             children: [
               Espera(),
-              if (EmailAuthProvider != null) Pausa(),
-              if (EmailAuthProvider != null) Andamento(),
+              Pausa(),
+              Andamento(),
               Finalizado(),
             ],
           ),
@@ -61,7 +61,8 @@ class _TabBarHomeState extends State<TabBarHome> {
 
   PopupMenuButton<int> _filtroPopup() {
     return PopupMenuButton<int>(
-      itemBuilder: (context) => <PopupMenuEntry<int>>[
+      itemBuilder: (context) =>
+      <PopupMenuEntry<int>>[
         PopupMenuItem<int>(
           child: Text("Titulo A-Z"),
           value: 1,
@@ -91,7 +92,6 @@ class _TabBarHomeState extends State<TabBarHome> {
         setState(() {
           switch (resultado) {
             case 1:
-
               Firestore.instance.collection("chamados").orderBy(
                   "titulo", descending: false);
               break;
@@ -99,14 +99,23 @@ class _TabBarHomeState extends State<TabBarHome> {
               Firestore.instance.collection("chamados").orderBy(
                   "titulo", descending: true);
               break;
+            case 3:
+              Firestore.instance.collection("chamados").orderBy(
+                  "data", descending: false);
+              break;
+            case 4:
+              Firestore.instance.collection("chamados").orderBy(
+                  "data", descending: true);
+              break;
+            case 5:
+              Firestore.instance.collection("chamados").orderBy(
+                  "prioridade", descending: false);
+              break;
+            case 6:
+              Firestore.instance.collection("chamados").orderBy(
+                  "prioridade", descending: true);
+              break;
           }
-//                      }
-//                      if (resultado == 1) {
-//                        Firestore.instance.collection("chamados").orderBy("titulo", descending: false);
-//                        //filtros.sort((a, b) {return a.nome.toLowerCase().compareTo(b.nome.toLowerCase());});
-//                      } else if (resultado == 2) {
-//
-//                      }
         });
       },
     );
@@ -147,7 +156,6 @@ class _TabBarHomeState extends State<TabBarHome> {
       },
     );
   }
-
 
 }
 
