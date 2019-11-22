@@ -2,6 +2,7 @@ import 'package:app_vai/drawer/menuLateral.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'tabs/espera.dart';
 import 'tabs/pausados.dart';
 import 'tabs/andamento.dart';
@@ -51,8 +52,8 @@ class _TabBarHomeState extends State<TabBarHome> {
             physics: FixedExtentScrollPhysics(),
             children: [
               Espera(),
-              if (EmailAuthProvider != null) Pausa(),
-              if (EmailAuthProvider != null) Andamento(),
+              Pausa(),
+              Andamento(),
               Finalizado(),
             ],
           ),
@@ -125,13 +126,6 @@ class _TabBarHomeState extends State<TabBarHome> {
                   .orderBy("data", descending: true).toString();
               break;
           }
-//                      }
-//                      if (resultado == 1) {
-//                        Firestore.instance.collection("chamados").orderBy("titulo", descending: false);
-//                        //filtros.sort((a, b) {return a.nome.toLowerCase().compareTo(b.nome.toLowerCase());});
-//                      } else if (resultado == 2) {
-//
-//                      }
           ResultadoGlobal = resultado;
         });
       },
