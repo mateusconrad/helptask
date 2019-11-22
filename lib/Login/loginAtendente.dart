@@ -17,6 +17,7 @@ class _LoginAtendenteState extends State<LoginAtendente> {
   GlobalKey<FormState> _loginFormKey = GlobalKey<FormState>();
 
   initState() {
+    super.initState();
     _loginFormKey = GlobalKey<FormState>();
     nomeUsuario = TextEditingController();
     senhaUsuario = TextEditingController();

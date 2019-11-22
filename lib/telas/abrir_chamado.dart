@@ -42,6 +42,7 @@ class _AbrirChamadoState extends State<AbrirChamado> {
     String fileName = _image.path;
     StorageReference firebaseStorageRef = FirebaseStorage.instance.ref().child(fileName);
     StorageUploadTask uploadTask = firebaseStorageRef.putFile(_image);
+    // ignore: unused_local_variable
     StorageTaskSnapshot taskSnapshot=await uploadTask.onComplete;
     setState(() {
       print("Profile Picture uploaded");
