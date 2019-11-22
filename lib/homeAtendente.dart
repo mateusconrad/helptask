@@ -18,10 +18,14 @@ class _TabBarHomeState extends State<TabBarHome> {
   DocumentSnapshot dadosBranco;
   TextStyle estilo = TextStyle(fontSize: 12);
 
+  // ignore: non_constant_identifier_names
+  int ResultadoGlobal = 0;
+  Firestore queryFiltro = new Firestore();
   @override
   void initState() {
     super.initState();
     buildTabBar();
+
   }
 
   Widget build(BuildContext context) {
@@ -91,13 +95,34 @@ class _TabBarHomeState extends State<TabBarHome> {
         setState(() {
           switch (resultado) {
             case 1:
-
-              Firestore.instance.collection("chamados").orderBy(
-                  "titulo", descending: false);
+              queryFiltro
+                  .collection("chamados")
+                  .orderBy("titulo", descending: false).toString();
               break;
             case 2:
-              Firestore.instance.collection("chamados").orderBy(
-                  "titulo", descending: true);
+              queryFiltro
+                  .collection("chamados")
+                  .orderBy("titulo", descending: true).toString();
+              break;
+            case 3:
+              queryFiltro
+                  .collection("chamados")
+                  .orderBy("data", descending: false).toString();
+              break;
+            case 4:
+              queryFiltro
+                  .collection("chamados")
+                  .orderBy("data", descending: true).toString();
+              break;
+            case 5:
+              queryFiltro
+                  .collection("chamados")
+                  .orderBy("prioridade", descending: false).toString();
+              break;
+            case 6:
+              queryFiltro
+                  .collection("chamados")
+                  .orderBy("data", descending: true).toString();
               break;
           }
 //                      }
@@ -107,6 +132,7 @@ class _TabBarHomeState extends State<TabBarHome> {
 //                      } else if (resultado == 2) {
 //
 //                      }
+          ResultadoGlobal = resultado;
         });
       },
     );
@@ -117,19 +143,31 @@ class _TabBarHomeState extends State<TabBarHome> {
       tabs: [
         Tab(
           icon: Icon(Icons.hourglass_full),
-          child: Text("Em espera", style: estilo,),
+          child: Text(
+            "Em espera",
+            style: estilo,
+          ),
         ),
         Tab(
           icon: Icon(Icons.pause),
-          child: Text("Pausados", style: estilo,),
+          child: Text(
+            "Pausados",
+            style: estilo,
+          ),
         ),
         Tab(
           icon: Icon(Icons.build),
-          child: Text("Atendendo", style: estilo,),
+          child: Text(
+            "Atendendo",
+            style: estilo,
+          ),
         ),
         Tab(
           icon: Icon(Icons.check),
-          child: Text("Finalizados", style: estilo,),
+          child: Text(
+            "Finalizados",
+            style: estilo,
+          ),
         ),
       ],
     );
@@ -147,8 +185,6 @@ class _TabBarHomeState extends State<TabBarHome> {
       },
     );
   }
-
-
 }
 
 //        userDetails: details);
