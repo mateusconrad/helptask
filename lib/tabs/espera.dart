@@ -1,5 +1,6 @@
 import 'package:app_vai/telas/showInfo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Espera extends StatefulWidget {
@@ -61,8 +62,9 @@ class _EsperaState extends State<Espera> {
                                     snapshot.data.documents[index].data["titulo"].toString(),
                                     style: TextStyle(fontSize: 25)),
                                 ),
+
 //                              Text(snapshot.data),
-                              ButtonTheme.bar(
+                                ButtonTheme.bar(
                                 child: ButtonBar(
                                   children: <Widget>[
                                     OutlineButton(
@@ -71,7 +73,7 @@ class _EsperaState extends State<Espera> {
                                         finalizarChamado(context, index, snapshot);
                                       },
                                     ),
-                                    OutlineButton(
+                                    if (EmailAuthProvider == GoogleAuthProvider) OutlineButton(
                                       child: const Text('Atender'),
                                       onPressed: () => atenderChamado(
                                           context,
@@ -111,7 +113,6 @@ class _EsperaState extends State<Espera> {
             content: Column(
               children: <Widget>[
                 Text(snapshot.data.documents[index].data["descricao"].toString()),
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.end,

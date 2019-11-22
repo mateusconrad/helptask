@@ -1,5 +1,6 @@
 import 'package:app_vai/telas/showInfo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -62,11 +63,11 @@ class _AndamentoState extends State<Andamento> {
                                   ButtonTheme.bar(
                                     child: ButtonBar(
                                       children: <Widget>[
-                                        OutlineButton(
+                                        if (EmailAuthProvider == GoogleAuthProvider) OutlineButton(
                                           child: const Text('Finalizar'),
                                           onPressed: () => finalizarChamado(context, index, snapshot),
                                         ),
-                                        OutlineButton(
+                                        if (EmailAuthProvider == GoogleAuthProvider) OutlineButton(
                                           child: const Text('Pausar'),
                                           onPressed: () => pausarChamado(context, index, snapshot),
                                         ),

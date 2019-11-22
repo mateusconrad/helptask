@@ -47,8 +47,6 @@ class _FinalizadoState extends State<Finalizado> {
                               child: Column(
                                 children: <Widget>[
                                   ListTile(
-                                    //snapshot.data.documents[index].documentID.toString()
-                                    // - pega o ID
                                     title: Text(
                                         snapshot
                                             .data.documents[index].data["titulo"],

@@ -1,5 +1,6 @@
 import 'package:app_vai/telas/showInfo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Pausa extends StatefulWidget {
@@ -61,7 +62,7 @@ class _PausaState extends State<Pausa> {
                               ButtonTheme.bar(
                                 child: ButtonBar(
                                   children: <Widget>[
-                                    OutlineButton(
+                                    if (EmailAuthProvider == GoogleAuthProvider) OutlineButton(
                                       child: const Text('Retomar'),
                                       onPressed: () => retomarChamado(
                                           context, index, snapshot),
