@@ -1,5 +1,6 @@
 import 'package:app_vai/telas/showInfo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Espera extends StatefulWidget {
@@ -77,8 +78,6 @@ class _EsperaState extends State<Espera> {
                                           context,
                                           index,
                                           snapshot),
-//                          snapshot.data
-//                              .documents[index])
                                     ),
                                     IconButton(
                                       icon: Icon(Icons.info),

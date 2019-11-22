@@ -8,6 +8,11 @@ class Pausa extends StatefulWidget {
 }
 
 class _PausaState extends State<Pausa> {
+
+  var queryAdm= Firestore.instance.document("users").snapshots();
+
+
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -118,7 +123,7 @@ class _PausaState extends State<Pausa> {
                       .updateData({
                     "status": "3",
                   });
-                  Navigator.pop(context);
+                  //                  Navigator.pop(context);
                 },
               )
             ],
