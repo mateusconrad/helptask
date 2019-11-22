@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 showInfo(BuildContext context, index, snapshot) async {
 
   var resolucao = snapshot.data.documents[index].data["resolucao"].toString();
-//  final imageUrl = Fstorage.ref().child('').child(snapshot['imageName']);
-//  var imageUrl = FirebaseStorage.instance.ref().child('').child(snapshot[{}])
   var urlImagem =snapshot.data.documents[index].data["urlImagem"];
   final imagem = await urlImagem.getDownloadUrl();
   var data = snapshot.data.documents[index].data["dataAbertura"].toString();
