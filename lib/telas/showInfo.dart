@@ -29,9 +29,11 @@ showInfo(BuildContext context, index, snapshot) {
               Text(
                 "Resolução: " + resolucao,
               ),
-              Image.network(
-                urlImagem,
-                width: 150,
+              Container(
+                child: Image.network(
+                  urlImagem,
+                  width: 150,
+                ),
               ),
             ],
           ),
