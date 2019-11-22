@@ -62,7 +62,7 @@ class _PausaState extends State<Pausa> {
                               ButtonTheme.bar(
                                 child: ButtonBar(
                                   children: <Widget>[
-                                    if (EmailAuthProvider == GoogleAuthProvider) OutlineButton(
+                                    if (FirebaseAuth == EmailAuthProvider) OutlineButton(
                                       child: const Text('Retomar'),
                                       onPressed: () => retomarChamado(
                                           context, index, snapshot),

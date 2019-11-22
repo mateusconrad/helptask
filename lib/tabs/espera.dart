@@ -67,13 +67,13 @@ class _EsperaState extends State<Espera> {
                                 ButtonTheme.bar(
                                 child: ButtonBar(
                                   children: <Widget>[
-                                    OutlineButton(
+                                    if (FirebaseAuth == EmailAuthProvider) OutlineButton(
                                       child: const Text('Finalizar'),
                                       onPressed: () {
                                         finalizarChamado(context, index, snapshot);
                                       },
                                     ),
-                                    if (EmailAuthProvider == GoogleAuthProvider) OutlineButton(
+                                    if (FirebaseAuth == EmailAuthProvider) OutlineButton(
                                       child: const Text('Atender'),
                                       onPressed: () => atenderChamado(
                                           context,
@@ -113,6 +113,7 @@ class _EsperaState extends State<Espera> {
             content: Column(
               children: <Widget>[
                 Text(snapshot.data.documents[index].data["descricao"].toString()),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.end,

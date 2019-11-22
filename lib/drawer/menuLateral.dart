@@ -39,9 +39,8 @@ class _MenuLateralState extends State<MenuLateral> {
             accountName: Text("${user?.displayName}"),
             accountEmail: Text("${user?.email}"),
             currentAccountPicture: CircleAvatar(
-              backgroundImage:  NetworkImage("${user?.photoUrl}", scale: 1.0),
+              backgroundImage: NetworkImage("${user?.photoUrl}", scale: 1.0),
             ),
-
           ),
           //SizedBox(height:100,),
           _listTileHelp(context, Icons.help, "Ajuda", "mais informações..."),
@@ -52,69 +51,64 @@ class _MenuLateralState extends State<MenuLateral> {
           _listTileLogout(
               context, Icons.power_settings_new, "Sair", "Fazer Logout"),
           _divisor(),
-          _listTileRegistrarUsuario(
-    context, Icons.person_outline, "Novo usuário", "Registrar usuario"
-          ),
+//          if (EmailAuthProvider == GoogleAuthProvider)
+            _listTileRegistrarUsuario(context, Icons.person_outline,
+                "Novo usuário", "Registrar usuario"),
         ],
       ),
     );
   }
-
 }
 
 //  Divider _divisor() => Divider();
 Divider _divisor() => Divider();
 
-ListTile _listTileHelp(BuildContext context, IconData iconField, String title, String subTitle ) {
+ListTile _listTileHelp(
+    BuildContext context, IconData iconField, String title, String subTitle) {
   return ListTile(
     leading: Icon(iconField),
     title: Text(title),
     subtitle: Text(subTitle),
-    onTap: () =>
-        Navigator.push(context,MaterialPageRoute(
-        builder: (context) =>  AjudaPage())),
+    onTap: () => Navigator.push(
+        context, MaterialPageRoute(builder: (context) => AjudaPage())),
   );
 }
 
-ListTile _listTileGraphics(BuildContext context, IconData iconField,String title, String subTitle) {
+ListTile _listTileGraphics(
+    BuildContext context, IconData iconField, String title, String subTitle) {
   return ListTile(
-    leading: Icon(iconField),
-    title: Text(title),
-    subtitle: Text(subTitle),
-    onTap: () {
-      Navigator.push(context,MaterialPageRoute(
-      builder: (context) =>  GraficosPage()));
-    }
-  );
+      leading: Icon(iconField),
+      title: Text(title),
+      subtitle: Text(subTitle),
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => GraficosPage()));
+      });
 }
 
-ListTile _listTileLogout(BuildContext context, IconData iconField, String title, String subTitle ) {
+ListTile _listTileLogout(
+    BuildContext context, IconData iconField, String title, String subTitle) {
   return ListTile(
-    leading: Icon(iconField),
-    title: Text(title),
-    subtitle: Text(subTitle),
-    onTap: () {
-      FirebaseAuth.instance.signOut();
-      GoogleSignIn.standard().signOut();
-      Navigator.pop(context);
-      Navigator.pushReplacement(context,
-          MaterialPageRoute(
-              builder: (context) => (LoginUsuario())));
-    }
-  );
+      leading: Icon(iconField),
+      title: Text(title),
+      subtitle: Text(subTitle),
+      onTap: () {
+        FirebaseAuth.instance.signOut();
+        GoogleSignIn.standard().signOut();
+        Navigator.pop(context);
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => (LoginUsuario())));
+      });
 }
 
-
-ListTile _listTileRegistrarUsuario(BuildContext context, IconData iconField, String title, String subTitle ) {
+ListTile _listTileRegistrarUsuario(
+    BuildContext context, IconData iconField, String title, String subTitle) {
   return ListTile(
       leading: Icon(iconField),
       title: Text(title),
       subtitle: Text(subTitle),
       onTap: () {
         Navigator.push(context,
-            MaterialPageRoute(
-                builder: (context) => (RegistrarAtendente())));
-      }
-  );
+            MaterialPageRoute(builder: (context) => (RegistrarAtendente())));
+      });
 }
-

@@ -63,11 +63,11 @@ class _AndamentoState extends State<Andamento> {
                                   ButtonTheme.bar(
                                     child: ButtonBar(
                                       children: <Widget>[
-                                        if (EmailAuthProvider == GoogleAuthProvider) OutlineButton(
+                                        if (FirebaseAuth == EmailAuthProvider) OutlineButton(
                                           child: const Text('Finalizar'),
                                           onPressed: () => finalizarChamado(context, index, snapshot),
                                         ),
-                                        if (EmailAuthProvider == GoogleAuthProvider) OutlineButton(
+                                        if (FirebaseAuth == EmailAuthProvider) OutlineButton(
                                           child: const Text('Pausar'),
                                           onPressed: () => pausarChamado(context, index, snapshot),
                                         ),

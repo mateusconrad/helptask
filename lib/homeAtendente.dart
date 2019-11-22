@@ -92,45 +92,47 @@ class _TabBarHomeState extends State<TabBarHome> {
           value: 6,
         ),
       ],
-      onSelected: (int resultado) {
-        setState(() {
-          switch (resultado) {
-            case 1:
-              queryFiltro
-                  .collection("chamados")
-                  .orderBy("titulo", descending: false).toString();
-              break;
-            case 2:
-              queryFiltro
-                  .collection("chamados")
-                  .orderBy("titulo", descending: true).toString();
-              break;
-            case 3:
-              queryFiltro
-                  .collection("chamados")
-                  .orderBy("data", descending: false).toString();
-              break;
-            case 4:
-              queryFiltro
-                  .collection("chamados")
-                  .orderBy("data", descending: true).toString();
-              break;
-            case 5:
-              queryFiltro
-                  .collection("chamados")
-                  .orderBy("prioridade", descending: false).toString();
-              break;
-            case 6:
-              queryFiltro
-                  .collection("chamados")
-                  .orderBy("data", descending: true).toString();
-              break;
-          }
-          ResultadoGlobal = resultado;
-        });
-      },
+      onSelected: switchCaseMenuItem,
     );
   }
+
+  void switchCaseMenuItem(int resultado) {
+      setState(() {
+        switch (resultado) {
+          case 1:
+            queryFiltro
+                .collection("chamados")
+                .orderBy("titulo", descending: false).toString();
+            break;
+          case 2:
+            queryFiltro
+                .collection("chamados")
+                .orderBy("titulo", descending: true).toString();
+            break;
+          case 3:
+            queryFiltro
+                .collection("chamados")
+                .orderBy("data", descending: false).toString();
+            break;
+          case 4:
+            queryFiltro
+                .collection("chamados")
+                .orderBy("data", descending: true).toString();
+            break;
+          case 5:
+            queryFiltro
+                .collection("chamados")
+                .orderBy("prioridade", descending: false).toString();
+            break;
+          case 6:
+            queryFiltro
+                .collection("chamados")
+                .orderBy("data", descending: true).toString();
+            break;
+        }
+        ResultadoGlobal = resultado;
+      });
+    }
 
   TabBar buildTabBar() {
     return TabBar(
