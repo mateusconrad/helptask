@@ -1,13 +1,15 @@
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 
-showInfo(BuildContext context, index, snapshot){
+showInfo(BuildContext context, index, snapshot) async {
+
   var resolucao = snapshot.data.documents[index].data["resolucao"].toString();
-  var urlImagem = snapshot.data.documents[index].data["urlImagem"].toString();
+//  final imageUrl = Fstorage.ref().child('').child(snapshot['imageName']);
+//  var imageUrl = FirebaseStorage.instance.ref().child('').child(snapshot[{}])
+  var urlImagem =snapshot.data.documents[index].data["urlImagem"];
+  final imagem = await urlImagem.getDownloadUrl();
   var data = snapshot.data.documents[index].data["dataAbertura"].toString();
   var hora = snapshot.data.documents[index].data["horaAbertura"].toString();
-
-
 
   showDialog<void>(
       context: context,
@@ -25,7 +27,7 @@ showInfo(BuildContext context, index, snapshot){
               Text("Descrição: "+snapshot.data.documents[index].data["descricao"].toString()),
               Text("Abertura: "+ data + " " + hora),
               Text("Resolução: " + resolucao,),
-//              Image.network(urlImagem, width: 150,),
+              Image.network(imagem.toString(), width: 150,),
             ],
           ),
         );
