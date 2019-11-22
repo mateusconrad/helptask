@@ -32,8 +32,8 @@ class _LoginAtendenteState extends State<LoginAtendente> {
           child: Column(
             children: <Widget>[
               Text("Acesso Atendente",),
-              FieldUser(context),
-              FieldSenha(context),
+              fieldUser(context),
+              fieldSenha(context),
               RaisedButton(
                   onPressed: (){
                     if (_loginFormKey.currentState.validate()) {
@@ -62,7 +62,7 @@ class _LoginAtendenteState extends State<LoginAtendente> {
     );
   }
 
-  TextFormField FieldSenha(BuildContext context) {
+  TextFormField fieldSenha(BuildContext context) {
     return TextFormField(
       focusNode: focusSenhaUsuario,
       obscureText: true,
@@ -80,7 +80,7 @@ class _LoginAtendenteState extends State<LoginAtendente> {
     );
   }
 
-  TextFormField FieldUser(BuildContext context) {
+  TextFormField fieldUser(BuildContext context) {
     return TextFormField(
       decoration:
           InputDecoration(labelText: "Usuário", icon: Icon(Icons.people)),

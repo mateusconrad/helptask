@@ -1,5 +1,6 @@
 import 'package:app_vai/telas/showInfo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -12,6 +13,7 @@ class _AndamentoState extends State<Andamento> {
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
   TextEditingController resolucaoChamado  = TextEditingController();
 
+//  Firestore isAdm = Firestore.instance.document("users").snapshots().where("adm", isEqual).
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -62,11 +64,11 @@ class _AndamentoState extends State<Andamento> {
                                   ButtonTheme.bar(
                                     child: ButtonBar(
                                       children: <Widget>[
-                                        OutlineButton(
+                                        if (FirebaseAuth == EmailAuthProvider) OutlineButton(
                                           child: const Text('Finalizar'),
                                           onPressed: () => finalizarChamado(context, index, snapshot),
                                         ),
-                                        OutlineButton(
+                                        if ( == EmailAuthProvider) OutlineButton(
                                           child: const Text('Pausar'),
                                           onPressed: () => pausarChamado(context, index, snapshot),
                                         ),

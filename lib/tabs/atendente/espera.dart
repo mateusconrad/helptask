@@ -62,17 +62,18 @@ class _EsperaState extends State<Espera> {
                                     snapshot.data.documents[index].data["titulo"].toString(),
                                     style: TextStyle(fontSize: 25)),
                                 ),
+
 //                              Text(snapshot.data),
-                              ButtonTheme.bar(
+                                ButtonTheme.bar(
                                 child: ButtonBar(
                                   children: <Widget>[
-                                    OutlineButton(
+                                    if (FirebaseAuth == EmailAuthProvider) OutlineButton(
                                       child: const Text('Finalizar'),
                                       onPressed: () {
                                         finalizarChamado(context, index, snapshot);
                                       },
                                     ),
-                                    OutlineButton(
+                                    if (FirebaseAuth == EmailAuthProvider) OutlineButton(
                                       child: const Text('Atender'),
                                       onPressed: () => atenderChamado(
                                           context,

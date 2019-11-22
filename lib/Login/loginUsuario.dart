@@ -1,6 +1,5 @@
 import 'package:app_vai/Login/loginAtendente.dart';
 import 'package:app_vai/drawer/userDetails.dart';
-import 'package:app_vai/homeUsuarios.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -103,8 +102,6 @@ class _LoginUsuarioState extends State<LoginUsuario> {
           .catchError((e) => print(e)),
     );
   }
-
-  SizedBox _sBox() => SizedBox(height: 100);
 
   ClipRRect _logoAbase() {
     return ClipRRect(
