@@ -1,7 +1,7 @@
+import 'package:app_vai/Drawer/drawerUsuario/menuLateral.dart';
 import 'package:flutter/material.dart';
-import 'package:app_vai/drawer/menuLateral.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'tabs/usuario/andamento.dart';
+import 'tabs/atendente/andamento.dart';
 import 'tabs/usuario/finalizado.dart';
 import 'tabs/usuario/espera.dart';
 import 'tabs/usuario/pausados.dart';
@@ -53,7 +53,7 @@ class _TabBarHomeUserState extends State<TabBarHomeUser> {
             ],
           ),
           floatingActionButton: _addChamado(context),
-          drawer: MenuLateral(),
+          drawer: MenuLateralUsuario(),
         ),
       ),
     );
@@ -90,32 +90,7 @@ class _TabBarHomeUserState extends State<TabBarHomeUser> {
       ],
       onSelected: (int resultado) {
         setState(() {
-          switch (resultado) {
-            case 1:
-              Firestore.instance.collection("chamados").orderBy(
-                  "titulo", descending: false);
-              break;
-            case 2:
-              Firestore.instance.collection("chamados").orderBy(
-                  "titulo", descending: true);
-              break;
-            case 3:
-              Firestore.instance.collection("chamados").orderBy(
-                  "data", descending: false);
-              break;
-            case 4:
-              Firestore.instance.collection("chamados").orderBy(
-                  "data", descending: true);
-              break;
-            case 5:
-              Firestore.instance.collection("chamados").orderBy(
-                  "prioridade", descending: false);
-              break;
-            case 6:
-              Firestore.instance.collection("chamados").orderBy(
-                  "prioridade", descending: true);
-              break;
-          }
+
         });
       },
     );

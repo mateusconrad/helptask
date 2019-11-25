@@ -1,5 +1,5 @@
+import 'package:app_vai/Drawer/drawerUsuario/userDetails.dart';
 import 'package:app_vai/Login/loginAtendente.dart';
-import 'package:app_vai/drawer/userDetails.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -98,9 +98,15 @@ class _LoginUsuarioState extends State<LoginUsuario> {
   GoogleSignInButton botaoLoginUsuario() {
     return GoogleSignInButton(
       text: "Login Usuário",
-      onPressed: () => _signInWithGoogle()
-          .then((FirebaseUser user) => print(user))
-          .catchError((e) => print(e)),
+      onPressed: () =>
+        Navigator.pushReplacement(
+          context,
+          new MaterialPageRoute(
+            builder: (context) => new TabBarHomeUser(), //userDetails: details
+          )),
+//          _signInWithGoogle()
+//          .then((FirebaseUser user) => print(user))
+//          .catchError((e) => print(e)),
     );
   }
 

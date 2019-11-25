@@ -1,6 +1,5 @@
 import 'package:app_vai/telas/showInfo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-//import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -13,17 +12,19 @@ class _AndamentoState extends State<Andamento> {
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
   TextEditingController resolucaoChamado  = TextEditingController();
 
-//  Firestore isAdm = Firestore.instance.document("users").snapshots().where("adm", isEqual).
+  // Firestore isAdm = Firestore.instance.document("users").snapshots().where("adm", isEqual).
   @override
+
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
+        Container(child: Text('asdasdas'),),
         Expanded(
           child: StreamBuilder(
               stream: Firestore.instance
                   .collection("chamados")
                   .where("status", isEqualTo: "3")
-                  .orderBy("titulo")
+//                  .orderBy()
                   .snapshots(),
               builder: (context, snapshot) {
                 switch (snapshot.connectionState) {
@@ -44,7 +45,7 @@ class _AndamentoState extends State<Andamento> {
                       );
                     }
 
-                    return ListView.builder(
+                return ListView.builder(
                         itemCount: snapshot.data.documents.length,
                         padding: EdgeInsets.only(
                             top: 5, left: 5, right: 5, bottom: 10),
@@ -190,5 +191,33 @@ class _AndamentoState extends State<Andamento> {
         return null;
       },
     );
+  }
+  resultadoFiltro(resultado){
+    switch (resultado) {
+      case 1:
+        Firestore.instance.collection("chamados").orderBy(
+            "titulo", descending: false);
+        break;
+      case 2:
+        Firestore.instance.collection("chamados").orderBy(
+            "titulo", descending: true);
+        break;
+      case 3:
+        Firestore.instance.collection("chamados").orderBy(
+            "data", descending: false);
+        break;
+      case 4:
+        Firestore.instance.collection("chamados").orderBy(
+            "data", descending: true);
+        break;
+      case 5:
+        Firestore.instance.collection("chamados").orderBy(
+            "prioridade", descending: false);
+        break;
+      case 6:
+        Firestore.instance.collection("chamados").orderBy(
+            "prioridade", descending: true);
+        break;
+    }
   }
 }

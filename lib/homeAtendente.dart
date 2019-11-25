@@ -1,4 +1,4 @@
-import 'package:app_vai/drawer/menuLateral.dart';
+import 'package:app_vai/Drawer/drawerAtendente/menuLateral.dart';
 import 'package:app_vai/tabs/atendente/espera.dart';
 import 'package:app_vai/tabs/atendente/pausados.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -27,7 +27,6 @@ class _TabBarHomeAtendenteState extends State<TabBarHomeAtendente> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      //showSemanticsDebugger: true,
       theme: ThemeData(
         brightness: Brightness.dark,
       ),
@@ -53,7 +52,7 @@ class _TabBarHomeAtendenteState extends State<TabBarHomeAtendente> {
             ],
           ),
           floatingActionButton: _addChamado(context),
-          drawer: MenuLateral(),
+          drawer: MenuLateralAtendente(),
         ),
       ),
     );
