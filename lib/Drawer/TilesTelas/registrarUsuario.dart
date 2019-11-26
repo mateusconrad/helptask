@@ -1,4 +1,3 @@
-import 'package:app_vai/Login/loginUsuario.dart';
 import 'package:app_vai/homeAtendente.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -137,12 +136,12 @@ class _RegistrarAtendenteState extends State<RegistrarAtendente> {
 
   @override
   initState() {
+    super.initState();
     nomeController = new TextEditingController();
     sobrenomeController = new TextEditingController();
     emailController = new TextEditingController();
     senhaController = new TextEditingController();
     confirmaSenhaController = new TextEditingController();
-    super.initState();
   }
 
   // ignore: missing_return

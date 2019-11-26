@@ -3,7 +3,6 @@ import 'package:app_vai/tabs/atendente/andamento.dart';
 import 'package:app_vai/tabs/atendente/espera.dart';
 import 'package:app_vai/tabs/atendente/finalizado.dart';
 import 'package:app_vai/tabs/atendente/pausados.dart';
-import 'package:app_vai/telas/filtropop.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:app_vai/telas/abrir_chamado.dart';

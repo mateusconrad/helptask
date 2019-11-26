@@ -6,8 +6,6 @@ import 'package:flutter/widgets.dart';
 class Andamento extends StatefulWidget {
   @override
   _AndamentoState createState() => _AndamentoState();
-}
-
 class _AndamentoState extends State<Andamento> {
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
   TextEditingController resolucaoChamado = TextEditingController();
@@ -15,72 +13,11 @@ class _AndamentoState extends State<Andamento> {
   // Firestore isAdm = Firestore.instance.document("users").snapshots().where("adm", isEqual).
   @override
   Widget build(BuildContext context) {
-    String filtro;
-    bool descc;
+    /*String filtro;
+    bool descc;*/
     return Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: <Widget>[
-        PopupMenuButton<int>(
-
-          itemBuilder: (context) => <PopupMenuEntry<int>>[
-            PopupMenuItem<int>(
-              child: Text("Titulo A-Z"),
-              value: 1,
-            ),
-            PopupMenuItem<int>(
-              child: Text("Titulo Z-A"),
-              value: 2,
-            ),
-            PopupMenuItem<int>(
-              child: Text("Data Asc"),
-              value: 3,
-            ),
-            PopupMenuItem<int>(
-              child: Text("Data Desc"),
-              value: 4,
-            ),
-            PopupMenuItem<int>(
-              child: Text("Prioridade Alta"),
-              value: 5,
-            ),
-            PopupMenuItem<int>(
-              child: Text("Prioridade Baixa"),
-              value: 6,
-            ),
-          ],
-          onSelected: (int resultado) {
-            setState(() {
-              switch (resultado) {
-                case 1:
-                  filtro = "titulo";
-                  descc  = false;
-                  break;
-                case 2:
-                  filtro = "titulo";
-                  descc = true;
-                  break;
-                case 3:
-                  filtro = "data";
-                  descc = false;
-                  break;
-                case 4:
-                  filtro = "data";
-                  descc = true;
-                  break;
-//                case 5:
-//                  filtro = Firestore.instance
-//                      .collection("chamados")
-//                      .orderBy("prioridade", descending: false);
-//                  break;
-//                case 6:
-//                  filtro = Firestore.instance
-//                      .collection("chamados").where("status", isEqualTo: 3)
-//                      .orderBy("prioridade", descending: true);
-//                  break;
-              }
-            });
-          },
-        ),
         Expanded(
           child: StreamBuilder(
               stream: Firestore.instance
@@ -106,7 +43,6 @@ class _AndamentoState extends State<Andamento> {
                         ),
                       );
                     }
-
                     return ListView.builder(
                         itemCount: snapshot.data.documents.length,
                         padding: EdgeInsets.only(
@@ -256,40 +192,5 @@ class _AndamentoState extends State<Andamento> {
         return null;
       },
     );
-  }
-
-  resultadoFiltro(resultado) {
-    switch (resultado) {
-      case 1:
-        Firestore.instance
-            .collection("chamados")
-            .orderBy("titulo", descending: false);
-        break;
-      case 2:
-        Firestore.instance
-            .collection("chamados")
-            .orderBy("titulo", descending: true);
-        break;
-      case 3:
-        Firestore.instance
-            .collection("chamados")
-            .orderBy("data", descending: false);
-        break;
-      case 4:
-        Firestore.instance
-            .collection("chamados")
-            .orderBy("data", descending: true);
-        break;
-      case 5:
-        Firestore.instance
-            .collection("chamados")
-            .orderBy("prioridade", descending: false);
-        break;
-      case 6:
-        Firestore.instance
-            .collection("chamados")
-            .orderBy("prioridade", descending: true);
-        break;
-    }
   }
 }
