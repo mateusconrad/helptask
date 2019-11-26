@@ -69,11 +69,14 @@ class _LoginUsuarioState extends State<LoginUsuario> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              SizedBox(height: 100,),
               _logoAbase(),
               tituloApp(),
+              SizedBox(height: 100,),
               MaterialButton(
                 child: Text("Login Atendente"),
                 color: Colors.indigo,
+                minWidth: 175 ,
                 onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginAtendente()));
                 },

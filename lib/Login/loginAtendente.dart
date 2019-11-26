@@ -32,10 +32,14 @@ class _LoginAtendenteState extends State<LoginAtendente> {
           padding: const EdgeInsets.only(left: 10, top: 150, right: 10),
           child: Column(
             children: <Widget>[
+              SizedBox(height: 50,),
               Text("Acesso Atendente",),
               fieldUser(context),
+              Divider(endIndent: 15,),
               fieldSenha(context),
+              SizedBox(height: 50,),
               RaisedButton(
+                child: Text("Entrar"),
                   onPressed: (){
                     if (_loginFormKey.currentState.validate()) {
                       FirebaseAuth.instance

@@ -1,4 +1,5 @@
 import 'package:app_vai/Login/loginUsuario.dart';
+import 'package:app_vai/homeAtendente.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -97,7 +98,7 @@ class _RegistrarAtendenteState extends State<RegistrarAtendente> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              LoginUsuario()),
+                                              TabBarHomeAtendente()),
                                           (_) => false),
                                   nomeController.clear(),
                                   sobrenomeController.clear(),

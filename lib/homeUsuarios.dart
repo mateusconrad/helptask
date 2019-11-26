@@ -1,3 +1,4 @@
+import 'package:app_vai/Drawer/drawerAtendente/menuLateral.dart';
 import 'package:app_vai/Drawer/drawerUsuario/menuLateral.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
