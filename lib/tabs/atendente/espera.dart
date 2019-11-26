@@ -1,6 +1,5 @@
 import 'package:app_vai/telas/showInfo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Espera extends StatefulWidget {
@@ -16,20 +15,18 @@ class _EsperaState extends State<Espera> {
   var _tiposPrioridades = ["Baixa", "Média", "Alta", "Critica"];
   TextEditingController resolucaoChamado  = TextEditingController();
 
+  Stream <QuerySnapshot>  snapp = Firestore.instance
+      .collection("chamados")
+      .where("status", isEqualTo: "1")
+      .orderBy("titulo")
+      .snapshots();
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
         Expanded(
           child: StreamBuilder(
-
-              stream: Firestore.instance
-                  .collection("chamados")
-                  .where("status", isEqualTo: "1")
-                  .orderBy("titulo")
-//                  .orderBy("prioridade", descending: true)
-                  .snapshots(),
-
+              stream: snapp,
               builder: (context, snapshot) {
                 switch (snapshot.connectionState) {
                   case ConnectionState.none:

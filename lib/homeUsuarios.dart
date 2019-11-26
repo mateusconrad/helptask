@@ -1,7 +1,7 @@
 import 'package:app_vai/Drawer/drawerUsuario/menuLateral.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'tabs/atendente/andamento.dart';
+import 'tabs/usuario/andamento.dart';
 import 'tabs/usuario/finalizado.dart';
 import 'tabs/usuario/espera.dart';
 import 'tabs/usuario/pausados.dart';
@@ -16,7 +16,6 @@ class _TabBarHomeUserState extends State<TabBarHomeUser> {
   String nomeTab = "Help Task";
   DocumentSnapshot dadosBranco;
   TextStyle estilo = TextStyle(fontSize: 12);
-
 
   @override
   void initState() {

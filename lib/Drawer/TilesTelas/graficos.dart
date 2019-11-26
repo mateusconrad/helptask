@@ -1,5 +1,9 @@
+/*qEspera = Firestore.instance.collection("chamados").where("status", isEqualTo: "1").snapshots().toString();
+qPausado = Firestore.instance.collection("chamados").snapshots().length.toString();
+qAndamento = Firestore.instance.collection("chamados").snapshots().length.toString();
+qFinalizado = Firestore.instance.collection("chamados").snapshots().length.toString();*/
+
 import 'package:charts_flutter/flutter.dart' as charts;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class Graficos extends StatefulWidget {
@@ -10,60 +14,27 @@ class Graficos extends StatefulWidget {
 class _GraficosState extends State<Graficos> {
   @override
   Widget build(BuildContext context) {
-
-
-    Future<int> espera = Firestore.instance
-        .collection("chamados")
-        .where("status", isEqualTo: "1")
-        .snapshots()
-        .length;
-    /*
-    var pausado = Firestore.instance
-        .collection("chamados")
-        .where("status", isEqualTo: "2")
-        .snapshots()
-        .length
-        .toString();
-    var andamento = Firestore.instance
-        .collection("chamados")
-        .where("status", isEqualTo: "3")
-        .snapshots()
-        .length
-        .toString();
-    var finalizado = Firestore.instance
-        .collection("chamados")
-        .where("status", isEqualTo: "4")
-        .snapshots()
-        .length
-        .toString();
     var data = [
-      Chamados(espera),
-      Chamados(pausado),
-      Chamados(andamento),
-      Chamados(finalizado),
-
-    * */
-    var data = [
-      Gra('Jan', 2225),
-      Gra('Fev', 25000),
-      Gra('Mar', 30000),
-      Gra('Abr', 8500),
+      Gra('Em Aberto', 10),
+      Gra('Pausados', 25),
+      Gra('Andamento', 30),
+      Gra('Finalizados', 30),
     ];
+
     var series = [
       charts.Series(
           domainFn: (Gra sales, _) => sales.year,
           measureFn: (Gra sales, _) => sales.sales,
-          id: 'Sales',
+//          id: 'Sales',
           data: data,
-          colorFn: (T, _) => charts.MaterialPalette.green.shadeDefault,
-          labelAccessorFn: (Gra sales, _) => 'R\$${sales.sales.toStringAsFixed(2)}')
+//          colorFn: (T, _) => charts.MaterialPalette.green.shadeDefault,
+          labelAccessorFn: (Gra sales, _) => sales.year.toString())
     ];
+
     var chart = charts.BarChart(
       series,
-      barRendererDecorator: new charts.BarLabelDecorator<String>(),
-      vertical: false,
-      animate: true,
-      animationDuration: Duration(seconds: 1),
+//      barRendererDecorator: new charts.BarLabelDecorator<String>(),
+//      vertical: false,
     );
     return SingleChildScrollView(
       child: Column(
@@ -72,6 +43,13 @@ class _GraficosState extends State<Graficos> {
             child: chart,
             height: 500,
           ),
+          Text(
+            "Gráficos",
+            style: TextStyle(fontSize: 20, color: Colors.white),
+            textAlign: TextAlign.center,
+
+          ),
+
         ],
       ),
     );
@@ -84,4 +62,3 @@ class Gra {
 
   Gra(this.year, this.sales);
 }
-

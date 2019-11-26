@@ -20,6 +20,7 @@ class _LoginUsuarioState extends State<LoginUsuario> {
   GoogleSignIn _googleSignIn = GoogleSignIn();
   FirebaseAuth _authusuario = FirebaseAuth.instance;
 
+  // ignore: unused_element
   Future<FirebaseUser> _signInWithGoogle() async {
     GoogleSignInAccount googleUser = await _googleSignIn.signIn();
     GoogleSignInAuthentication googleAuth = await googleUser.authentication;
