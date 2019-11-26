@@ -18,7 +18,7 @@ class _AndamentoState extends State<Andamento> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Container(child: Text('asdasdas'),),
+
         Expanded(
           child: StreamBuilder(
               stream: Firestore.instance
@@ -26,6 +26,7 @@ class _AndamentoState extends State<Andamento> {
                   .where("status", isEqualTo: "3")
 //                  .orderBy()
                   .snapshots(),
+
               builder: (context, snapshot) {
                 switch (snapshot.connectionState) {
                   case ConnectionState.none:

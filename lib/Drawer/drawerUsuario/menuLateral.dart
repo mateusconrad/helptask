@@ -77,7 +77,7 @@ ListTile _listTileGraphics(
       subtitle: Text(subTitle),
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => GraficosPage()));
+            context, MaterialPageRoute(builder: (context) => Graficos()));
       });
 }
 
