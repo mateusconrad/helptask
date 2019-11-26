@@ -16,7 +16,7 @@ class _FinalizadoState extends State<Finalizado> {
           child: StreamBuilder(
               stream: Firestore.instance
                   .collection("chamados")
-                  .where("status", isEqualTo: "4")
+                  .where("status", isEqualTo: 4)
                   .orderBy("titulo")
                   .snapshots(),
               builder: (context, snapshot) {
@@ -33,7 +33,7 @@ class _FinalizadoState extends State<Finalizado> {
                         child: Text(
                           "Não há dados!",
                           style:
-                          TextStyle(color: Colors.redAccent, fontSize: 20),
+                              TextStyle(color: Colors.redAccent, fontSize: 20),
                         ),
                       );
                     }
@@ -45,25 +45,26 @@ class _FinalizadoState extends State<Finalizado> {
                         itemBuilder: (context, index) {
                           return Card(
                               child: Column(
-                                children: <Widget>[
-                                  ListTile(
-                                    title: Text(
-                                        snapshot
-                                            .data.documents[index].data["titulo"],
-                                        style: TextStyle(fontSize: 25)),
-                                  ),
-                                  ButtonTheme.bar(
-                                    child: ButtonBar(
-                                      children: <Widget>[
-                                        IconButton(
-                                          icon: Icon(Icons.info),
-                                          onPressed: () => showInfo(context, index, snapshot),
-                                        ),
-                                      ],
+                            children: <Widget>[
+                              ListTile(
+                                title: Text(
+                                    snapshot
+                                        .data.documents[index].data["titulo"],
+                                    style: TextStyle(fontSize: 25)),
+                              ),
+                              ButtonTheme.bar(
+                                child: ButtonBar(
+                                  children: <Widget>[
+                                    IconButton(
+                                      icon: Icon(Icons.info),
+                                      onPressed: () =>
+                                          showInfo(context, index, snapshot),
                                     ),
-                                  ),
-                                ],
-                              ));
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ));
                         });
                 }
               }),
@@ -71,5 +72,4 @@ class _FinalizadoState extends State<Finalizado> {
       ],
     );
   }
-
 }

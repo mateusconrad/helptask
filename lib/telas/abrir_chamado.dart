@@ -177,13 +177,13 @@ class _AbrirChamadoState extends State<AbrirChamado> {
             "setor": setorChamado.text,
             "classificacao": _valueClassificacao,
             "tipo": _valueTipoChamado,
-            "status": "1",
+            "status": 1,
             "urlImagem": _image,
             "dataAbertura": getDiaMesAno(),
             "horaAbertura": getHoraMinuto(),
           });
 
-          if(_image != null) uploadPic(context);
+          if(_image != null || _image == null) uploadPic(context);
           Navigator.of(context).pop();
         }
       },

@@ -8,10 +8,7 @@ class Pausa extends StatefulWidget {
 }
 
 class _PausaState extends State<Pausa> {
-
-  var queryAdm= Firestore.instance.document("users").snapshots();
-
-
+  var queryAdm = Firestore.instance.document("users").snapshots();
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +18,7 @@ class _PausaState extends State<Pausa> {
           child: StreamBuilder(
               stream: Firestore.instance
                   .collection("chamados")
-                  .where("status", isEqualTo: "2")
+                  .where("status", isEqualTo: 2)
                   .orderBy("titulo")
                   .snapshots(),
               builder: (context, snapshot) {
@@ -116,7 +113,7 @@ class _PausaState extends State<Pausa> {
                       .document(
                           snapshot.data.documents[index].documentID.toString())
                       .updateData({
-                    "status": "3",
+                    "status": 3,
                   });
                   //                  Navigator.pop(context);
                 },

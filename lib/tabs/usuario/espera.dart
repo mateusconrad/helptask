@@ -1,6 +1,5 @@
 import 'package:app_vai/telas/showInfo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-//import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Espera extends StatefulWidget {
@@ -24,8 +23,8 @@ class _EsperaState extends State<Espera> {
           child: StreamBuilder(
               stream: Firestore.instance
                   .collection("chamados")
-                  .where("status", isEqualTo: "1")
-                  .orderBy("titulo")
+                  .where("status", isEqualTo: 1)
+//                  .orderBy(resultado)
 //                  .orderBy("prioridade", descending: true)
                   .snapshots(),
 
@@ -130,7 +129,7 @@ class _EsperaState extends State<Espera> {
                       snapshot.data.documents[index].documentID.toString())
                       .updateData(
                       {
-                        "status": "3",
+                        "status": 3,
                         "prioridade":_valuePrioridade,
                       }
                       );
@@ -175,7 +174,7 @@ class _EsperaState extends State<Espera> {
                       snapshot.data.documents[index].documentID.toString())
                       .updateData(
                       {
-                        "status": "4",
+                        "status": 4,
                         "resolucao": resolucaoChamado.text,
                       }
                   );

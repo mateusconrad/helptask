@@ -20,7 +20,7 @@ class _AndamentoState extends State<Andamento> {
           child: StreamBuilder(
               stream: Firestore.instance
                   .collection("chamados")
-                  .where("status", isEqualTo: "3")
+                  .where("status", isEqualTo: 3)
                   .orderBy("titulo")
                   .snapshots(),
               builder: (context, snapshot) {

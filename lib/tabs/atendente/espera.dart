@@ -17,7 +17,7 @@ class _EsperaState extends State<Espera> {
 
   Stream <QuerySnapshot>  snapp = Firestore.instance
       .collection("chamados")
-      .where("status", isEqualTo: "1")
+      .where("status", isEqualTo: 1)
       .orderBy("titulo")
       .snapshots();
   @override
@@ -136,7 +136,7 @@ class _EsperaState extends State<Espera> {
                       snapshot.data.documents[index].documentID.toString())
                       .updateData(
                       {
-                        "status": "3",
+                        "status":3,
                         "prioridade":_valuePrioridade,
                       }
                       );
@@ -181,7 +181,7 @@ class _EsperaState extends State<Espera> {
                       snapshot.data.documents[index].documentID.toString())
                       .updateData(
                       {
-                        "status": "4",
+                        "status": 4,
                         "resolucao": resolucaoChamado.text,
                       }
                   );

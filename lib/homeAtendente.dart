@@ -3,6 +3,7 @@ import 'package:app_vai/tabs/atendente/andamento.dart';
 import 'package:app_vai/tabs/atendente/espera.dart';
 import 'package:app_vai/tabs/atendente/finalizado.dart';
 import 'package:app_vai/tabs/atendente/pausados.dart';
+import 'package:app_vai/telas/filtropop.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:app_vai/telas/abrir_chamado.dart';
@@ -38,9 +39,7 @@ class _TabBarHomeAtendenteState extends State<TabBarHomeAtendente> {
             bottom: buildTabBar(),
             title: Text(nomeTab),
             centerTitle: true,
-            actions: <Widget>[
-              _filtroPopup(),
-            ],
+
           ),
           body: TabBarView(
             physics: FixedExtentScrollPhysics(),
@@ -58,67 +57,6 @@ class _TabBarHomeAtendenteState extends State<TabBarHomeAtendente> {
     );
   }
 
-  PopupMenuButton<int> _filtroPopup() {
-    return PopupMenuButton<int>(
-      itemBuilder: (context) =>
-      <PopupMenuEntry<int>>[
-        PopupMenuItem<int>(
-          child: Text("Titulo A-Z"),
-          value: 1,
-        ),
-        PopupMenuItem<int>(
-          child: Text("Titulo Z-A"),
-          value: 2,
-        ),
-        PopupMenuItem<int>(
-          child: Text("Data Asc"),
-          value: 3,
-        ),
-        PopupMenuItem<int>(
-          child: Text("Data Desc"),
-          value: 4,
-        ),
-        PopupMenuItem<int>(
-          child: Text("Prioridade Alta"),
-          value: 5,
-        ),
-        PopupMenuItem<int>(
-          child: Text("Prioridade Baixa"),
-          value: 6,
-        ),
-      ],
-      onSelected: (int resultado) {
-        setState(() {
-          switch (resultado) {
-            case 1:
-              Firestore.instance.collection("chamados").orderBy(
-                  "titulo", descending: false);
-              break;
-            case 2:
-              Firestore.instance.collection("chamados").orderBy(
-                  "titulo", descending: true);
-              break;
-            case 3:
-              Firestore.instance.collection("chamados").orderBy(
-                  "data", descending: false);
-              break;
-            case 4:
-              Firestore.instance.collection("chamados").orderBy(
-                  "data", descending: true);
-              break;
-            case 5:
-              Firestore.instance.collection("chamados").orderBy(
-                  "prioridade", descending: false);
-              break;
-            case 6:
-              Firestore.instance.collection("chamados").orderBy(
-                  "prioridade", descending: true);
-              break;
-          }
-        });
-      },
-    );
-  }
 
   TabBar buildTabBar() {
     return TabBar(
@@ -157,5 +95,3 @@ class _TabBarHomeAtendenteState extends State<TabBarHomeAtendente> {
   }
 
 }
-
-//        userDetails: details);
