@@ -6,6 +6,8 @@ import 'package:flutter/widgets.dart';
 class Andamento extends StatefulWidget {
   @override
   _AndamentoState createState() => _AndamentoState();
+}
+
 class _AndamentoState extends State<Andamento> {
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
   TextEditingController resolucaoChamado = TextEditingController();
