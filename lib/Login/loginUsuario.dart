@@ -102,15 +102,9 @@ class _LoginUsuarioState extends State<LoginUsuario> {
   GoogleSignInButton botaoLoginUsuario() {
     return GoogleSignInButton(
       text: "Login Usuário",
-      onPressed: () =>
-        Navigator.pushReplacement(
-          context,
-          new MaterialPageRoute(
-            builder: (context) => new TabBarHomeUser(), //userDetails: details
-          )),
-//          _signInWithGoogle()
-//          .then((FirebaseUser user) => print(user))
-//          .catchError((e) => print(e)),
+      onPressed: () => _signInWithGoogle()
+          .then((FirebaseUser user) => print(user))
+          .catchError((e) => print(e)),
     );
   }
 

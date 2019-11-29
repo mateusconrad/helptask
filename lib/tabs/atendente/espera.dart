@@ -11,7 +11,7 @@ class _EsperaState extends State<Espera> {
 
   DocumentSnapshot dadosBranco;
 
-  var _valuePrioridade;
+  var _valuePrioridade = "Baixa";
   var _tiposPrioridades = ["Baixa", "Média", "Alta", "Critica"];
   TextEditingController resolucaoChamado  = TextEditingController();
 
