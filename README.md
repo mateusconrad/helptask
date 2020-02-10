@@ -19,12 +19,12 @@ Menu lateral: <br />
 <img src="https://github.com/mateusconrad/helptask/blob/master/relatorio/imagens/screenshots/6_drawer.png" height=350> 
 
 
-# Relatório
+## Relatório
 
-	O relatório elaborado está disponível [aqui](https://github.com/mateusconrad/helptask/blob/master/relatorio/Relatório.pdf).
-	Também foi elaborado um resumo expandido, disponível [aqui](https://github.com/mateusconrad/helptask/blob/master/relatorio/Resumo Expandido.pdf).
-	A documentação está disponível [Aqui](https://github.com/mateusconrad/helptask/blob/master/relatorio/DocumentaçãoHelpTask.pdf)
-	Este relatório foi escrito usando como base o template LaTeX SETREM disponibilizado pelo [LARCC](http://larcc.setrem.com.br).
+O relatório elaborado está disponível [aqui](https://github.com/mateusconrad/helptask/blob/master/relatorio/Relatório.pdf).
+Também foi elaborado um resumo expandido, disponível [aqui](https://github.com/mateusconrad/helptask/blob/master/relatorio/Resumo Expandido.pdf).
+A documentação está disponível [Aqui](https://github.com/mateusconrad/helptask/blob/master/relatorio/DocumentaçãoHelpTask.pdf)
+Este relatório foi escrito usando como base o template LaTeX SETREM disponibilizado pelo [LARCC](http://larcc.setrem.com.br/).
 
 Acesse a página de contato do LARCC [aqui](http://larcc.setrem.com.br/en/contact/).
 
