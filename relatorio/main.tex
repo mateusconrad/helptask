@@ -1,0 +1,226 @@
+\documentclass[diss]{template/setrem}
+\sloppy
+\usepackage[utf8]{inputenc}
+\usepackage[table]{xcolor}
+\usepackage{multicol}
+\usepackage{array} % for defining a new column type
+\usepackage{varwidth} %for the varwidth minipage environment
+\usepackage{float}
+\usepackage{todonotes}
+\usepackage{subfigure}
+\usepackage{graphicx,url}
+\usepackage{lipsum} %generate fake text
+
+\makeatletter
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+\makeatother
+
+
+\usepackage{setspace}
+\usepackage{amssymb}
+\usepackage{colortbl}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{verbatim}
+\usepackage{scrextend}
+\usepackage{csvsimple}
+\usepackage{glossaries}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{threeparttablex}
+\usepackage{lscape}
+\usepackage{colortbl}
+\usepackage{booktabs}
+
+% Coloca a contagem das figuras sequenciais sem considerar capítulos
+\usepackage{chngcntr}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{datatool}
+\usepackage{seqsplit}
+% \usepackage[toc,page]{appendix}
+\usepackage[titletoc, title]{appendix}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{titletoc}
+\usepackage{pdfpages}
+
+\makeatletter
+\def\@cline#1-#2\@nil{%
+  \omit
+  \@multicnt#1%
+  \advance\@multispan\m@ne
+  \ifnum\@multicnt=\@ne\@firstofone{&\omit}\fi
+  \@multicnt#2%
+  \advance\@multicnt-#1%
+  \advance\@multispan\@ne
+  \leaders\hrule\@height\arrayrulewidth\hfill
+  \cr
+  \noalign{\nobreak\vskip-\arrayrulewidth}}
+\makeatother
+
+
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+\definecolor{color_keywords}{rgb}{0.0, 0.0, 0.44}
+\definecolor{color_mykeyword}{RGB}{10, 100, 112}
+
+\definecolor{myblue}{rgb}{0,0.3,0.9}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{mygray2}{rgb}{0.2,0.2,0.2}
+\definecolor{mygray3}{rgb}{0.4,0.4,0.4}
+
+
+
+\lstdefinestyle{mycode}{ %
+  %backgroundcolor=\color{yellow!05},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\linespread{1}\small,        % the size of the fonts that are used for the code \footnotesize
+  %lineskip={-1pt},
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=t,                    % sets the caption-position to top
+  commentstyle=\color{gray!90},    % comment style
+%  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=l,                    % adds a frame around the code (bt,l,r) single
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{black}\bf,       % keyword style
+  language=C++,                     % the language of the code
+ % morekeywords={input,output,parallel_activity,stream_producer},            % if you want to add more keywords to the set
+  keywordstyle=[2]{\color{blue}\bf},
+ % keywords=[3]{serial_in_order, parallel, pipeline, run, add_filter, task_scheduler_init},
+ % keywordstyle=[3]{\color{blue!70!green}\bf},
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{red},     % string literal style
+  tabsize=1,                       % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+% Negrito no título do listing
+\captionsetup[lstlisting]{font={bf},labelfont=bf}
+
+%Ajusta a contagem do listing
+\AtBeginDocument{% the counter is defined later
+  \counterwithout{lstlisting}{chapter}%
+}
+\makeatletter
+\renewcommand{\l@lstlisting}[2]{%
+  \@dottedtocline{1}{0em}{1.5em}{\lstlistingname\ #1}{#2}%
+}
+\makeatother
+
+
+\title{Desenvolvimento de um app mobile para chamados de suporte de uma empresa}
+\author{Giehl}{Bruno Leonardo}
+\author{Conrad}{Mateus Augusto}
+\advisor{Msc.}{Siqueira}{Denise}
+\advisor{Esp.}{Knob}{Alexandre}
+%%%%%ARRUMAR ISSO
+
+
+% Place where the undergraduate thesis will be made.
+\location{Três de Maio}{RS}
+
+% Date of undergraduate thesis development/presentation.
+\date{Setembro}{2019}
+
+% Course name - defined in setremdefs.sty.
+\course{\ctrc}
+%\vspace{-4cm}
+
+% Header image of the cover.
+
+% Sistemas de Informação
+\courseheader{\silogo[1]}
+
+\docname{Relatório Final do Trabalho Interdisciplinar III do Curso de Bacharelado em Sistemas de Informação - Faculdade Três de Maio - SETREM}
+
+% Mostra a lista de tabelas e figuras com os prefixos corretos.
+\titlecontents{table}
+  [0em]
+  {}
+  {\tablename\enspace\thecontentslabel:\enspace\enspace}
+  {}
+  {\titlerule*[.5pc]{.}\contentspage}
+
+\titlecontents{figure}
+  [0em]
+  {}
+  {\figurename\enspace\thecontentslabel:\enspace\enspace}
+  {}
+  {\titlerule*[.5pc]{.}\contentspage}
+
+\begin{document} 
+\maketitle
+%\input{apro.tex}
+\begin{abstract}
+
+Today, companies in all industries use some form of IT infrastructure and services to run their business. This is mainly due to the ability to improve the business through the implementation of ERP'S and other tools, capable of controlling the business flow, as well as presenting concrete and real time data about the business. The IT infrastructure needs constant support so that downtime in the event of equipment failures / errors required for the full operation of the operation to have the least possible impact, and for this reason, medium to large companies employ their own management team. support, usually operating as a service desk. Thus, the present work proposes the development of a mobile application for Android operating systems, to open and support IT support calls, aiming to facilitate and standardize the service process using the ITIL guide for good practice in IT. IT as well as graphing for easy viewing of recurring information. This research and development took place with the object of research the environment of the IT support sector of the company Abase Sistemas Ltda. Application development is treated as the main problem of the present research, in which the existing methodologies in the company were analyzed, so that the real needs and functionalities necessary to propose a solution capable of standardizing the support were analyzed. The application has access levels for attendants and users, allowing you to create tickets, and track the status of the ticket, having its development based on the Dart language plus the Flutter framework, as well as using Firebase non-relational database. Through this research, it was possible to develop an application following the requirements raised through the evaluation of the company's IT sector, as well as presenting useful information to users through the generation of graphs. 
+\end{abstract}
+\keyw{Support. Development. Information technology}
+
+\begin{resumo}
+
+.Nos dias atuais, empresas de todos setores do mercado se utilizam de alguma forma de infraestruturas e/ou serviços de TI para conduzir seu negócio. Isso se deve principalmente pela capacidade de aprimoramento do negócio através da implementação de ERP’S e demais ferramentas, capazes de controlar o fluxo de negócio, além de apresentar dados concretos e em tempo real acerca do negócio. A infraestrutura de TI necessita de constante suporte para que o \textit{downtime} em casos de falhas/erros nos equipamentos necessários para o pleno funcionamento da operação cause o mínimo impacto possível, e, por esta razão, empresas de médio a grande porte empregam sua própria equipe de suporte, costumeiramente operando como uma central de serviços. Sendo assim, o presente trabalho propõe o desenvolvimento de uma aplicação mobile para sistemas operacionais Android, para realizar abertura e atendimento de chamados de suporte de TI, visando facilitar e padronizar o processo de atendimento utilizando-se ainda do guia de ITIL para boas prática em TI, bem como a geração de gráficos para facilitar a visualização de informações recorrentes. A presente pesquisa e desenvolvimento ocorreram tendo como objeto de pesquisa  o ambiente do setor de suporte de TI da empresa Abase Sistemas Ltda. O desenvolvimento da aplicação é tratada como a principal problemática da presente pesquisa, na qual foram analisadas as metodologias já existentes na empresa, para que assim se avaliasse as reais necessidades e funcionalidades necessárias para propor uma solução capaz de padronizar o suporte. A aplicação apresenta níveis de acesso para atendentes e usuários, permitindo criar chamados, e acompanhar o status do chamado, tendo seu desenvolvimento baseado na linguagem Dart acrescida do framework Flutter, bem como utilização de banco de dados não-relacional Firebase. Através da presente pesquisa, foi possível desenvolver uma aplicação seguindo os requisitos levantados através da avaliação do setor de TI da empresa, bem como apresentar informações úteis aos usuários através da geração de gráficos.
+\end{resumo}
+\keyw{Suporte. Desenvolvimento. Tecnologia da Informação.}
+
+\begin{singlespaced}    %Lista de figuras
+    \listoffigures
+\end{singlespaced}
+
+\begin{singlespaced}    %Lista de tabelas
+    \listoftables
+\end{singlespaced}
+
+\begin{listofabbrv}{OR-AC-GAN} % Lista de siglas.
+    \setstretch{1}
+    \item[ACM] {Association for Computing Machinery}
+    \item[API] {Applicatio Programming Inteafce}
+    \item[BaaS] {Back-end as a Service}
+    \item[COBIT]{Control Objectives for Information and related Technology}
+    \item[COSO] {Committee of Sponsoring Organizations}
+    \item[GCP] {Google Cloud Platform}
+    \item[GITIM]{Government Information Technology Infraestructure Method}
+    \item[IBGE] {Instituto Brasileiro de Geografia e Estatísticas}
+    \item[ITIL] {Information Technology Infrastructure Library}
+    \item[JSON] {JavaScript Object Notation}
+    \item[MVC] {Model View and Controller}
+    \item[NoSQL]{Not Only SQL}
+    \item[TI]{Tecnologia da informação}
+    \item[RDM]{Requisições de Mudança}
+    \item[RF]{Requisito Funcional}
+    \item[RNF]{Requisito Não Funcional}
+    \item[SDK]{Software Development Kit}
+    \item[SGBD]{Sistema Gerenciador de Banco de Dados}
+    \item[SGBDTR]{Sistema Gerenciador de Banco de Dados em Tempo Real}
+    \item[SQL]{Structured Query Language} 
+\end{listofabbrv}
+\tableofcontents
+\input{intro.tex}
+\input{cap1.tex}
+\input{cap2.tex}
+\input{cap3.tex}
+\input{concl.tex}
+
+\bibliographystyle{template/abnt-pt}
+\bibliography{bib/bibliography}
+\clearpage
+
+\input{apendices.tex}
+
+
+\end{document}
+
