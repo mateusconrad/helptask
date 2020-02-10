@@ -1,5 +1,6 @@
 # Help Task
-	Aplicativo desenvolvido para o Interdisciplinar III envolvendo a cadeira de Linguagem de Programação III com Alinhamento e Estratégias de Sistemas.
+
+Aplicativo desenvolvido para o Interdisciplinar III envolvendo a cadeira de Linguagem de Programação III com Alinhamento e Estratégias de Sistemas.
 
 
 Página de login:
@@ -23,7 +24,7 @@ Menu lateral: <br />
 
 O relatório elaborado está disponível [aqui](https://github.com/mateusconrad/helptask/blob/master/relatorio/Relatório.pdf). <br />
 Também foi elaborado um resumo expandido, disponível [aqui](https://github.com/mateusconrad/helptask/blob/master/relatorio/ResumoExpandido.pdf). <br />
-A documentação está disponível [Aqui](https://github.com/mateusconrad/helptask/blob/master/relatorio/DocumentaçãoHelpTask.pdf). <br />
+A documentação está disponível [aqui](https://github.com/mateusconrad/helptask/blob/master/relatorio/DocumentaçãoHelpTask.pdf). <br />
 Este relatório foi escrito usando como base o template LaTeX SETREM disponibilizado pelo [LARCC](http://larcc.setrem.com.br/). <br />
 
 Acesse a página de contato do LARCC [aqui](http://larcc.setrem.com.br/en/contact/).
