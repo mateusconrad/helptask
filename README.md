@@ -22,7 +22,7 @@ Menu lateral: <br />
 ## Relatório
 
 O relatório elaborado está disponível [aqui](https://github.com/mateusconrad/helptask/blob/master/relatorio/Relatório.pdf).
-Também foi elaborado um resumo expandido, disponível [aqui](https://github.com/mateusconrad/helptask/blob/master/relatorio/Resumo Expandido.pdf).
+Também foi elaborado um resumo expandido, disponível [aqui](https://github.com/mateusconrad/helptask/blob/master/relatorio/ResumoExpandido.pdf).
 A documentação está disponível [Aqui](https://github.com/mateusconrad/helptask/blob/master/relatorio/DocumentaçãoHelpTask.pdf)
 Este relatório foi escrito usando como base o template LaTeX SETREM disponibilizado pelo [LARCC](http://larcc.setrem.com.br/).
 
