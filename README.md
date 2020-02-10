@@ -9,4 +9,4 @@ Acesse a página de contato do LARCC [aqui](http://larcc.setrem.com.br/en/contac
 
 Página de login:
 
-![Login] (https://github.com/mateusconrad/helptask/blob/master/relatorio/img/screenshots/1_login.png)
+<img src="https://github.com/mateusconrad/helptask/blob/master/relatorio/img/screenshots/1_login.png">
