@@ -246,21 +246,11 @@ class _AbrirChamadoState extends State<AbrirChamado> {
   }
 
   String getDiaMesAno() {
-    String dia = DateTime.now().day.toString();
-    String mes = DateTime.now().month.toString();
-    String ano = DateTime.now().year.toString();
-    String diamesano = (dia + '/' + mes + '/' + ano);
-
-    return diamesano;
+    return  (DateTime.now().day + '/' + DateTime.now().month + '/' + DateTime.now().year);
   }
 
   String getHoraMinuto() {
-    String hora = DateTime.now().hour.toString();
-    String minuto = DateTime.now().minute.toString();
-
-    String horaChamado = (hora+ ':' + minuto);
-
-    return horaChamado;
+     return (DateTime.now().hour.toString() + ':' + DateTime.now().minute.toString());
   }
 
 }
